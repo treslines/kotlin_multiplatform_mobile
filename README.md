@@ -59,4 +59,4 @@ Você prefere um conteúdo por escrito de **alta qualidade** e **extremamente di
 <a href="https://github.com/treslines/aad" target="_blank"> 👉 **GOOGLE DEVELOPER CERTIFICATION**</a>
 </br>
 <a href="https://github.com/treslines/android_compose_arsenal" target="_blank"> 👉 **JETPACK COMPOSE ARSENAL** </a>
-</br>
+</br> 
