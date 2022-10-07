@@ -1,5 +1,5 @@
 # 🇵🇹 🇧🇷 Kotlin Multiplatform Mobile (KMM)
-Desafios e resoluções a problemas relacionados ao desenvolvimento multiplataforma para mobile.
+Desafios e resoluções a problemas relacionados ao desenvolvimento multiplataforma para mobile. Uma playlist imperdível do zero de quem teve que criar um projeto do zero. Conto os problemas que passei, como contornei, soluções encontradas, desafios etc. Pretendo documentar tudo aqui com código e videos no youtube para te ajudar. 
 
 # O que você vai encontrar aqui?
 - Um projeto template para iniciar seu projeto multiplataforma 
