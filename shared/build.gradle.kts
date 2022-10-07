@@ -26,6 +26,11 @@ kotlin {
             dependencies {
                 implementation(Kotlinx.coroutinesTest)
                 implementation(kotlin("test"))
+
+                implementation(Test.kotlinCommon)
+                implementation(Test.kotlinAnnotation)
+                implementation(Mockk.core)
+                implementation(Mockk.common)
             }
         }
         val androidMain by getting {
@@ -33,7 +38,11 @@ kotlin {
                 api(Androidx.viewModelLifecycle)
             }
         }
-        val androidTest by getting
+        val androidTest by getting {
+            dependencies{
+                implementation(Test.junit)
+            }
+        }
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting

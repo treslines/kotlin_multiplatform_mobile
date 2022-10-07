@@ -45,6 +45,8 @@ object Versions {
     const val pluginAndroidApp = "7.3.0"
     const val viewModel = "2.5.1"
     const val kotlinx = "1.6.4"
+    const val mockkCommon = "1.12.5"
+    const val mockkCore = "1.13.2"
 }
 
 /**
@@ -83,6 +85,13 @@ object Compose {
  */
 object Test {
     const val junit = "junit:junit:${Versions.junit}"
+    const val kotlinAnnotation = "org.jetbrains.kotlin:kotlin-test-annotations-common:${Versions.kotlin}"
+    const val kotlinCommon = "org.jetbrains.kotlin:kotlin-test-common:${Versions.kotlin}"
+}
+
+object Mockk {
+    const val core = "io.mockk:mockk:${Versions.mockkCore}"
+    const val common = "io.mockk:mockk-common:${Versions.mockkCommon}"
 }
 
 /**
