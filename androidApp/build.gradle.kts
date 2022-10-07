@@ -1,23 +1,23 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    id(Plugins.androidApplication)
+    kotlin(Plugins.android)
 }
 
 android {
-    namespace = "br.com.progdeelite.kmmprogdeelite.android"
-    compileSdk = 32
+    namespace = Namespaces.android
+    compileSdk = Playstore.compileSdk
     defaultConfig {
-        applicationId = "br.com.progdeelite.kmmprogdeelite.android"
+        applicationId = Playstore.applicationId
         minSdk = Playstore.minSdk
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        targetSdk = Playstore.targetSdk
+        versionCode = Playstore.versionCode
+        versionName = Playstore.versionName
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.0"
+        kotlinCompilerExtensionVersion = Versions.composeCompiler
     }
     packagingOptions {
         resources {
@@ -33,10 +33,26 @@ android {
 
 dependencies {
     implementation(project(":shared"))
+
+    // CORE
+    implementation(Androidx.core)
+    implementation(Androidx.lifecycleRuntime)
+
+    // CORE LIBS
+    implementation(Compose.ui)
+    implementation(Compose.material)
+    implementation(Compose.toolingPreview)
+    implementation(Compose.foundation)
     implementation(Compose.activity)
-    implementation("androidx.compose.ui:ui-tooling:1.2.1")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.2.1")
-    implementation("androidx.compose.foundation:foundation:1.2.1")
-    implementation("androidx.compose.material:material:1.2.1")
-    implementation("androidx.activity:activity-compose:1.5.1")
+    implementation(Compose.layout)
+    implementation(Compose.themeAdapter)
+    implementation(Compose.runtime)
+    implementation(Compose.materialIconsExtended)
+
+    // TESTING
+    testImplementation(Test.junit)
+    androidTestImplementation(TestUi.extJunit)
+
+    // DEBUGGING
+    debugImplementation(Compose.tooling)
 }
