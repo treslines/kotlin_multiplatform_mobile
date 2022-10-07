@@ -1,5 +1,5 @@
 # 🇵🇹 🇧🇷 Kotlin Multiplatform Mobile (KMM)
-Desafios e resoluções a problemas relacionados ao desenvolvimento multiplataforma para mobile.
+Desafios e resoluções a problemas relacionados ao desenvolvimento multiplataforma para mobile. Uma playlist imperdível do zero de quem teve que criar um projeto do zero. Conto os problemas que passei, como contornei, soluções encontradas, desafios etc. Pretendo documentar tudo aqui com código e videos no youtube para te ajudar. 
 
 # O que você vai encontrar aqui?
 - Um projeto template para iniciar seu projeto multiplataforma 
@@ -20,7 +20,9 @@ Seja também um multiplicador de conhecimento. Mostre esse repositório para sua
 # 🧪 **CODELABS / VÍDEOS / RESOLUçÕES**
 | Titulo        | 📺 Youtube Link |
 | :------------- |:-------------:|
-| COMING SOON! | COMING SOON! |
+| **🚩 AGENDADO: 13/10/2022** ✔️ KMM - COMO CRIAR PROJETO KOTLIN MULTIPLATFORM MOBILE PARA ANDROID E IOS | <a href="https://youtu.be/xxxxxx" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BKMM%5D-COMO-CRIAR-PROJETO-KOTLIN-MULTIPLATFORM-MOBILE-PARA-ANDROID-E-IOS.png" width="100" height="56"></a> |
+| **🚩 AGENDADO: 17/10/2022** ✔️ GERENCIAR DEPENDÊNCIAS - COMO CRIAR GERENCIAMENTO DE VERSÕES buildSrc EM PROJETO MULTIPLATFORMA | <a href="https://youtu.be/xxxxxx" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BGERENCIAR-DEPEND%C3%8ANCIAS%5D-COMO-CRIAR-GERENCIAMENTO-DE-VERS%C3%95ES-buildSrc-EM-PROJETO-MULTIPLATFORMA.png" width="100" height="56"></a> |
+| **🚩 AGENDADO: 20/10/2022** ✔️ VERSIONAMENTO - COMO FAZER UPLOAD DO PROJETO ANDROID STUDIO DIRETO PARA GITHUB | <a href="https://youtu.be/xxxxxx" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BVERSIONAMENTO%5D-COMO-FAZER-UPLOAD-DO-PROJETO-ANDROID-STUDIO-DIRETO-PARA-GITHUB.png" width="100" height="56"></a> |
 
 # Ta Curtindo? 
 Algum dos meus vídeos, posts ou repositórios te salvou muito tempo ou te ajudou no trabalho? Não é clichê não, eu produzo mais com café mesmo. 😁 É minha gasolina ⛽️ Me presentea com um café aqui: https://bit.ly/umCafeGb
