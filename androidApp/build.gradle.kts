@@ -12,6 +12,8 @@ android {
         targetSdk = Playstore.targetSdk
         versionCode = Playstore.versionCode
         versionName = Playstore.versionName
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJunitRunner"
     }
     buildFeatures {
         compose = true
@@ -52,6 +54,7 @@ dependencies {
     // TESTING
     testImplementation(Test.junit)
     androidTestImplementation(TestUi.extJunit)
+    androidTestImplementation(Test.instrumentedTestCompose)
 
     // DEBUGGING
     debugImplementation(Compose.tooling)

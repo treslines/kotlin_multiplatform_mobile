@@ -1,0 +1,16 @@
+CREATE TABLE Story(
+    id TEXT NOT NULL,
+    body TEXT NOT NULL --,(virgula) erro banal mas que te pode roubar muito tempo
+);
+
+insertStory:
+INSERT INTO Story (id, body) VALUES(?,?);
+
+removeAllStory:
+DELETE FROM Story;
+
+selectStoryById:
+SELECT * FROM Story WHERE id = ?;
+
+selectAllStories:
+SELECT * FROM Story;

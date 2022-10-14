@@ -6,6 +6,13 @@ plugins {
     kotlin(Plugins.multiplatform).version(Versions.kotlin).apply(false)
 }
 
+buildscript {
+    dependencies {
+        classpath(Gradle.pluginSqlDelight)
+        classpath(Jetbrains.serializationKotlin)
+    }
+}
+
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }

@@ -1,6 +1,8 @@
 plugins {
     kotlin(Plugins.multiplatform)
     id(Plugins.androidLibrary)
+    id(SqlDelight.pluginId)
+    kotlin(Jetbrains.serializationPluginId)
 }
 
 kotlin {
@@ -20,6 +22,8 @@ kotlin {
         val commonMain by getting {
             dependencies{
                 implementation(Kotlinx.coroutinesCore)
+                implementation(SqlDelight.driverCommon)
+                implementation(Jetbrains.serializationKotlinCore)
             }
         }
         val commonTest by getting {
@@ -36,6 +40,7 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 api(Androidx.viewModelLifecycle)
+                implementation(SqlDelight.driverAndroid)
             }
         }
         val androidTest by getting {
@@ -51,6 +56,9 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+            dependencies{
+                implementation(SqlDelight.driverIos)
+            }
         }
         val iosX64Test by getting
         val iosArm64Test by getting
@@ -70,5 +78,12 @@ android {
     defaultConfig {
         minSdk = Playstore.minSdk
         targetSdk = Playstore.targetSdk
+    }
+}
+
+// 6) Configurar sqldelight no build.gradle (siga sequencia e so insira isso no passo 6)
+sqldelight {
+    database(SqlDelight.databaseScheme){
+        packageName = SqlDelight.databasePackage
     }
 }

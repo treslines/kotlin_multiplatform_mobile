@@ -37,6 +37,7 @@ object Versions {
     const val lifecycleRuntime = "2.5.1"
     const val junit = "4.13.2"
     const val extJunit = "1.1.3"
+    const val instrumentedTestCompose = "1.2.1"
     const val testManifest = "1.1.0-beta01"
     const val espressoCore = "3.4.0"
     const val uiUnitTest = "1.1.0-beta01"
@@ -47,6 +48,31 @@ object Versions {
     const val kotlinx = "1.6.4"
     const val mockkCommon = "1.12.5"
     const val mockkCore = "1.13.2"
+    const val sqlDelight = "1.5.3"
+    const val kotlinSerializationCore = "1.3.2"
+    const val buildTools = "7.3.0"
+}
+
+object Jetbrains {
+    const val serializationPluginId = "plugin.serialization"
+    const val serializationKotlin = "org.jetbrains.kotlin:kotlin-serialization:${Versions.kotlin}"
+    const val serializationKotlinCore = "org.jetbrains.kotlinx:kotlinx-serialization-core:${Versions.kotlinSerializationCore}"
+}
+
+object Gradle {
+    const val pluginSqlDelight = "com.squareup.sqldelight:gradle-plugin:${Versions.sqlDelight}"
+    const val pluginKotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+    const val buildTools = "com.android.tools.build:gradle${Versions.buildTools}"
+
+}
+
+object SqlDelight {
+    const val pluginId = "com.squareup.sqldelight"
+    const val driverCommon = "com.squareup.sqldelight:runtime:${Versions.sqlDelight}"
+    const val driverAndroid = "com.squareup.sqldelight:android-driver:${Versions.sqlDelight}"
+    const val driverIos = "com.squareup.sqldelight:native-driver:${Versions.sqlDelight}"
+    const val databasePackage = "br.com.progdeelite.kmmprogdeelite.database"
+    const val databaseScheme = "CommonDatabase"
 }
 
 /**
@@ -87,6 +113,7 @@ object Test {
     const val junit = "junit:junit:${Versions.junit}"
     const val kotlinAnnotation = "org.jetbrains.kotlin:kotlin-test-annotations-common:${Versions.kotlin}"
     const val kotlinCommon = "org.jetbrains.kotlin:kotlin-test-common:${Versions.kotlin}"
+    const val instrumentedTestCompose = "androidx.compose.ui:ui-test-junit4:${Versions.instrumentedTestCompose}"
 }
 
 object Mockk {

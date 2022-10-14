@@ -1,22 +1,24 @@
-package br.com.progdeelite.kmmprogdeelite.android
+package br.com.progdeelite.kmmprogdeelite.android.ui.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.*
 import br.com.progdeelite.kmmprogdeelite.Greeting
+import br.com.progdeelite.kmmprogdeelite.viewmodels.SampleViewModel
 
 @Composable
 fun MyApplicationTheme(
@@ -59,15 +61,37 @@ fun MyApplicationTheme(
 }
 
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalUnitApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val viewModel = SampleViewModel()
+
         setContent {
             MyApplicationTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting(Greeting().greeting())
+                    val stories by viewModel.stories.collectAsState()
+                    Column(modifier = Modifier.padding(12.dp)) {
+                        Text(text = "SqlDelight KMM", style = LocalTextStyle.current.copy(
+                            fontSize = TextUnit(24f, TextUnitType.Sp)
+                        ))
+                        Row {
+                            Button(onClick = { viewModel.loadStories() }) {
+                                Text(text = "Load Stories")
+                            }
+                            Spacer(modifier = Modifier.width(12.dp))
+                            Button(onClick = { viewModel.clearStories() }) {
+                                Text(text = "Clear Stories")
+                            }
+                        }
+
+                        stories.forEach { story ->
+                            Text(text = story.name)
+                        }
+                    }
                 }
             }
         }
