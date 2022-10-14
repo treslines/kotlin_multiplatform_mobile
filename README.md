@@ -1,9 +1,14 @@
 # 🇵🇹 🇧🇷 Kotlin Multiplatform Mobile (KMM)
 Desafios e resoluções a problemas relacionados ao desenvolvimento multiplataforma para mobile. Uma playlist imperdível do zero de quem teve que criar um projeto do zero. Conto os problemas que passei, como contornei, soluções encontradas, desafios etc. Pretendo documentar tudo aqui com código e videos no youtube para te ajudar. 
 
+### Branches
+- A) **kmm_ready_to_use_sample_project** > Projeto pronto para usar apenas com módulo de buildSrc (dependency management)
+- B) **kmm_with_shared_viewmodel** > Projeto com A) e viewmodel compartilhada em kmm
+- D) **kmm_with_viewmodel_and_mockk** > Projeto com A), B) e framework de mock para testes mockk
+- C) **kmm_viewmodel_mockk_database** > Projeto com A), B), C) e banco de dados compartilhado sqldelight
+
 # O que você vai encontrar aqui?
-- Um projeto template para iniciar seu projeto multiplataforma 
-- O peojeto template já configurado com o modulo de dependencias 
+- Um projeto template já configurado com o modulo de dependencias para iniciar seu projeto multiplataforma (vide branches acima)
   - vide techblog vantagens buildSrc: https://bit.ly/buildSrc
   - vide video como criar buildSrc: https://bit.ly/vidBuildSrc
   
