@@ -50,6 +50,7 @@ dependencies {
     implementation(Compose.themeAdapter)
     implementation(Compose.runtime)
     implementation(Compose.materialIconsExtended)
+    implementation(Compose.shimmer)
 
     // TESTING
     testImplementation(Test.junit)

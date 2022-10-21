@@ -17,11 +17,13 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.*
-import br.com.progdeelite.kmmprogdeelite.Greeting
+import br.com.progdeelite.kmmprogdeelite.android.R
+import br.com.progdeelite.kmmprogdeelite.android.ui.components.FullScreenMessageDialog
 import br.com.progdeelite.kmmprogdeelite.viewmodels.SampleViewModel
+import br.com.progdeelite.kmmprogdeelite.viewmodels.ShimmerViewModel
 
 @Composable
-fun MyApplicationTheme(
+fun AndroidAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
@@ -61,38 +63,65 @@ fun MyApplicationTheme(
 }
 
 class MainActivity : ComponentActivity() {
-    @OptIn(ExperimentalUnitApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val viewModel = SampleViewModel()
-
+        val shimmerViewModel = ShimmerViewModel()
         setContent {
-            MyApplicationTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    val stories by viewModel.stories.collectAsState()
-                    Column(modifier = Modifier.padding(12.dp)) {
-                        Text(text = "SqlDelight KMM", style = LocalTextStyle.current.copy(
-                            fontSize = TextUnit(24f, TextUnitType.Sp)
-                        ))
-                        Row {
-                            Button(onClick = { viewModel.loadStories() }) {
-                                Text(text = "Load Stories")
-                            }
-                            Spacer(modifier = Modifier.width(12.dp))
-                            Button(onClick = { viewModel.clearStories() }) {
-                                Text(text = "Clear Stories")
-                            }
-                        }
+            AndroidAppTheme {
+                // DatabaseVid(viewModel)
+                ShimmerVid(shimmerViewModel)
+            }
+        }
+    }
+}
 
-                        stories.forEach { story ->
-                            Text(text = story.name)
-                        }
-                    }
+@Composable
+private fun ShimmerVid(shimmerViewModel: ShimmerViewModel) {
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colors.background
+    ) {
+
+        FullScreenMessageDialog(
+            icon = R.drawable.ic_warning,
+            iconTint = android.R.color.holo_red_light,
+            title = "My Dialog",
+            message = "This is my fancy body message!",
+            bottomButtonText = "Toggle Shimmer",
+            bottomButtonAction = { shimmerViewModel.toggleLoadingState() },
+            loadingState = shimmerViewModel.loading
+        )
+    }
+}
+
+@Composable
+@OptIn(ExperimentalUnitApi::class)
+private fun DatabaseVid(viewModel: SampleViewModel) {
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colors.background
+    ) {
+        val stories by viewModel.stories.collectAsState()
+        Column(modifier = Modifier.padding(12.dp)) {
+            Text(
+                text = "SqlDelight KMM", style = LocalTextStyle.current.copy(
+                    fontSize = TextUnit(24f, TextUnitType.Sp)
+                )
+            )
+            Row {
+                Button(onClick = { viewModel.loadStories() }) {
+                    Text(text = "Load Stories")
                 }
+                Spacer(modifier = Modifier.width(12.dp))
+                Button(onClick = { viewModel.clearStories() }) {
+                    Text(text = "Clear Stories")
+                }
+            }
+
+            stories.forEach { story ->
+                Text(text = story.name)
             }
         }
     }
@@ -106,7 +135,7 @@ fun Greeting(text: String) {
 @Preview
 @Composable
 fun DefaultPreview() {
-    MyApplicationTheme {
+    AndroidAppTheme {
         Greeting("Hello, Android!")
     }
 }

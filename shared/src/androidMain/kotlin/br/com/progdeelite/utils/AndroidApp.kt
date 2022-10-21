@@ -2,6 +2,8 @@ package br.com.progdeelite.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
+import androidx.compose.runtime.Composable
+import androidx.navigation.NavHostController
 
 // Parte 1
 // 1) https://plugins.jetbrains.com/plugin/8191-sqldelight
@@ -32,5 +34,6 @@ class AndroidApplication {
         // since we are using the applicationContext and not 
         //  the context per se, nothing is going to leak here
         lateinit var context: Context
+        lateinit var navController: NavHostController
     }
 }
