@@ -1,9 +1,8 @@
-package br.com.progdeelite.utils
+package br.com.progdeelite.kmmprogdeelite.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
-import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
+// import androidx.navigation.NavHostController TODO
 
 // Parte 1
 // 1) https://plugins.jetbrains.com/plugin/8191-sqldelight
@@ -29,11 +28,11 @@ import androidx.navigation.NavHostController
 // https://play.kotlinlang.org/hands-on/Networking%20and%20Data%20Storage%20with%20Kotlin%20Multiplatfrom%20Mobile/01_Introduction
 
 @SuppressLint("StaticFieldLeak")
-class AndroidApplication {
+class AndroidApp {
     companion object {
         // since we are using the applicationContext and not 
         //  the context per se, nothing is going to leak here
-        lateinit var context: Context
-        lateinit var navController: NavHostController
+        lateinit var applicationContext: Context
+        // lateinit var navHostController: NavHostController // TODO
     }
 }

@@ -41,6 +41,7 @@ kotlin {
             dependencies {
                 api(Androidx.viewModelLifecycle)
                 implementation(SqlDelight.driverAndroid)
+                // api(Compose.navigation) // TODO: nav
             }
         }
         val androidTest by getting {

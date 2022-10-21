@@ -52,6 +52,7 @@ object Versions {
     const val kotlinSerializationCore = "1.3.2"
     const val buildTools = "7.3.0"
     const val shimmer = "1.0.3"
+    // const val navigation = "2.5.0" // TODO: nav
 }
 
 object Jetbrains {
@@ -104,6 +105,7 @@ object Compose {
     const val toolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
     const val ui = "androidx.compose.ui:ui:${Versions.compose}"
     const val shimmer = "com.valentinilk.shimmer:compose-shimmer:${Versions.shimmer}"
+    // const val navigation = "androidx.navigation:navigation-compose:${Versions.navigation}" TODO: nav
 }
 
 /**
