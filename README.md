@@ -4,8 +4,9 @@ Desafios e resoluções a problemas relacionados ao desenvolvimento multiplatafo
 ### Branches
 - A) **kmm_ready_to_use_sample_project** > Projeto pronto para usar apenas com módulo de buildSrc (dependency management)
 - B) **kmm_with_shared_viewmodel** > Projeto com A) e viewmodel compartilhada em kmm
-- D) **kmm_with_viewmodel_and_mockk** > Projeto com A), B) e framework de mock para testes mockk
-- C) **kmm_viewmodel_mockk_database** > Projeto com A), B), C) e banco de dados compartilhado sqldelight
+- C) **kmm_with_viewmodel_and_mockk** > Projeto com A), B) e framework de mock para testes mockk
+- D) **kmm_viewmodel_mockk_database** > Projeto com A), B), C) e banco de dados compartilhado sqldelight
+- E) **kmm_viewmodel_mockk_db_logger** > Projeto com A), B), C), D) logger e shimmer
 
 # O que você vai encontrar aqui?
 - Um projeto template já configurado com o modulo de dependencias para iniciar seu projeto multiplataforma (vide branches acima)
@@ -27,7 +28,7 @@ Seja também um multiplicador de conhecimento. Mostre esse repositório para sua
 | :------------- |:-------------:|
 | ✔️ KMM - COMO CRIAR PROJETO KOTLIN MULTIPLATFORM MOBILE PARA ANDROID E IOS | <a href="https://youtu.be/xxxxxx" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BKMM%5D-COMO-CRIAR-PROJETO-KOTLIN-MULTIPLATFORM-MOBILE-PARA-ANDROID-E-IOS.png" width="100" height="56"></a> |
 | ✔️ GERENCIAR DEPENDÊNCIAS - COMO CRIAR GERENCIAMENTO DE VERSÕES buildSrc EM PROJETO MULTIPLATFORMA | <a href="https://youtu.be/xxxxxx" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BGERENCIAR-DEPEND%C3%8ANCIAS%5D-COMO-CRIAR-GERENCIAMENTO-DE-VERS%C3%95ES-buildSrc-EM-PROJETO-MULTIPLATFORMA.png" width="100" height="56"></a> |
-| **🚩 AGENDADO: 20/10/2022** ✔️ VERSIONAMENTO - COMO FAZER UPLOAD DO PROJETO ANDROID STUDIO DIRETO PARA GITHUB | <a href="https://youtu.be/xxxxxx" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BVERSIONAMENTO%5D-COMO-FAZER-UPLOAD-DO-PROJETO-ANDROID-STUDIO-DIRETO-PARA-GITHUB.png" width="100" height="56"></a> |
+| ✔️ VERSIONAMENTO - COMO FAZER UPLOAD DO PROJETO ANDROID STUDIO DIRETO PARA GITHUB | <a href="https://youtu.be/xxxxxx" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BVERSIONAMENTO%5D-COMO-FAZER-UPLOAD-DO-PROJETO-ANDROID-STUDIO-DIRETO-PARA-GITHUB.png" width="100" height="56"></a> |
 | **🚩 AGENDADO: 24/10/2022** ✔️ COMPOSE ON KMM - COMO ADICIONAR COMPOSE EM PROJETO KOTLIN MULTIPLATFORM MOBILE | <a href="https://youtu.be/JrEYS6dZ0vs" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BCOMPOSE-ON-KMM%5D-COMO-ADICIONAR-COMPOSE-EM-PROJETO-KOTLIN-MULTIPLATFORM-MOBILE.png" width="100" height="56"></a> |
 | **🚩 AGENDADO: 27/10/2022** ✔️ [CLONAR PROJETO] COMO IMPORTAR E USAR REPOSITÓRIO DO GITHUB NO ANDROID STUDIO | <a href="https://youtu.be/FE1zW68tsYQ" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BCLONAR-PROJETO%5D-COMO-IMPORTAR-E-USAR-REPOSIT%C3%93RIO-DO-GITHUB-NO-ANDROID-STUDIO.png" width="100" height="56"></a> |
 | **🚩 AGENDADO: 31/10/2022** ✔️ [kmm shared viewmodel] COMO COMPARTILHAR VIEWMODEL EM PROJETO KOTLIN MULTIPLATFORM | <a href="https://youtu.be/qRDjwZD-SBM" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5Bkmm-shared-viewmodel%5D-COMO-COMPARTILHAR-VIEWMODEL-EM-PROJETO-KOTLIN-MULTIPLATFORM.png" width="100" height="56"></a> |
