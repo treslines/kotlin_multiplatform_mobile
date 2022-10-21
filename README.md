@@ -1,17 +1,33 @@
 # 🇵🇹 🇧🇷 Kotlin Multiplatform Mobile (KMM)
 Desafios e resoluções a problemas relacionados ao desenvolvimento multiplataforma para mobile. Uma playlist imperdível do zero de quem teve que criar um projeto do zero. Conto os problemas que passei, como contornei, soluções encontradas, desafios etc. Pretendo documentar tudo aqui com código e videos no youtube para te ajudar. 
 
+# O que você vai encontrar aqui?
+Um projeto template já configurado com o modulo de dependencias para iniciar seu projeto multiplataforma móvel assim como vários vídeos com resoluções aos desafios comuns em um projeto kmm (vide branches abaixo)
+  - techblog vantagens buildSrc: https://bit.ly/buildSrc
+
 ### Branches
 - A) **kmm_ready_to_use_sample_project** > Projeto pronto para usar apenas com módulo de buildSrc (dependency management)
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/1042887/197234681-21fea81a-38be-461b-a91d-e27b77998e9e.png" width="100" height="137">
+</p>
+
 - B) **kmm_with_shared_viewmodel** > Projeto com A) e viewmodel compartilhada em kmm
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/1042887/197233894-bc4412e7-d399-4a3a-9bc1-63348ffb0280.png" width="100" height="137">
+</p>
+
 - C) **kmm_with_viewmodel_and_mockk** > Projeto com A), B) e framework de mock para testes mockk
 - D) **kmm_viewmodel_mockk_database** > Projeto com A), B), C) e banco de dados compartilhado sqldelight
-- E) **kmm_viewmodel_mockk_db_logger** > Projeto com A), B), C), D) logger e shimmer
 
-# O que você vai encontrar aqui?
-- Um projeto template já configurado com o modulo de dependencias para iniciar seu projeto multiplataforma (vide branches acima)
-  - vide techblog vantagens buildSrc: https://bit.ly/buildSrc
-  - vide video como criar buildSrc: https://bit.ly/vidBuildSrc
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/1042887/197234244-ea7403d4-53c0-49eb-8d8d-7f41a7737f7c.png" width="100" height="137">
+</p>
+
+- E) **kmm_viewmodel_mockk_db_logger** > Projeto com A), B), C), D) logger e shimmer (vide UML abaixo)
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/1042887/197232046-d3361fb5-a4bd-4196-a4fd-78f5d296436d.png" width="100" height="137">
+</p>
+
   
 # O que mais além disso encontrarei?
  - Vídeos com resoluções aos problemas e pitfalls comuns no desenvolvimento híbrido.
