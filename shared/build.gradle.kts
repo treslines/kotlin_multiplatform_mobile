@@ -49,6 +49,13 @@ kotlin {
                 implementation(Test.junit)
             }
         }
+        val androidAndroidTest by getting {
+            dependencies {
+                implementation(Test.instrumentedCommonJunit)
+                implementation(Test.instrumentedCommonJunitKtx)
+                implementation(Test.instrumentedCommonEspresso)
+            }
+        }
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
@@ -79,6 +86,12 @@ android {
     defaultConfig {
         minSdk = Playstore.minSdk
         targetSdk = Playstore.targetSdk
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+    packagingOptions {
+        resources {
+            excludes += mutableSetOf("META-INF/LICENSE.md", "META-INF/LICENSE-notice.md")
+        }
     }
 }
 

@@ -53,6 +53,7 @@ object Versions {
     const val buildTools = "7.3.0"
     const val shimmer = "1.0.3"
     // const val navigation = "2.5.0" // TODO: nav
+    const val espresso = "3.4.0"
 }
 
 object Jetbrains {
@@ -118,6 +119,11 @@ object Test {
     const val kotlinAnnotation = "org.jetbrains.kotlin:kotlin-test-annotations-common:${Versions.kotlin}"
     const val kotlinCommon = "org.jetbrains.kotlin:kotlin-test-common:${Versions.kotlin}"
     const val instrumentedTestCompose = "androidx.compose.ui:ui-test-junit4:${Versions.instrumentedTestCompose}"
+
+    // INSTRUMENTED TEST COMMON
+    const val instrumentedCommonJunit = "androidx.test.ext:junit:${Versions.extJunit}"
+    const val instrumentedCommonJunitKtx = "androidx.test.ext:junit-ktx:${Versions.extJunit}"
+    const val instrumentedCommonEspresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
 }
 
 object Mockk {

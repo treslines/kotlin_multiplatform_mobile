@@ -18,7 +18,7 @@ class MockSampleTest {
     }
 
     @Test
-    fun `sample mock test`() {
+    fun sampleMockTest() {
         val clock = mockk<Clock>()
         every { clock.getCurrentTime() } returns "13:15"
 
