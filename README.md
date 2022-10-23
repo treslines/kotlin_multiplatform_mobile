@@ -28,6 +28,8 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
   <img src="https://user-images.githubusercontent.com/1042887/197232046-d3361fb5-a4bd-4196-a4fd-78f5d296436d.png" width="100" height="137">
 </p>
 
+- F) **kmm_with_instrumented_tests** > Projeto com A), B), C), D), E) e testes instrumentados no androidMain
+
   
 # O que mais além disso encontrarei?
  - Vídeos com resoluções aos problemas e pitfalls comuns no desenvolvimento híbrido.
