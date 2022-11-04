@@ -24,6 +24,10 @@ kotlin {
                 implementation(Kotlinx.coroutinesCore)
                 implementation(SqlDelight.driverCommon)
                 implementation(Jetbrains.serializationKotlinCore)
+                implementation(Ktor.core)
+                implementation(Ktor.jsonSerialization)
+                implementation(Ktor.serialization)
+                implementation(Ktor.clientContentNegotiation)
             }
         }
         val commonTest by getting {
@@ -41,6 +45,7 @@ kotlin {
             dependencies {
                 api(Androidx.viewModelLifecycle)
                 implementation(SqlDelight.driverAndroid)
+                implementation(Ktor.clientOkhttp)
                 // api(Compose.navigation) // TODO: nav
             }
         }
@@ -66,6 +71,7 @@ kotlin {
             iosSimulatorArm64Main.dependsOn(this)
             dependencies{
                 implementation(SqlDelight.driverIos)
+                implementation(Ktor.clientDarwin)
             }
         }
         val iosX64Test by getting
@@ -91,6 +97,18 @@ android {
     packagingOptions {
         resources {
             excludes += mutableSetOf("META-INF/LICENSE.md", "META-INF/LICENSE-notice.md")
+        }
+    }
+    flavorDimensions += "tier"
+    productFlavors {
+        create("development") {
+            dimension = "tier"
+        }
+        create("production") {
+            dimension = "tier"
+        }
+        create("integration") {
+            dimension = "tier"
         }
     }
 }

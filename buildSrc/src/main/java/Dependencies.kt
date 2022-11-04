@@ -54,6 +54,7 @@ object Versions {
     const val shimmer = "1.0.3"
     // const val navigation = "2.5.0" // TODO: nav
     const val espresso = "3.4.0"
+    const val ktor = "2.1.2" // Releases > https://ktor.io/
 }
 
 object Jetbrains {
@@ -107,6 +108,15 @@ object Compose {
     const val ui = "androidx.compose.ui:ui:${Versions.compose}"
     const val shimmer = "com.valentinilk.shimmer:compose-shimmer:${Versions.shimmer}"
     // const val navigation = "androidx.navigation:navigation-compose:${Versions.navigation}" TODO: nav
+}
+
+object Ktor {
+    const val clientOkhttp = "io.ktor:ktor-client-okhttp:${Versions.ktor}"
+    const val clientDarwin = "io.ktor:ktor-client-darwin:${Versions.ktor}"
+    const val core = "io.ktor:ktor-client-core:${Versions.ktor}"
+    const val serialization = "io.ktor:ktor-client-serialization:${Versions.ktor}"
+    const val clientContentNegotiation = "io.ktor:ktor-client-content-negotiation:${Versions.ktor}"
+    const val jsonSerialization = "io.ktor:ktor-serialization-kotlinx-json:${Versions.ktor}"
 }
 
 /**

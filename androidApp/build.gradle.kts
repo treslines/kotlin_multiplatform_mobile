@@ -26,9 +26,27 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    flavorDimensions += "tier"
+    productFlavors {
+        create("development") {
+            dimension = "tier"
+        }
+        create("production") {
+            dimension = "tier"
+        }
+        create("integration") {
+            dimension = "tier"
+        }
+    }
+
     buildTypes {
-        getByName("release") {
+        getByName("debug") {
+            applicationIdSuffix = ".debug"
             isMinifyEnabled = false
+            isDebuggable = true
+        }
+        getByName("release") {
+            isMinifyEnabled = true
         }
     }
 }

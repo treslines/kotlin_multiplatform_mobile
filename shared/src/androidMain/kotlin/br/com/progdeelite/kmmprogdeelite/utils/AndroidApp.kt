@@ -2,6 +2,8 @@ package br.com.progdeelite.kmmprogdeelite.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
+import br.com.progdeelite.kmmprogdeelite.network.Environment
+
 // import androidx.navigation.NavHostController TODO
 
 // Parte 1
@@ -28,11 +30,10 @@ import android.content.Context
 // https://play.kotlinlang.org/hands-on/Networking%20and%20Data%20Storage%20with%20Kotlin%20Multiplatfrom%20Mobile/01_Introduction
 
 @SuppressLint("StaticFieldLeak")
-class AndroidApp {
-    companion object {
-        // since we are using the applicationContext and not 
-        //  the context per se, nothing is going to leak here
-        lateinit var applicationContext: Context
-        // lateinit var navHostController: NavHostController // TODO
-    }
+object AndroidApp {
+    // since we are using the applicationContext and not
+    //  the context per se, nothing is going to leak here
+    lateinit var applicationContext: Context
+    lateinit var environment: Environment
+    // lateinit var navHostController: NavHostController // TODO
 }

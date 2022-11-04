@@ -1,6 +1,7 @@
 package br.com.progdeelite.kmmprogdeelite.android.ui.activity
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -19,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.*
 import br.com.progdeelite.kmmprogdeelite.android.R
 import br.com.progdeelite.kmmprogdeelite.android.ui.components.FullScreenMessageDialog
+import br.com.progdeelite.kmmprogdeelite.utils.AndroidApp
 import br.com.progdeelite.kmmprogdeelite.viewmodels.SampleViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.ShimmerViewModel
 
@@ -68,6 +70,7 @@ class MainActivity : ComponentActivity() {
 
         val viewModel = SampleViewModel()
         val shimmerViewModel = ShimmerViewModel()
+        Log.d("TESTANDO", AndroidApp.environment.name)
         setContent {
             AndroidAppTheme {
                 // DatabaseVid(viewModel)
