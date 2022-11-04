@@ -1,6 +1,5 @@
 package br.com.progdeelite.kmmprogdeelite.viewmodels
 
-import br.com.progdeelite.kmmprogdeelite.BaseSharedViewModel
 import br.com.progdeelite.kmmprogdeelite.models.Story
 import br.com.progdeelite.kmmprogdeelite.models.StoryMedia
 import br.com.progdeelite.kmmprogdeelite.providers.DataSourceProvider

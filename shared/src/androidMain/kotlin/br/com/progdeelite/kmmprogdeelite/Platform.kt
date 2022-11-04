@@ -14,16 +14,17 @@ class AndroidPlatform : Platform {
 
 actual fun getPlatform(): Platform = AndroidPlatform()
 
-actual abstract class BaseSharedViewModel: ViewModel()/*, Navigation TODO: nav */  {
-
-    actual val scope = viewModelScope
-
-    // private val navigator: NavHostController = AndroidApp.navHostController // TODO nav
-
-    actual override fun onCleared() {
-        super.onCleared()
-    }
-
+// PLAYGROUND ONLY
+//actual abstract class BaseSharedViewModel: ViewModel()/*, Navigation TODO: nav */  {
+//
+//    actual val scope = viewModelScope
+//
+//    // private val navigator: NavHostController = AndroidApp.navHostController // TODO nav
+//
+//    actual override fun onCleared() {
+//        super.onCleared()
+//    }
+//
 //     TODO: nav
 //    override fun navigateTo(destination: String) {
 //        navigator.navigate(destination)
@@ -32,4 +33,4 @@ actual abstract class BaseSharedViewModel: ViewModel()/*, Navigation TODO: nav *
 //    override fun navigateToButRemoveBackStack(destination: String) {
 //        navigator.popBackStack(destination, true)
 //    }
-}
+//}

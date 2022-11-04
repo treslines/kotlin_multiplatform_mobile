@@ -1,6 +1,5 @@
 package br.com.progdeelite.kmmprogdeelite.viewmodels
 
-import br.com.progdeelite.kmmprogdeelite.BaseSharedViewModel
 import br.com.progdeelite.kmmprogdeelite.utils.CommonLogger
 import br.com.progdeelite.kmmprogdeelite.utils.CommonLoggerImpl
 import kotlinx.coroutines.flow.MutableStateFlow
