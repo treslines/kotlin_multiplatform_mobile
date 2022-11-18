@@ -29,6 +29,10 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 </p>
 
 - F) **kmm_with_instrumented_tests** > Projeto com A), B), C), D), E) e testes instrumentados no androidMain
+- G) **kmm_with_ktor** > Projeto com A), B), C), D), E), F) e ktor com respository e viewmodel retornando flow
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/1042887/202708517-d82c153e-0899-4644-b075-6201f8718810.png" width="100" height="137">
+</p>
 
   
 # O que mais além disso encontrarei?
