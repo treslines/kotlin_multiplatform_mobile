@@ -14,6 +14,7 @@ package br.com.progdeelite.kmmprogdeelite.network
 enum class Environment(
     val host: String,
     val certificatePinningHashes: List<String> = emptyList(),
+    val hostTest: String = ""
 ) {
 
     // +--------------------------+
@@ -34,7 +35,8 @@ enum class Environment(
             "sha256/rE/SEU_HASH_DE_PINNING",
             "sha256/rE/SEU_HASH_DE_PINNING",
             "sha256/rE/SEU_HASH_DE_PINNING",
-        )
+        ),
+        hostTest = "https://api.publicapis.org"
     ),
 
     DEV(
@@ -43,7 +45,8 @@ enum class Environment(
             "sha256/rE/SEU_HASH_DE_PINNING",
             "sha256/rE/SEU_HASH_DE_PINNING",
             "sha256/rE/SEU_HASH_DE_PINNING",
-        )
+        ),
+        hostTest = "https://api.publicapis.org" // DEFINICÃO DA API DE TESTE PÚBLICA
     );
 
     companion object{

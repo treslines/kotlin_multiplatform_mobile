@@ -1,6 +1,8 @@
 package br.com.progdeelite.kmmprogdeelite.network
 
+import br.com.progdeelite.kmmprogdeelite.network.models.ApiError
 import io.ktor.client.*
+import io.ktor.client.call.*
 import io.ktor.client.engine.okhttp.*
 import io.ktor.client.plugins.*
 import io.ktor.client.plugins.contentnegotiation.*
@@ -18,10 +20,20 @@ fun createOkHttpClient(clientConfig: ClientConfig): HttpClient {
     }
 }
 
+// 0) ASSISTA A AULA ANTERIOR - PRE-REQUISITO
+// 1) COMO CRIAR UM CUSTOM INTERCEPTOR
+// 2) COMO MAPEAR O RESULTADO DO BACKEND (ApiError / SafeApiCall)
 private fun HttpClientConfig<OkHttpConfig>.installResponseValidator() {
     HttpResponseValidator {
         validateResponse { response ->
-            // TODO: próximos episódios - já segue para não perder!
+            if(response.status != HttpStatusCode.OK){
+                try {
+                    val apiError = response.body<ApiError>()
+                    throw YourCompanyException(message = "YourCompanyException", apiError= apiError)
+                } catch (e: Throwable) {
+                    throw Exception("${response.status}: ${response.body<String>()}", e)
+                }
+            }
         }
     }
 }

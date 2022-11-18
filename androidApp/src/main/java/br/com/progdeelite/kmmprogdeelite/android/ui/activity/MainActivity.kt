@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.*
 import br.com.progdeelite.kmmprogdeelite.android.R
 import br.com.progdeelite.kmmprogdeelite.android.ui.components.FullScreenMessageDialog
 import br.com.progdeelite.kmmprogdeelite.utils.AndroidApp
+import br.com.progdeelite.kmmprogdeelite.viewmodels.EntryViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.SampleViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.ShimmerViewModel
 
@@ -70,11 +71,41 @@ class MainActivity : ComponentActivity() {
 
         val viewModel = SampleViewModel()
         val shimmerViewModel = ShimmerViewModel()
+        val entryViewModel = EntryViewModel()
+
         Log.d("TESTANDO", AndroidApp.environment.name)
         setContent {
             AndroidAppTheme {
                 // DatabaseVid(viewModel)
-                ShimmerVid(shimmerViewModel)
+                // ShimmerVid(shimmerViewModel)
+                KtorVid(viewModel = entryViewModel)
+            }
+        }
+    }
+}
+
+@Composable
+@OptIn(ExperimentalUnitApi::class)
+private fun KtorVid(viewModel: EntryViewModel) {
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colors.background
+    ) {
+        val entries by viewModel.entries.collectAsState()
+        Column(modifier = Modifier.padding(12.dp)) {
+            Text(
+                text = "Ktor Http-Request KMM", style = LocalTextStyle.current.copy(
+                    fontSize = TextUnit(24f, TextUnitType.Sp)
+                )
+            )
+            Row {
+                Button(onClick = { viewModel.fetchEntries() }) {
+                    Text(text = "Load Entries")
+                }
+            }
+
+            entries?.forEach { entry ->
+                Text(text = entry.description ?: "")
             }
         }
     }
