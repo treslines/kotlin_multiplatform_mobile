@@ -52,9 +52,11 @@ object Versions {
     const val kotlinSerializationCore = "1.3.2"
     const val buildTools = "7.3.0"
     const val shimmer = "1.0.3"
-    // const val navigation = "2.5.0" // TODO: nav
     const val espresso = "3.4.0"
     const val ktor = "2.1.2" // Releases > https://ktor.io/
+
+    // BuildKonfig
+    const val buildKonfig = "0.13.3"
 }
 
 object Jetbrains {
@@ -107,7 +109,6 @@ object Compose {
     const val toolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
     const val ui = "androidx.compose.ui:ui:${Versions.compose}"
     const val shimmer = "com.valentinilk.shimmer:compose-shimmer:${Versions.shimmer}"
-    // const val navigation = "androidx.navigation:navigation-compose:${Versions.navigation}" TODO: nav
 }
 
 object Ktor {
@@ -159,4 +160,9 @@ object TestUi {
  */
 object Debug {
     const val testManifest = "androidx.compose.ui:ui-test-manifest:${Versions.testManifest}"
+}
+
+object BuildKonfig {
+    const val pluginId = "com.codingfeline.buildkonfig"
+    const val plugin = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin:${Versions.buildKonfig}"
 }

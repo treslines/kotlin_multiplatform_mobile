@@ -1,7 +1,11 @@
+
 plugins {
     id(Plugins.androidApplication)
     kotlin(Plugins.android)
 }
+
+val flavorProps = project.properties["FLAVOR_PROPERTIES"]
+val envProps = if(flavorProps != null) flavorProps as Map<*,*> else null
 
 android {
     namespace = Namespaces.android
@@ -15,6 +19,25 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJunitRunner"
     }
+
+    if(envProps != null && envProps.isNotEmpty()){
+        println("--------props-----------")
+        envProps.forEach {
+            println("key:${it.key} - value:${it.value}")
+        }
+        println("--------props-----------")
+        val keystoreJksSecret = System.getenv("KEYSTORE_JKS_PASSWORD")
+        signingConfigs {
+            // Creates a signing configuration called "release".
+            create("release") {
+                storeFile=file(envProps["storeFile"] as Any)      // path to your keystore file.
+                storePassword=keystoreJksSecret                   // password for your keystore.
+                keyAlias=envProps["keyAlias"] as String           // identifying name for your key.
+                keyPassword=keystoreJksSecret                     // password for your key.
+            }
+        }
+    }
+
     buildFeatures {
         compose = true
     }
@@ -26,27 +49,41 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    flavorDimensions += "tier"
+
+    // Environments (Ambientes de desenvolvimento)
+    flavorDimensions += "environment"
     productFlavors {
         create("development") {
-            dimension = "tier"
-        }
-        create("production") {
-            dimension = "tier"
+            applicationIdSuffix=".dev"
+            signingConfig = signingConfigs.getByName("debug")
+            dimension = "environment"
         }
         create("integration") {
-            dimension = "tier"
+            applicationIdSuffix=".int"
+            signingConfig = signingConfigs.getByName("debug")
+            dimension = "environment"
+        }
+        create("production") {
+            dimension = "environment"
         }
     }
 
     buildTypes {
-        getByName("debug") {
+        debug {
             applicationIdSuffix = ".debug"
             isMinifyEnabled = false
             isDebuggable = true
         }
-        getByName("release") {
+        release {
             isMinifyEnabled = true
+            isShrinkResources = true
+            if(signingConfig != null) {
+                signingConfig = signingConfigs.getByName("release")
+            }
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 }

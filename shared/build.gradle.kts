@@ -1,7 +1,10 @@
+import com.codingfeline.buildkonfig.compiler.FieldSpec
+
 plugins {
     kotlin(Plugins.multiplatform)
     id(Plugins.androidLibrary)
     id(SqlDelight.pluginId)
+    id(BuildKonfig.pluginId)
     kotlin(Jetbrains.serializationPluginId)
 }
 
@@ -37,8 +40,8 @@ kotlin {
 
                 implementation(Test.kotlinCommon)
                 implementation(Test.kotlinAnnotation)
-                implementation(Mockk.core)
-                implementation(Mockk.common)
+//                implementation(Mockk.core)
+//                implementation(Mockk.common)
             }
         }
         val androidMain by getting {
@@ -46,7 +49,6 @@ kotlin {
                 api(Androidx.viewModelLifecycle)
                 implementation(SqlDelight.driverAndroid)
                 implementation(Ktor.clientOkhttp)
-                // api(Compose.navigation) // TODO: nav
             }
         }
         val androidTest by getting {
@@ -99,16 +101,16 @@ android {
             excludes += mutableSetOf("META-INF/LICENSE.md", "META-INF/LICENSE-notice.md")
         }
     }
-    flavorDimensions += "tier"
+    flavorDimensions += "environment"
     productFlavors {
         create("development") {
-            dimension = "tier"
+            dimension = "environment"
         }
         create("production") {
-            dimension = "tier"
+            dimension = "environment"
         }
         create("integration") {
-            dimension = "tier"
+            dimension = "environment"
         }
     }
 }
@@ -117,5 +119,24 @@ android {
 sqldelight {
     database(SqlDelight.databaseScheme){
         packageName = SqlDelight.databasePackage
+    }
+}
+
+buildkonfig {
+    packageName = Playstore.applicationId
+    exposeObjectWithName = "CommonConfig" // Name of the common build config we specify
+
+    val flavorProps = project.properties["FLAVOR_PROPERTIES"]
+    val envProps = if(flavorProps != null) flavorProps as Map<*,*> else null
+
+    if(envProps != null && envProps.isNotEmpty()){
+        defaultConfigs {
+            buildConfigField(FieldSpec.Type.STRING, "LOKALISE_PROJEKT_ID", envProps["LOKALISE_PROJEKT_ID"].toString(), false,true)
+            buildConfigField(FieldSpec.Type.STRING, "LOKALISE_TOKEN", envProps["LOKALISE_TOKEN"].toString(), false, true)
+            buildConfigField(FieldSpec.Type.STRING, "ADOBE_APP_ID", envProps["ADOBE_APP_ID"].toString(),false, true)
+            buildConfigField(FieldSpec.Type.STRING, "FLAVOR", envProps["FLAVOR"].toString(),false, true)
+        }
+    } else {
+        defaultConfigs {}
     }
 }
