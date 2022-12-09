@@ -34,6 +34,12 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
   <img src="https://user-images.githubusercontent.com/1042887/202708517-d82c153e-0899-4644-b075-6201f8718810.png" width="100" height="137">
 </p>
 
+- H) **kmm_shared_build_config** > Projeto com A), B), C), D), E), F), G) e common config (buildConfig) compartilhado entre android e iOS
+
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/1042887/206722841-6f64628b-8926-4e1d-9561-c73f509ddd38.png" width="100" height="137">
+</p>
+
   
 # O que mais além disso encontrarei?
  - Vídeos com resoluções aos problemas e pitfalls comuns no desenvolvimento híbrido.
