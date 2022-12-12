@@ -18,17 +18,13 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 | G) **kmm_with_ktor** <br/> Projeto com A), B), C), D), E), F) e ktor com respository e viewmodel retornando flow | <img src="https://user-images.githubusercontent.com/1042887/202708517-d82c153e-0899-4644-b075-6201f8718810.png" width="100" height="137"> |
 | H) **kmm_shared_build_config** <br/> Projeto com A), B), C), D), E), F), G) e common config (buildConfig) compartilhado entre android e iOS | <img src="https://user-images.githubusercontent.com/1042887/206722841-6f64628b-8926-4e1d-9561-c73f509ddd38.png" width="100" height="137"> |
 
-
-  
-# O que mais além disso encontrarei?
- - Vídeos com resoluções aos problemas e pitfalls comuns no desenvolvimento híbrido.
  
 # Posso Ajudar/Contribuir?
 Seja também um multiplicador de conhecimento. Mostre esse repositório para sua **COMUNIDADE/GRUPO/SLACK MOBILE**
 :
 | 👇 Texto com link para postar nas redes sociais 👇 |
 | :------------- |
-| Repositório bacana em Português 🇵🇹 🇧🇷 para quem pretende criar um projeto multiplataforma mobile. Vai te evitar dor de cabeça e economizar muito tempo no trabalho. https://bit.ly/kotlin-multiplatform-mobile |
+| Repositório bacana em Português 🇵🇹 🇧🇷 para quem pretende criar um projeto multiplataforma mobile. Vai te evitar muita dor de cabeça e economizar muito tempo no trabalho. https://bit.ly/kotlin-multiplatform-mobile |
 
 # 🧪 **CODELABS / VÍDEOS / RESOLUçÕES**
 | Titulo        | 📺 Youtube Link |
