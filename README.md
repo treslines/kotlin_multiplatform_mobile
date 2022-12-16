@@ -6,50 +6,25 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
   - techblog vantagens buildSrc: https://bit.ly/buildSrc
 
 ### Branches
-- A) **kmm_ready_to_use_sample_project** > Projeto pronto para usar apenas com módulo de buildSrc (dependency management)
-<p align="left">
-  <img src="https://user-images.githubusercontent.com/1042887/197234681-21fea81a-38be-461b-a91d-e27b77998e9e.png" width="100" height="137">
-</p>
+# 🌳 **Branches**
+| Nome e Descrição da Branch | 📺 UML-Diagram |
+| :------------- |:-------------:|
+| A) **kmm_ready_to_use_sample_project** <br/> Projeto pronto para usar apenas com módulo de buildSrc (dependency management) | <img src="https://user-images.githubusercontent.com/1042887/197234681-21fea81a-38be-461b-a91d-e27b77998e9e.png" width="100" height="137"> |
+| B) **kmm_with_shared_viewmodel** <br/> Projeto com A) e viewmodel compartilhada em kmm | <img src="https://user-images.githubusercontent.com/1042887/197233894-bc4412e7-d399-4a3a-9bc1-63348ffb0280.png" width="100" height="137"> |
+| C) **kmm_with_viewmodel_and_mockk** <br/> Projeto com A), B) e framework de mock para testes mockk |  |
+| D) **kmm_viewmodel_mockk_database** <br/> Projeto com A), B), C) e banco de dados compartilhado sqldelight | <img src="https://user-images.githubusercontent.com/1042887/197234244-ea7403d4-53c0-49eb-8d8d-7f41a7737f7c.png" width="100" height="137"> |
+| E) **kmm_viewmodel_mockk_db_logger** <br/> Projeto com A), B), C), D) logger e shimmer | <img src="https://user-images.githubusercontent.com/1042887/197232046-d3361fb5-a4bd-4196-a4fd-78f5d296436d.png" width="100" height="137"> |
+| F) **kmm_with_instrumented_tests** <br/> Projeto com A), B), C), D), E) e testes instrumentados no androidMain |  |
+| G) **kmm_with_ktor** <br/> Projeto com A), B), C), D), E), F) e ktor com respository e viewmodel retornando flow | <img src="https://user-images.githubusercontent.com/1042887/202708517-d82c153e-0899-4644-b075-6201f8718810.png" width="100" height="137"> |
+| H) **kmm_shared_build_config** <br/> Projeto com A), B), C), D), E), F), G) e common config (buildConfig) compartilhado entre android e iOS | <img src="https://user-images.githubusercontent.com/1042887/206722841-6f64628b-8926-4e1d-9561-c73f509ddd38.png" width="100" height="137"> |
 
-- B) **kmm_with_shared_viewmodel** > Projeto com A) e viewmodel compartilhada em kmm
-<p align="left">
-  <img src="https://user-images.githubusercontent.com/1042887/197233894-bc4412e7-d399-4a3a-9bc1-63348ffb0280.png" width="100" height="137">
-</p>
-
-- C) **kmm_with_viewmodel_and_mockk** > Projeto com A), B) e framework de mock para testes mockk
-- D) **kmm_viewmodel_mockk_database** > Projeto com A), B), C) e banco de dados compartilhado sqldelight
-
-<p align="left">
-  <img src="https://user-images.githubusercontent.com/1042887/197234244-ea7403d4-53c0-49eb-8d8d-7f41a7737f7c.png" width="100" height="137">
-</p>
-
-- E) **kmm_viewmodel_mockk_db_logger** > Projeto com A), B), C), D) logger e shimmer (vide UML abaixo)
-<p align="left">
-  <img src="https://user-images.githubusercontent.com/1042887/197232046-d3361fb5-a4bd-4196-a4fd-78f5d296436d.png" width="100" height="137">
-</p>
-
-- F) **kmm_with_instrumented_tests** > Projeto com A), B), C), D), E) e testes instrumentados no androidMain
-- G) **kmm_with_ktor** > Projeto com A), B), C), D), E), F) e ktor com respository e viewmodel retornando flow
-<p align="left">
-  <img src="https://user-images.githubusercontent.com/1042887/202708517-d82c153e-0899-4644-b075-6201f8718810.png" width="100" height="137">
-</p>
-
-- H) **kmm_shared_build_config** > Projeto com A), B), C), D), E), F), G) e common config (buildConfig) compartilhado entre android e iOS
-
-<p align="left">
-  <img src="https://user-images.githubusercontent.com/1042887/206722841-6f64628b-8926-4e1d-9561-c73f509ddd38.png" width="100" height="137">
-</p>
-
-  
-# O que mais além disso encontrarei?
- - Vídeos com resoluções aos problemas e pitfalls comuns no desenvolvimento híbrido.
  
 # Posso Ajudar/Contribuir?
 Seja também um multiplicador de conhecimento. Mostre esse repositório para sua **COMUNIDADE/GRUPO/SLACK MOBILE**
 :
 | 👇 Texto com link para postar nas redes sociais 👇 |
 | :------------- |
-| Repositório bacana em Português 🇵🇹 🇧🇷 para quem pretende criar um projeto multiplataforma mobile. Vai te evitar dor de cabeça e economizar muito tempo no trabalho. https://bit.ly/kotlin-multiplatform-mobile |
+| Repositório bacana em Português 🇵🇹 🇧🇷 para quem pretende criar um projeto multiplataforma mobile. Vai te evitar muita dor de cabeça e economizar muito tempo no trabalho. https://bit.ly/kotlin-multiplatform-mobile |
 
 # 🧪 **CODELABS / VÍDEOS / RESOLUçÕES**
 | Titulo        | 📺 Youtube Link |
@@ -71,7 +46,9 @@ Seja também um multiplicador de conhecimento. Mostre esse repositório para sua
 | ✔️ KTOR CLIENT HTTP - COMO CRIAR CLIENTCONFIG PARA CLIENTHTTP EM KOTLIN MULTIPLATFORM MOBILE | <a href="https://youtu.be/URTvrcRYpTM" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BKTOR-CLIENT-HTTP%5D-COMO-CRIAR-CLIENTCONFIG-PARA-CLIENTHTTP-EM-KOTLIN-MULTIPLATFORM-MOBILE.png" width="100" height="56"></a> |
 | ✔️ ENDPOINTS KTOR - COMO FAZER REQUISIçÃO DE API COM KTOR EM KOTLIN MULTIPLATFORM MOBILE ANDROID | <a href="https://youtu.be/Pq8kbZxFajs" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BENDPOINTS-KTOR%5D-COMO-FAZER-REQUISI%C3%A7%C3%83O-DE-API-COM-KTOR-EM-KOTLIN-MULTIPLATFORM-MOBILE-ANDROID%20-%20Kopie.png" width="100" height="56"></a> |
 | ✔️ KTOR INTERCEPTOR - COMO MAPEAR A RESPOSTA DO SERVIDOR EM CASOS DE EXCEçÃO KTOR KOTLIN KMM ANDROID | <a href="https://youtu.be/am5Ek2d5M0I" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BKTOR-INTERCEPTOR%5D-COMO-MAPEAR-A-RESPOSTA-DO-SERVIDOR-EM-CASOS-DE-EXCE%C3%A7%C3%83O-KTOR-KOTLIN-KMM-ANDROID.png" width="100" height="56"></a> |
-| **🚩 AGENDADO: 12/12/2022** ✔️ VIEWMODEL FLOW - COMO CRIAR RESPOSITÓRIO QUE RETORNA FLOW PARA VIEWMODEL COM KTOR EM KOTLIN KMM | <a href="https://youtu.be/n6WKMwDTthQ" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BVIEWMODEL-FLOW%5D-COMO-CRIAR-RESPOSIT%C3%93RIO-QUE-RETORNA-FLOW-PARA-VIEWMODEL-COM-KTOR-EM-KOTLIN-KMM.png" width="100" height="56"></a> |
+| ✔️ VIEWMODEL FLOW - COMO CRIAR RESPOSITÓRIO QUE RETORNA FLOW PARA VIEWMODEL COM KTOR EM KOTLIN KMM | <a href="https://youtu.be/n6WKMwDTthQ" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BVIEWMODEL-FLOW%5D-COMO-CRIAR-RESPOSIT%C3%93RIO-QUE-RETORNA-FLOW-PARA-VIEWMODEL-COM-KTOR-EM-KOTLIN-KMM.png" width="100" height="56"></a> |
+| **🚩 AGENDADO: 15/12/2022** ✔️ SECRET API KEYS - COMO CRIPTOGRAFAR API KEYS ANDROID EM PROJETO KOTLIN MULTIPLATFORM MOBILE | <a href="https://youtu.be/X8oEeArMnoY" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BSECRET-API-KEYS%5D-COMO-CRIPTOGRAFAR-API-KEYS-ANDROID-EM-PROJETO-KOTLIN-MULTIPLATFORM-MOBILE.png" width="100" height="56"></a> |
+| **🚩 AGENDADO: 19/12/2022** ✔️ Shared BuildConfig - COMO COMPARTILHAR VARIÁVEIS DE AMBIENTE ENTRE ANDROID E IOS KMM? | <a href="https://youtu.be/Z1cpeZchpC0" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BShared-BuildConfig%5D-COMO-COMPARTILHAR-VARI%C3%81VEIS-DE-AMBIENTE-ENTRE-ANDROID-E-IOS-KMM.png" width="100" height="56"></a> |
 
 # Ta Curtindo? 
 Algum dos meus vídeos, posts ou repositórios te salvou muito tempo ou te ajudou no trabalho? Não é clichê não, eu produzo mais com café mesmo. 😁 É minha gasolina ⛽️ Me presentea com um café aqui: https://bit.ly/umCafeGb
