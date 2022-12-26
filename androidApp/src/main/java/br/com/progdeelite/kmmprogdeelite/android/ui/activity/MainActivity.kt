@@ -20,7 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.*
 import br.com.progdeelite.kmmprogdeelite.android.R
 import br.com.progdeelite.kmmprogdeelite.android.ui.components.FullScreenMessageDialog
-import br.com.progdeelite.kmmprogdeelite.utils.AndroidApp
+import br.com.progdeelite.kmmprogdeelite.di.DI
 import br.com.progdeelite.kmmprogdeelite.viewmodels.EntryViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.SampleViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.ShimmerViewModel
@@ -73,7 +73,7 @@ class MainActivity : ComponentActivity() {
         val shimmerViewModel = ShimmerViewModel()
         val entryViewModel = EntryViewModel()
 
-        Log.d("TESTANDO", AndroidApp.environment.name)
+        Log.d("TESTANDO", DI.Native.environment.name)
         setContent {
             AndroidAppTheme {
                 // DatabaseVid(viewModel)

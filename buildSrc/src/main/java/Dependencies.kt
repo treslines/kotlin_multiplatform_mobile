@@ -54,7 +54,7 @@ object Versions {
     const val shimmer = "1.0.3"
     const val espresso = "3.4.0"
     const val ktor = "2.1.2" // Releases > https://ktor.io/
-
+    const val lokalise = "2.1.1-lite"
     // BuildKonfig
     const val buildKonfig = "0.13.3"
 }
@@ -140,6 +140,11 @@ object Test {
 object Mockk {
     const val core = "io.mockk:mockk:${Versions.mockkCore}"
     const val common = "io.mockk:mockk-common:${Versions.mockkCommon}"
+}
+
+object Translation {
+    const val lokaliseUri = "https://maven.lokalise.com"
+    const val lokaliseSdk = "com.lokalise.android:sdk:${Versions.lokalise}"
 }
 
 /**

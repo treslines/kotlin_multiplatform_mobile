@@ -14,8 +14,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.progdeelite.kmmprogdeelite.android.R
 import br.com.progdeelite.kmmprogdeelite.android.ui.activity.AndroidAppTheme
+import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
 import br.com.progdeelite.kmmprogdeelite.resources.getPreviewImageResource
+import br.com.progdeelite.kmmprogdeelite.resources.getTextResource
 import br.com.progdeelite.kmmprogdeelite.viewmodels.OnBoardingImages
+import br.com.progdeelite.kmmprogdeelite.viewmodels.OnBoardingTexts
 import br.com.progdeelite.kmmprogdeelite.viewmodels.OnBoardingViewModel
 
 @Composable
@@ -40,17 +43,17 @@ fun OnBoardingScreen(
                     painter = painterResource(id = viewModel.images.topImage.id),
                     contentDescription = ""
                 )
-                Text("Hello Compose")
+                Text(viewModel.texts.topImageText.localized)
                 Image(
                     painter = painterResource(id = viewModel.images.middleImage.id),
                     contentDescription = ""
                 )
-                Text("Eu consigo me")
+                Text(viewModel.texts.middleImageText.localized)
                 Image(
                     painter = painterResource(id = viewModel.images.bottomImage.id),
                     contentDescription = ""
                 )
-                Text("renderizar assim!")
+                Text(viewModel.texts.bottomImageText.localized)
             }
         }
     }
@@ -59,6 +62,7 @@ fun OnBoardingScreen(
 @Preview
 @Composable
 fun OnBoardingPreview() {
+    DependencyInjectionForPreview()
     AndroidAppTheme {
         Column {
             OnBoardingScreen(
@@ -67,6 +71,11 @@ fun OnBoardingPreview() {
                         topImage = getPreviewImageResource(R.drawable.ic_warning),
                         middleImage = getPreviewImageResource(R.drawable.ic_warning),
                         bottomImage = getPreviewImageResource(R.drawable.ic_warning)
+                    ),
+                    texts = OnBoardingTexts(
+                        topImageText = getTextResource("Titulo: Hello Compose"),
+                        middleImageText = getTextResource("Titulo: Eu consigo me"),
+                        bottomImageText = getTextResource("Titulo: renderizar assim!")
                     )
                 )
             )

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KMM App</string>
+    <string name="top_image_text">Top Image Text</string>
+    <string name="middle_image_text">Middle Image Text</string>
+    <string name="bottom_image_text">Bottom Image Text</string>
+</resources>

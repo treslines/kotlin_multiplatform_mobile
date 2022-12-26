@@ -1,7 +1,7 @@
 package br.com.progdeelite.kmmprogdeelite.resources
 
 import android.annotation.SuppressLint
-import br.com.progdeelite.kmmprogdeelite.utils.AndroidApp
+import br.com.progdeelite.kmmprogdeelite.utils.AndroidMainApp
 
 actual class ImageResource actual constructor(private val name: String) {
 
@@ -11,7 +11,7 @@ actual class ImageResource actual constructor(private val name: String) {
     @SuppressLint("DiscouragedApi")
     private fun getDrawableRes(): Int {
         return if(_id == -1){
-            with(AndroidApp.applicationContext) {
+            with(AndroidMainApp.applicationContext) {
                 resources.getIdentifier(name, "drawable", packageName)
             }
         } else return _id

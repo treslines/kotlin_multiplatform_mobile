@@ -4,7 +4,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import br.com.progdeelite.kmmprogdeelite.models.Story
 import br.com.progdeelite.kmmprogdeelite.models.StoryMedia
-import br.com.progdeelite.kmmprogdeelite.utils.AndroidApp
+import br.com.progdeelite.kmmprogdeelite.utils.AndroidMainApp
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
@@ -18,7 +18,7 @@ class DatabaseTest {
 
     @Before
     fun prepareTest() {
-        AndroidApp.applicationContext = InstrumentationRegistry.getInstrumentation().targetContext
+        AndroidMainApp.applicationContext = InstrumentationRegistry.getInstrumentation().targetContext
         database = Database(createSqlDriver())
         database.clearDatabase()
     }

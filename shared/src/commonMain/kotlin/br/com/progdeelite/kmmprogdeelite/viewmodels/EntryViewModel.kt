@@ -1,5 +1,6 @@
 package br.com.progdeelite.kmmprogdeelite.viewmodels
 
+import br.com.progdeelite.kmmprogdeelite.di.DI.inject
 import br.com.progdeelite.kmmprogdeelite.network.*
 import br.com.progdeelite.kmmprogdeelite.network.models.Entry
 import br.com.progdeelite.kmmprogdeelite.repositories.EntryRepository
@@ -13,6 +14,7 @@ class EntryViewModel: BaseSharedViewModel() {
 
     private lateinit var storyRepository: EntryRepository
     private val logger: CommonLogger = CommonLoggerImpl()
+    private val environment by inject<Environment>()
 
     private val _entries = MutableStateFlow<List<Entry>?>(null)
     val entries: StateFlow<List<Entry>?>
@@ -40,6 +42,7 @@ class EntryViewModel: BaseSharedViewModel() {
     }
 
     fun fetchEntries() {
+        logger.log("Meu ambiente é: ${environment.name}")
         scope.launch {
             storyRepository.fetchEntries().collect { result ->
                 when(result){

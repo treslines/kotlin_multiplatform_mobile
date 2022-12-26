@@ -107,6 +107,9 @@ dependencies {
     implementation(Compose.materialIconsExtended)
     implementation(Compose.shimmer)
 
+    // LOKALISE
+    implementation(Translation.lokaliseSdk)
+
     // TESTING
     testImplementation(Test.junit)
     androidTestImplementation(TestUi.extJunit)

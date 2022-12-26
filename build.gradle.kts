@@ -20,6 +20,12 @@ tasks.register("clean", Delete::class) {
 
 allprojects {
 
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri(Translation.lokaliseUri) }
+    }
+
     // Hack: Determine current build flavor and add it to exported FLAVOR_PROPERTIES
     val tasks = gradle.startParameter.taskRequests.toString()
     if (tasks.contains("assemble")) {
