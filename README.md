@@ -20,6 +20,7 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 | I) **kmm_shared_image_resource** <br/> Projeto com A), B), C), D), E), F), G), H) e imagens compartilhadas entre android e iOS | <img src="https://user-images.githubusercontent.com/1042887/209583722-7e9733b8-c892-4c9b-83cd-845fa9b3f7cb.png" width="100" height="137"> |
 | J) **kmm_di_and_text_resource** <br/> Projeto com A), B), C), D), E), F), G), H), I) e textos compartilhados entre android e iOS | <img src="https://user-images.githubusercontent.com/1042887/209583839-a1e1f41c-d806-4417-9b22-3730c411023a.png" width="100" height="137"> |
 | L) **kmm_shared_color_resource** <br/> Projeto com A), B), C), D), E), F), G), H), I), J) e cores compartilhadas entre android e iOS |  |
+| M) **kmm_responsive_windows_size** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L) e telas responsivas compartilhadas entre android e iOS |  |
 
 
 # Posso Ajudar/Contribuir?
