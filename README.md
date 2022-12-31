@@ -17,8 +17,10 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 | F) **kmm_with_instrumented_tests** <br/> Projeto com A), B), C), D), E) e testes instrumentados no androidMain |  |
 | G) **kmm_with_ktor** <br/> Projeto com A), B), C), D), E), F) e ktor com respository e viewmodel retornando flow | <img src="https://user-images.githubusercontent.com/1042887/202708517-d82c153e-0899-4644-b075-6201f8718810.png" width="100" height="137"> |
 | H) **kmm_shared_build_config** <br/> Projeto com A), B), C), D), E), F), G) e common config (buildConfig) compartilhado entre android e iOS | <img src="https://user-images.githubusercontent.com/1042887/206722841-6f64628b-8926-4e1d-9561-c73f509ddd38.png" width="100" height="137"> |
+| I) **kmm_shared_image_resource** <br/> Projeto com A), B), C), D), E), F), G), H) e imagens compartilhadas entre android e iOS | <img src="https://user-images.githubusercontent.com/1042887/209583722-7e9733b8-c892-4c9b-83cd-845fa9b3f7cb.png" width="100" height="137"> |
+| J) **kmm_di_and_text_resource** <br/> Projeto com A), B), C), D), E), F), G), H), I) e textos compartilhados entre android e iOS | <img src="https://user-images.githubusercontent.com/1042887/209583839-a1e1f41c-d806-4417-9b22-3730c411023a.png" width="100" height="137"> |
 
- 
+
 # Posso Ajudar/Contribuir?
 Seja também um multiplicador de conhecimento. Mostre esse repositório para sua **COMUNIDADE/GRUPO/SLACK MOBILE**
 :
@@ -53,6 +55,8 @@ Seja também um multiplicador de conhecimento. Mostre esse repositório para sua
 | ✔️ Shared Object - COMO CRIAR BASH SCRIPT PARA GERAR CLASSE OU OBJETOS EM KOTLIN ANDROID | <a href="https://youtu.be/5q5aMna6VPU" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BShared-Object%5D-COMO-CRIAR-BASH-SCRIPT-PARA-GERAR-CLASSE-OU-OBJETOS-EM-KOTLIN-ANDROID.png" width="100" height="56"></a> |
 | **🚩 AGENDADO: 29/12/2022** ✔️ Import Translation - COMO USAR BASH SCRIPT PARA IMPORTAR TEXTOS DE TRADUçÃO ANDROID | <a href="https://youtu.be/tNesvzuup3U" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BImport-Translation%5D-COMO-USAR-BASH-SCRIPT-PARA-IMPORTAR-TEXTOS-DE-TRADU%C3%A7%C3%83O-ANDROID.png" width="100" height="56"></a> |
 | **🚩 AGENDADO: 02/01/2023** ✔️ Shared ImageResource - COMO COMPARTILHAR ImageResource ENTRE ANDROID E IOS KMM? | <a href="https://youtu.be/ukXx8mD9Lmo" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BShared-ImageResource%5D-COMO-COMPARTILHAR-ImageResource-ENTRE-ANDROID-E-IOS-KMM.png" width="100" height="56"></a> |
+| **🚩 AGENDADO: 05/01/2023** ✔️ Dependency Injection - COMO FAZER INJEçÃO DE DEPENDÊNCIAS ENTRE ANDROID E IOS KMM | <a href="https://youtu.be/VGrFCv_6bcc" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BDependency-Injection%5D-COMO-FAZER-INJE%C3%A7%C3%83O-DE-DEPEND%C3%8ANCIAS-ENTRE-ANDROID-E-IOS-KMM.png" width="100" height="56"></a> |
+| **🚩 AGENDADO: 09/01/2023** ✔️ Shared TextResource - COMO COMPARTILHAR StringResource ENTRE ANDROID E IOS KMM | <a href="https://youtu.be/MjitUKJFu80" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BShared-TextResource%5D-COMO-COMPARTILHAR-StringResource-ENTRE-ANDROID-E-IOS-KMM.png" width="100" height="56"></a> |
 
 # Ta Curtindo? 
 Algum dos meus vídeos, posts ou repositórios te salvou muito tempo ou te ajudou no trabalho? Não é clichê não, eu produzo mais com café mesmo. 😁 É minha gasolina ⛽️ Me presentea com um café aqui: https://bit.ly/umCafeGb
