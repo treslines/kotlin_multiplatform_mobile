@@ -12,4 +12,7 @@ object Resources {
     // Uso: Iremos acessar e atribuir da seguinte maneira nas views: Resources.Theme.primaryColor.getColor()
     val Theme: Theme
         get() = Color.getTheme()
+
+    // COMO USAR EX: modifier = modifier.height(Spacing.extraLarge.dp)
+    val Spacing = SpacingResources.getSpacing()
 }
