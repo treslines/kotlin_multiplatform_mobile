@@ -55,6 +55,7 @@ object Versions {
     const val espresso = "3.4.0"
     const val ktor = "2.1.2" // Releases > https://ktor.io/
     const val lokalise = "2.1.1-lite"
+    const val uiGraphics ="1.3.2"
     // BuildKonfig
     const val buildKonfig = "0.13.3"
 }
@@ -108,6 +109,7 @@ object Compose {
     const val tooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
     const val toolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
     const val ui = "androidx.compose.ui:ui:${Versions.compose}"
+    const val uiGraphics = "androidx.compose.ui:ui-graphics:${Versions.uiGraphics}"
     const val shimmer = "com.valentinilk.shimmer:compose-shimmer:${Versions.shimmer}"
 }
 

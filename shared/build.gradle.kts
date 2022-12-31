@@ -49,6 +49,7 @@ kotlin {
                 api(Androidx.viewModelLifecycle)
                 implementation(SqlDelight.driverAndroid)
                 implementation(Ktor.clientOkhttp)
+                implementation(Compose.uiGraphics)
             }
         }
         val androidTest by getting {
