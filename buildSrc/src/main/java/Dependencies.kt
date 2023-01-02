@@ -58,6 +58,9 @@ object Versions {
     const val uiGraphics ="1.3.2"
     // BuildKonfig
     const val buildKonfig = "0.13.3"
+    // Settings Russwolf Kmm
+    const val settings = "1.0.0-RC"
+    const val preferences = "1.2.0"
 }
 
 object Jetbrains {
@@ -91,6 +94,7 @@ object Androidx {
     const val core = "androidx.core:core-ktx:${Versions.androidxCore}"
     const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntime}"
     const val viewModelLifecycle = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}"
+    const val preferences = "androidx.preference:preference-ktx:${Versions.preferences}"
 }
 
 object Kotlinx {
@@ -120,6 +124,10 @@ object Ktor {
     const val serialization = "io.ktor:ktor-client-serialization:${Versions.ktor}"
     const val clientContentNegotiation = "io.ktor:ktor-client-content-negotiation:${Versions.ktor}"
     const val jsonSerialization = "io.ktor:ktor-serialization-kotlinx-json:${Versions.ktor}"
+}
+
+object Russhwolf {
+    const val settings = "com.russhwolf:multiplatform-settings:${Versions.settings}"
 }
 
 /**

@@ -31,6 +31,7 @@ kotlin {
                 implementation(Ktor.jsonSerialization)
                 implementation(Ktor.serialization)
                 implementation(Ktor.clientContentNegotiation)
+                implementation(Russhwolf.settings)
             }
         }
         val commonTest by getting {
@@ -50,6 +51,7 @@ kotlin {
                 implementation(SqlDelight.driverAndroid)
                 implementation(Ktor.clientOkhttp)
                 implementation(Compose.uiGraphics)
+                implementation(Androidx.preferences)
             }
         }
         val androidTest by getting {

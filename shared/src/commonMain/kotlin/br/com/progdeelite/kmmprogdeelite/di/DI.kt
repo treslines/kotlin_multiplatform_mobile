@@ -6,6 +6,8 @@ import br.com.progdeelite.kmmprogdeelite.localization.Localization
 import br.com.progdeelite.kmmprogdeelite.localization.LocalizationService
 import br.com.progdeelite.kmmprogdeelite.localization.Lokalisable
 import br.com.progdeelite.kmmprogdeelite.network.Environment
+import br.com.progdeelite.kmmprogdeelite.settings.AppSettings
+import br.com.progdeelite.kmmprogdeelite.settings.SettingsService
 import kotlin.native.concurrent.ThreadLocal
 
 // 1) Renomear AndroidApp para AndroidMainApp e criar IOSMainApp
@@ -40,6 +42,7 @@ object DI {
             Environment::class -> lazy { environment as T }
             Lokalisable::class -> lazy { lokalisable as T }
             LocalizationService::class -> lazy { Localization() as T }
+            SettingsService::class -> lazy { AppSettings() as T }
             else -> throw IllegalArgumentException("Dependency not found! Specify class \"${T::class.qualifiedName}\" in DI.inject()")
         }
     }
