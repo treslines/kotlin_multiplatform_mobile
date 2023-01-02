@@ -22,6 +22,7 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 | L) **kmm_shared_color_resource** <br/> Projeto com A), B), C), D), E), F), G), H), I), J) e cores compartilhadas entre android e iOS |  |
 | M) **kmm_responsive_windows_size** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L) e telas responsivas compartilhadas entre android e iOS |  |
 | N) **kmm_shared_settings** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M) e settings & preferências compartilhadas entre android e iOS |  |
+| O) **kmm_custom_style_fonts** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M), N) e estilos & fontes customizadas android |  |
 
 
 # Posso Ajudar/Contribuir?
