@@ -13,7 +13,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.progdeelite.kmmprogdeelite.android.R
-import br.com.progdeelite.kmmprogdeelite.android.ui.activity.AndroidAppTheme
+import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
 import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
 import br.com.progdeelite.kmmprogdeelite.resources.getPreviewImageResource
 import br.com.progdeelite.kmmprogdeelite.resources.getTextResource

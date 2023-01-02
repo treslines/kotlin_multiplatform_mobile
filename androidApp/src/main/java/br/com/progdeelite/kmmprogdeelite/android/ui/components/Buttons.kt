@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import br.com.progdeelite.kmmprogdeelite.android.ui.activity.AndroidAppTheme
+import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
 
 @Composable
 fun TopButton(modifier: Modifier = Modifier, text: String, onClick: () -> Unit = {}) {
