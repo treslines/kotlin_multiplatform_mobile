@@ -13,6 +13,12 @@ object Resources {
     val Theme: Theme
         get() = Color.getTheme()
 
+//    1) DEFINIR CORES MATERIAL THEME
+//    2) TORNAR METODOS INTERNOS
+//    3) ATRIBUIR CORES NO THEMA DO APLICATIVO
+    val Dark = Color.getDarkTheme()
+    val Light = Color.getLightTheme()
+
     // COMO USAR EX: modifier = modifier.height(Spacing.extraLarge.dp)
     val Spacing = SpacingResources.getSpacing()
 }

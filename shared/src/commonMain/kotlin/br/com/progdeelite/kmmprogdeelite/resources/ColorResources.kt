@@ -4,10 +4,26 @@ import kotlin.native.concurrent.ThreadLocal
 
 @ThreadLocal
 object ColorResources {
-    fun getTheme(): Theme = if (isSystemInDarkMode()) Theme.Dark else Theme.Light
+    internal fun getTheme(): Theme = if (isSystemInDarkMode()) Theme.Dark else Theme.Light
+    internal fun getDarkTheme(): Theme = Theme.Dark
+    internal fun getLightTheme(): Theme = Theme.Light
 }
 
 abstract class Theme (
+    // material theme android colors
+    val primary : ColorResource,
+    val primaryVariant : ColorResource,
+    val secondary : ColorResource,
+    val secondaryVariant : ColorResource,
+    val background : ColorResource,
+    val surface : ColorResource,
+    val error : ColorResource,
+    val onPrimary : ColorResource,
+    val onSecondary : ColorResource,
+    val onBackground : ColorResource,
+    val onSurface : ColorResource,
+    val onError : ColorResource,
+
     // default theming colors for background and content
     val contentPrimary: ColorResource,
     val contentSecondary: ColorResource,
@@ -38,6 +54,20 @@ abstract class Theme (
     val description: ColorResource,
 ) {
     object Dark : Theme (
+
+        primary = ColorResource(0xFFE95D0F), // laranja
+        primaryVariant = ColorResource(0xFFE95D0F), // laranja
+        secondary = ColorResource(0xFF707070), // black 60% alpha
+        secondaryVariant = ColorResource(0xFF707070), // black 60% alpha
+        background = ColorResource(0xFFEFEFEF), // black 5% alpha
+        surface = ColorResource(0xFFFFFFFF), // white
+        error = ColorResource(0xFFF09C6D), // laranja 60% alpha
+        onPrimary = ColorResource(0xFFFFFFFF), // white
+        onSecondary = ColorResource(0xFFFFFFFF), // white
+        onBackground = ColorResource(0xFF131313), // black
+        onSurface = ColorResource(0xFF131313), // black
+        onError = ColorResource(0xFFFFFFFF), // white
+
         contentPrimary =  ColorResource(0xFFFFFFFF), // white
         contentSecondary =  ColorResource(0xFF131313), // black
         backgroundPrimary = ColorResource(0xFF414141), // black 80% alpha
@@ -62,6 +92,20 @@ abstract class Theme (
     )
 
     object Light : Theme (
+
+        primary = ColorResource(0xFFE95D0F), // laranja
+        primaryVariant = ColorResource(0xFFE95D0F), // laranja
+        secondary = ColorResource(0xFF707070), // black 60% alpha
+        secondaryVariant = ColorResource(0xFF707070), // black 60% alpha
+        background = ColorResource(0xFFEFEFEF), // black 5% alpha
+        surface = ColorResource(0xFFFFFFFF), // white
+        error = ColorResource(0xFFF09C6D), // laranja 60% alpha
+        onPrimary = ColorResource(0xFFFFFFFF), // white
+        onSecondary = ColorResource(0xFFFFFFFF), // white
+        onBackground = ColorResource(0xFF131313), // black
+        onSurface = ColorResource(0xFF131313), // black
+        onError = ColorResource(0xFFFFFFFF), // white
+
         contentPrimary =  ColorResource(0xFFFFFFFF), // white
         contentSecondary =  ColorResource(0xFFE95D0F), // laranja
         backgroundPrimary = ColorResource(0xFFE95D0F), // laranja
