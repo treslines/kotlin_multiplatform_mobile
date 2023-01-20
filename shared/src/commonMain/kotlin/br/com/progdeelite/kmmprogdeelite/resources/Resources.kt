@@ -21,4 +21,6 @@ object Resources {
 
     // COMO USAR EX: modifier = modifier.height(Spacing.extraLarge.dp)
     val Spacing = SpacingResources.getSpacing()
+
+    val FontSizing = FontSizingResources.getFontSizing()
 }
