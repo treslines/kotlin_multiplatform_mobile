@@ -24,7 +24,8 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 | N) **kmm_shared_settings** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M) e settings & preferências compartilhadas entre android e iOS |  |
 | O) **kmm_custom_style_fonts** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M), N) e estilos & fontes customizadas android |  |
 | P) **kmm_usage_color_resource** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M), N), P) e uso prático do recurso de cores (theme) android |  |
-| q) **kmm_usage_spacing_resource** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M), N), P), O) e uso prático do recurso de dimens (spacing) android |  |
+| Q) **kmm_usage_spacing_resource** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M), N), P), O) e uso prático do recurso de dimens (spacing) android |  |
+| R) **kmm_shared_font_sizing** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M), N), P), O), Q) e uso prático do recurso de tamanho de textos (font sizing) android |  |
 
 
 # Posso Ajudar/Contribuir?
