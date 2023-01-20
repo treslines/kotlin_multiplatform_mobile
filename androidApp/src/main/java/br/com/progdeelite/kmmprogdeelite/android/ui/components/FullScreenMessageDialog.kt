@@ -22,6 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.progdeelite.kmmprogdeelite.android.R
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
+import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
 import br.com.progdeelite.kmmprogdeelite.viewmodels.ShimmerViewModel
 import com.valentinilk.shimmer.Shimmer
 import com.valentinilk.shimmer.ShimmerBounds
@@ -134,6 +135,7 @@ fun MessageContentWithShimmer(
 @Preview(uiMode = UI_MODE_NIGHT_YES)
 @Composable
 fun FullScreenMessagePreview() {
+    DependencyInjectionForPreview()
     AndroidAppTheme {
         FullScreenMessageDialog(
             icon = R.drawable.ic_warning,
@@ -149,6 +151,7 @@ fun FullScreenMessagePreview() {
 @Preview(uiMode = UI_MODE_NIGHT_YES)
 @Composable
 fun FullScreenMessagePreviewWithShimmer() {
+    DependencyInjectionForPreview()
     AndroidAppTheme {
         // shimmer aplicado
         val viewModel = ShimmerViewModel().apply { toggleLoadingState() }

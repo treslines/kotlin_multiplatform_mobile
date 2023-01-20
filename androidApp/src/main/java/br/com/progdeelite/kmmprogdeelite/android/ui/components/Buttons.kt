@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
+import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
 
 @Composable
 fun TopButton(modifier: Modifier = Modifier, text: String, onClick: () -> Unit = {}) {
@@ -29,10 +30,13 @@ fun BottomButton(modifier: Modifier = Modifier, text: String, onClick: () -> Uni
 @Preview
 @Composable
 fun DialogButtonsPreview() {
+    DependencyInjectionForPreview()
     AndroidAppTheme {
         Column {
             TopButton(text = "Botão superior")
             Spacer(modifier = Modifier.height(12.dp))
+            Spacer.Big()
+            //SpacerNormal()
             BottomButton(text = "Botão inferior")
         }
     }

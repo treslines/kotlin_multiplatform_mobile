@@ -25,6 +25,7 @@ class MainApplication: Application() {
     // - https://developer.android.com/studio/build/build-variants#kts
     // - https://developer.android.com/studio/build
     private fun setEnvironment() {
-        DI.Native.environment = Environment.getEnvironmentByBuildFlavor(CommonConfig.FLAVOR)
+        // TODO: comentado pois não esta sendo usado no projeto, apenas para fins didáticos
+        DI.Native.environment = Environment.getEnvironmentByBuildFlavor("CommonConfig.FLAVOR")
     }
 }

@@ -15,7 +15,8 @@ import java.util.Locale
 class AndroidLocalisable (private val appContext: Context): Lokalisable {
 
     init {
-        Lokalise.init(appContext, CommonConfig.LOKALISE_TOKEN, CommonConfig.LOKALISE_PROJEKT_ID)
+        // TODO: comentado pois não esta sendo usado no projeto, apenas para fins didáticos
+        Lokalise.init(appContext, "CommonConfig.LOKALISE_TOKEN", "CommonConfig.LOKALISE_PROJEKT_ID")
         if (BuildConfig.DEBUG) {
             Lokalise.isPreRelease = true // Configuration in Lokalise dashboard to take all strings while developing
         }
