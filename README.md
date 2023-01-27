@@ -28,6 +28,7 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 | R) **kmm_shared_font_sizing** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M), N), P), O), Q) e uso prático do recurso de tamanho de textos (font sizing) android |  |
 | S) **kmm_custom_spacers** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M), N), P), O), Q), R) e uso prático do spacer customizado fazendo uso dos espaços compartilhados (spacing resource) android |  |
 | T) **kmm_custom_listview_item** <br/> Projeto com A) até S) e uso prático do list view item customizado fazendo uso do theme compartilhado (color resource) android |  |
+| U) **kmm_custom_button_set** <br/> Projeto com A) até T) e criação de um set de botões customizáveis jetpack compose android |  |
 
 
 
