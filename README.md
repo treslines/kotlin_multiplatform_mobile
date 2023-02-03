@@ -30,6 +30,8 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 | T) **kmm_custom_listview_item** <br/> Projeto com A) até S) e uso prático do list view item customizado fazendo uso do theme compartilhado (color resource) android |  |
 | U) **kmm_custom_button_set** <br/> Projeto com A) até T) e criação de um set de botões customizáveis jetpack compose android |  |
 | V) **kmm_shared_dimens_resource** <br/> Projeto com A) até U) e recursos de dimensões compartilhados em kmm e uso prático dos mesmos |  |
+| X) **kmm_debug_proguard_release** <br/> Projeto com A) até V) como depurar, ofuscar e otimizar tamanho de código com proguard em release |  |
+
 
 
 # Posso Ajudar/Contribuir?
