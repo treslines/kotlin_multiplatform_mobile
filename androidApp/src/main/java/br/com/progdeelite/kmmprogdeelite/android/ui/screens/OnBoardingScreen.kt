@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import br.com.progdeelite.kmmprogdeelite.android.R
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
 import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
+import br.com.progdeelite.kmmprogdeelite.resources.Resources
 import br.com.progdeelite.kmmprogdeelite.resources.getPreviewImageResource
 import br.com.progdeelite.kmmprogdeelite.resources.getTextResource
 import br.com.progdeelite.kmmprogdeelite.viewmodels.OnBoardingImages
@@ -43,12 +44,17 @@ fun OnBoardingScreen(
                     painter = painterResource(id = viewModel.images.topImage.id),
                     contentDescription = ""
                 )
+                // DIMENSÃO COMPARTILHADA
+                Spacer(modifier = Modifier.height(Resources.Dimen.button.height))
                 Text(viewModel.texts.topImageText.localized)
                 Image(
                     painter = painterResource(id = viewModel.images.middleImage.id),
                     contentDescription = ""
                 )
-                Text(viewModel.texts.middleImageText.localized)
+                Text(
+                    text = viewModel.texts.middleImageText.localized,
+                    fontSize = Resources.FontSizing.large.size // FONTE COMPARTILHADA
+                )
                 Image(
                     painter = painterResource(id = viewModel.images.bottomImage.id),
                     contentDescription = ""
