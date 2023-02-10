@@ -61,6 +61,7 @@ object Versions {
     // Settings Russwolf Kmm
     const val settings = "1.0.0-RC"
     const val preferences = "1.2.0"
+    const val lottie = "5.2.0"
 }
 
 object Jetbrains {
@@ -115,6 +116,7 @@ object Compose {
     const val ui = "androidx.compose.ui:ui:${Versions.compose}"
     const val uiGraphics = "androidx.compose.ui:ui-graphics:${Versions.uiGraphics}"
     const val shimmer = "com.valentinilk.shimmer:compose-shimmer:${Versions.shimmer}"
+    const val lottie = "com.airbnb.android:lottie-compose:${Versions.lottie}"
 }
 
 object Ktor {

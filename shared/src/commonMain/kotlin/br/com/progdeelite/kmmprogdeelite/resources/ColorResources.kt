@@ -58,6 +58,11 @@ abstract class Theme (
     val textFieldCursorColor: ColorResource,
     val textFieldSelectedFocusColor: ColorResource,
     val textFieldUnselectedFocusColor: ColorResource,
+
+    // buttons
+    val loadingButtonActiveColor: ColorResource,
+    val loadingButtonLoadingColor: ColorResource,
+    val loadingButtonDisabledColor: ColorResource,
 ) {
     object Dark : Theme (
 
@@ -78,6 +83,10 @@ abstract class Theme (
         textFieldCursorColor = ColorResource(0xFF131313),
         textFieldSelectedFocusColor = ColorResource(0xFFEFEFEF),
         textFieldUnselectedFocusColor = ColorResource(0xFF707070),
+
+        loadingButtonActiveColor = ColorResource(0xFFE95D0F),
+        loadingButtonLoadingColor = ColorResource(0xFFF09C6D),
+        loadingButtonDisabledColor = ColorResource(0xFFEFEFEF),
 
         contentPrimary =  ColorResource(0xFFFFFFFF), // white
         contentSecondary =  ColorResource(0xFF131313), // black
@@ -121,6 +130,10 @@ abstract class Theme (
         textFieldCursorColor = ColorResource(0xFF131313),
         textFieldSelectedFocusColor = ColorResource(0xFFEFEFEF),
         textFieldUnselectedFocusColor = ColorResource(0xFF707070),
+
+        loadingButtonActiveColor = ColorResource(0xFFE95D0F),
+        loadingButtonLoadingColor = ColorResource(0xFFF09C6D),
+        loadingButtonDisabledColor = ColorResource(0xFFEFEFEF),
 
         contentPrimary =  ColorResource(0xFFFFFFFF), // white
         contentSecondary =  ColorResource(0xFFE95D0F), // laranja

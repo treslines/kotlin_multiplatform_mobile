@@ -106,6 +106,7 @@ dependencies {
     implementation(Compose.runtime)
     implementation(Compose.materialIconsExtended)
     implementation(Compose.shimmer)
+    implementation(Compose.lottie)
 
     // LOKALISE
     implementation(Translation.lokaliseSdk)

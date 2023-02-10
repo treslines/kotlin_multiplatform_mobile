@@ -14,11 +14,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.*
 import br.com.progdeelite.kmmprogdeelite.android.R
 import br.com.progdeelite.kmmprogdeelite.android.ui.components.FullScreenMessageDialog
+import br.com.progdeelite.kmmprogdeelite.android.ui.components.LoadingButton
+import br.com.progdeelite.kmmprogdeelite.android.ui.components.Spacing
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
+import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
 import br.com.progdeelite.kmmprogdeelite.di.DI
+import br.com.progdeelite.kmmprogdeelite.utils.LoadingButtonState
 import br.com.progdeelite.kmmprogdeelite.viewmodels.EntryViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.SampleViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.ShimmerViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +38,8 @@ class MainActivity : ComponentActivity() {
             AndroidAppTheme {
                 // DatabaseVid(viewModel)
                 // ShimmerVid(shimmerViewModel)
-                KtorVid(viewModel = entryViewModel)
+                // KtorVid(viewModel = entryViewModel)
+                LoadingButtonVid()
             }
         }
     }
@@ -86,6 +92,25 @@ private fun ShimmerVid(shimmerViewModel: ShimmerViewModel) {
 }
 
 @Composable
+private fun LoadingButtonVid() {
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colors.background
+    ) {
+        val activeState = MutableStateFlow(LoadingButtonState.ACTIVE)
+        val disabledState = MutableStateFlow(LoadingButtonState.DISABLED)
+        val loadingState = MutableStateFlow(LoadingButtonState.LOADING)
+        Column(modifier = Modifier.padding(12.dp)) {
+            LoadingButton(text = "Loading", loadingButtonState = activeState)
+            Spacing.Normal()
+            LoadingButton(text = "Loading", loadingButtonState = disabledState)
+            Spacing.Normal()
+            LoadingButton(text = "Loading", loadingButtonState = loadingState)
+        }
+    }
+}
+
+@Composable
 @OptIn(ExperimentalUnitApi::class)
 private fun DatabaseVid(viewModel: SampleViewModel) {
     Surface(
@@ -124,6 +149,7 @@ fun Greeting(text: String) {
 @Preview
 @Composable
 fun DefaultPreview() {
+    DependencyInjectionForPreview()
     AndroidAppTheme {
         Greeting("Hello, Android!")
     }
