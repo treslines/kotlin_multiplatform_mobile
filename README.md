@@ -30,6 +30,8 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 | T) **kmm_custom_listview_item** <br/> Projeto com A) até S) e uso prático do list view item customizado fazendo uso do theme compartilhado (color resource) android |  |
 | U) **kmm_custom_button_set** <br/> Projeto com A) até T) e criação de um set de botões customizáveis jetpack compose android |  |
 | V) **kmm_shared_dimens_resource** <br/> Projeto com A) até U) e recursos de dimensões compartilhados em kmm e uso prático dos mesmos |  |
+| X) **kmm_debug_proguard_release** <br/> Projeto com A) até V) como depurar, ofuscar e otimizar tamanho de código com proguard em release |  |
+
 
 
 # Posso Ajudar/Contribuir?
@@ -78,6 +80,8 @@ Seja também um multiplicador de conhecimento. Mostre esse repositório para sua
 | **🚩 AGENDADO: 06/02/2023** ✔️ SpacingResource - COMO USAR RECURSO DE DIMENSÃO COMPARTILHADO NO SPACER ANDROID COMPOSE KMM | <a href="https://youtu.be/luxthMWcxOU" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BCustom-Spacer%5D-COMO-USAR-RECURSO-DE-DIMENS%C3%83O-COMPARTILHADO-NO-SPACER-ANDROID-COMPOSE-KMM.png" width="100" height="56"></a> |
 | **🚩 AGENDADO: 09/02/2023** ✔️ ListView Item - COMO CRIAR LIST VIEW ITEM CUSTOMIZADO COMPOSE KOTLIN MULTIPLATAFORMA KMM | <a href="https://youtu.be/7nyVh7mKN88" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BListView%5D-COMO-CRIAR-LIST-VIEW-ITEM-CUSTOMIZADO-COMPOSE-KOTLIN-MULTIPLATAFORMA-KMM.png" width="100" height="56"></a> |
 | **🚩 AGENDADO: 13/02/2023** ✔️ Custom Button - COMO CRIAR BOTÕES CUSTOMIZADOS PARA ANDROID COMPOSE KMM | <a href="https://youtu.be/qKwn8Xu2Tlk" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BCustom-Button%5D-COMO-CRIAR-SET-DE-BOT%C3%95ES-CUSTOMIZADOS-PARA-ANDROID-COMPOSE-KMM.png" width="100" height="56"></a> |
+| **🚩 AGENDADO: 16/02/2023** ✔️ DimensResource - COMO COMPARTILHAR ALTURA E LARGURA DOS COMPONENTES ENTRE ANDROID E IOS KMM? | <a href="https://youtu.be/NXOL-F3IGIQ" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BDimensResource%5D-COMO-COMPARTILHAR-ALTURA-E-LARGURA-DOS-COMPONENTES-ENTRE-ANDROID-E-IOS-KMM.png" width="100" height="56"></a> |
+| **🚩 AGENDADO: 20/02/2023** ⚡ PROGUARD - COMO OFUSCAR, DEPURAR, OTIMIZAR E REDUZIR TAMANHO DO CÓDIGO COM PROGUARD ANDROID? | <a href="https://youtu.be/UaYT-G_80wg" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BPROGUARD%5D-COMO-OFUSCAR-DEPURAR-OTIMIZAR-E-REDUZIR-TAMANHO-DO-C%C3%93DIGO-COM-PROGUARD-ANDROID.png" width="100" height="56"></a> |
 
 # Ta Curtindo? 
 Algum dos meus vídeos, posts ou repositórios te salvou muito tempo ou te ajudou no trabalho? Não é clichê não, eu produzo mais com café mesmo. 😁 É minha gasolina ⛽️ Me presentea com um café aqui: https://bit.ly/umCafeGb
