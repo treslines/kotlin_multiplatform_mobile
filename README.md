@@ -32,6 +32,7 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 | V) **kmm_shared_dimens_resource** <br/> Projeto com A) até U) e recursos de dimensões compartilhados em kmm e uso prático dos mesmos |  |
 | X) **kmm_debug_proguard_release** <br/> Projeto com A) até V) como depurar, ofuscar e otimizar tamanho de código com proguard em release |  |
 | W) **kmm_textfield_with_erro_states** <br/> Projeto com A) até X) como criar campo de texo e validar entradas de erro com estados em compose |  |
+| Y) **kmm_loading_button_lottie** <br/> Projeto com A) até W) como criar loading button com lottie em compose |  |
 
 
 
