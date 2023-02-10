@@ -3,6 +3,7 @@ package br.com.progdeelite.kmmprogdeelite.android.ui.theme
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.toFontFamily
 import androidx.compose.ui.unit.sp
+import br.com.progdeelite.kmmprogdeelite.resources.Resources
 
 /** Centralizes App text styles */
 object TextStyles {
@@ -47,5 +48,21 @@ object TextStyles {
         fontWeight = FontTypes.ttNormsBold.weight,
         fontSize = 13.sp,
         fontStyle = FontTypes.ttNormsBold.style
+    )
+
+    val textField = TextStyle(
+        fontFamily = FontTypes.ttNormsRegular.toFontFamily(),
+        fontWeight = FontTypes.ttNormsRegular.weight,
+        fontStyle = FontTypes.ttNormsRegular.style,
+        fontSize = Resources.FontSizing.normal.size,
+        lineHeight = Resources.FontSizing.normal.lineHeight
+
+    )
+    val textFieldHint = TextStyle(
+        fontFamily = FontTypes.ttNormsMedium.toFontFamily(),
+        fontWeight = FontTypes.ttNormsMedium.weight,
+        fontStyle = FontTypes.ttNormsMedium.style,
+        fontSize = Resources.FontSizing.small.size,
+        lineHeight = Resources.FontSizing.small.lineHeight
     )
 }

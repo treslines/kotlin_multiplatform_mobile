@@ -17,8 +17,10 @@ actual class ButtonDimensResource actual constructor(
 
 actual class TextFieldDimensResource actual constructor(
     private val minWidthUnit: Int,
-    private val minHeightUnit: Int
+    private val minHeightUnit: Int,
+    private val roundCornerUnit: Int
 ) {
     val minWidth: Dp by lazy { minWidthUnit.dp }
     val minHeight: Dp by lazy { minHeightUnit.dp }
+    val roundCorner: Dp by lazy { roundCornerUnit.dp }
 }

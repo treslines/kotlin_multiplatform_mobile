@@ -4,4 +4,8 @@
     <string name="top_image_text">Top Image Text</string>
     <string name="middle_image_text">Middle Image Text</string>
     <string name="bottom_image_text">Bottom Image Text</string>
+
+    <string name="textfield_number_not_found">Este número não foi encontrado.</string>
+    <string name="textfield_invalid_birthdate">Data de nascimento invalida.</string>
+    <string name="textfield_invalid_code">Código invalido.</string>
 </resources>

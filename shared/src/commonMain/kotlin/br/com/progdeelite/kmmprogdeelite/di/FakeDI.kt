@@ -10,7 +10,7 @@ internal fun fakeDI(){
 }
 
 class FakeLokalise: Lokalisable {
-    override fun lokalise(stringRef: String): String = "fake lokalise"
+    override fun lokalise(stringRef: String): String = stringRef
     override fun loadResources() {}
     override fun changeLanguage(language: Language) {}
     override fun geLokaliseLanguage(): Language = Language.getDefaultLanguage()

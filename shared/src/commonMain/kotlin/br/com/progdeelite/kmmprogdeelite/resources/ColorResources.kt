@@ -52,6 +52,12 @@ abstract class Theme (
     val titleSecondary: ColorResource,
     val subtitle: ColorResource,
     val description: ColorResource,
+
+    // textos
+    val textFieldHintColor: ColorResource,
+    val textFieldCursorColor: ColorResource,
+    val textFieldSelectedFocusColor: ColorResource,
+    val textFieldUnselectedFocusColor: ColorResource,
 ) {
     object Dark : Theme (
 
@@ -67,6 +73,11 @@ abstract class Theme (
         onBackground = ColorResource(0xFF131313), // black
         onSurface = ColorResource(0xFF131313), // black
         onError = ColorResource(0xFFFFFFFF), // white
+
+        textFieldHintColor = ColorResource(0xFF707070),
+        textFieldCursorColor = ColorResource(0xFF131313),
+        textFieldSelectedFocusColor = ColorResource(0xFFEFEFEF),
+        textFieldUnselectedFocusColor = ColorResource(0xFF707070),
 
         contentPrimary =  ColorResource(0xFFFFFFFF), // white
         contentSecondary =  ColorResource(0xFF131313), // black
@@ -105,6 +116,11 @@ abstract class Theme (
         onBackground = ColorResource(0xFF131313), // black
         onSurface = ColorResource(0xFF131313), // black
         onError = ColorResource(0xFFFFFFFF), // white
+
+        textFieldHintColor = ColorResource(0xFF707070),
+        textFieldCursorColor = ColorResource(0xFF131313),
+        textFieldSelectedFocusColor = ColorResource(0xFFEFEFEF),
+        textFieldUnselectedFocusColor = ColorResource(0xFF707070),
 
         contentPrimary =  ColorResource(0xFFFFFFFF), // white
         contentSecondary =  ColorResource(0xFFE95D0F), // laranja

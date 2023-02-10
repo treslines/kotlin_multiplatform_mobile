@@ -20,9 +20,9 @@ abstract class ComponentDimens(
 ) {
      internal class Dimens : ComponentDimens(
          button = ButtonDimensResource(20, 0, 44, 34),
-         textInputField = TextFieldDimensResource(40, 48),
+         textInputField = TextFieldDimensResource(40, 54, 40),
     )
 }
 
 expect class ButtonDimensResource(roundedCornerUnit: Int, minWidthUnit: Int, heightUnit: Int, smallHeightUnit: Int)
-expect class TextFieldDimensResource(minWidthUnit: Int, minHeightUnit: Int)
+expect class TextFieldDimensResource(minWidthUnit: Int, minHeightUnit: Int, roundCornerUnit: Int)

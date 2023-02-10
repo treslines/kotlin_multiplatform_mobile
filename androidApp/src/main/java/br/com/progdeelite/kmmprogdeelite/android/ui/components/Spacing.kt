@@ -10,7 +10,7 @@ import br.com.progdeelite.kmmprogdeelite.resources.Resources.Spacing
 // 2) COMO USAR O SPACING COMPARTILHADO
 // 3) OUTRA FORMA ALTERNATIVA PARA VC DECIDIR QUAL USAR
 
-object Spacer {
+object Spacing {
 
     @Composable
     fun Tiny() {

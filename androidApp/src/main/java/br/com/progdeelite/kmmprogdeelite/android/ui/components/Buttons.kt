@@ -42,7 +42,7 @@ fun DialogButtonsPreview() {
         Column {
             TopButton(text = "Botão superior")
             Spacer(modifier = Modifier.height(12.dp))
-            Spacer.Big()
+            Spacing.Big()
             //SpacerNormal()
             BottomButton(text = "Botão inferior")
         }
@@ -241,19 +241,19 @@ fun ButtonsPreview() {
     AndroidAppTheme {
         Column {
             PrimaryButton(text = "Explorar App")
-            Spacer.Normal()
+            Spacing.Normal()
             PrimaryWhiteButton(text = "Descobrir App")
-            Spacer.Normal()
+            Spacing.Normal()
             SmallButton(text = "BR")
-            Spacer.Normal()
+            Spacing.Normal()
             SmallButton(text = "IT")
-            Spacer.Normal()
+            Spacing.Normal()
             SmallButton(text = "Voltar", showBackIcon = true)
-            Spacer.Normal()
+            Spacing.Normal()
             SmallButton(text = "Próximo")
-            Spacer.Normal()
+            Spacing.Normal()
             SecondaryButton(text = "Atendimento")
-            Spacer.Normal()
+            Spacing.Normal()
             CloseButton()
         }
     }
