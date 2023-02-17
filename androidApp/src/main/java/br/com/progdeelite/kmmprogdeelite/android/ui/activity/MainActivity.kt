@@ -6,19 +6,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.*
 import br.com.progdeelite.kmmprogdeelite.android.R
-import br.com.progdeelite.kmmprogdeelite.android.ui.components.FullScreenMessageDialog
-import br.com.progdeelite.kmmprogdeelite.android.ui.components.LoadingButton
-import br.com.progdeelite.kmmprogdeelite.android.ui.components.Spacing
+import br.com.progdeelite.kmmprogdeelite.android.ui.components.*
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
 import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
 import br.com.progdeelite.kmmprogdeelite.di.DI
+import br.com.progdeelite.kmmprogdeelite.localization.DialogTexts
 import br.com.progdeelite.kmmprogdeelite.utils.LoadingButtonState
 import br.com.progdeelite.kmmprogdeelite.viewmodels.EntryViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.SampleViewModel
@@ -39,8 +36,51 @@ class MainActivity : ComponentActivity() {
                 // DatabaseVid(viewModel)
                 // ShimmerVid(shimmerViewModel)
                 // KtorVid(viewModel = entryViewModel)
-                LoadingButtonVid()
+                // LoadingButtonVid()
+                CustomDialogVid()
             }
+        }
+    }
+}
+
+@Composable
+private fun CustomDialogVid() {
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colors.background
+    ) {
+        var showForceUpdateDialog by remember{ mutableStateOf(false) }
+        var showCancelDialog by remember{ mutableStateOf(false) }
+
+        Column(modifier = Modifier.padding(12.dp)) {
+            if(showForceUpdateDialog){
+                CustomDialog(
+                    dialogTexts = DialogTexts.ForceUpdate,
+                    primaryButtonAction = {showForceUpdateDialog = false},
+                    secondaryButtonAction = {showForceUpdateDialog = false}
+                )
+            }
+            if(showCancelDialog) {
+                CustomDialog(
+                    dialogTexts = DialogTexts.Cancel,
+                    primaryButtonAction = {showCancelDialog = false}
+                )
+            }
+            PrimaryButton(
+                text = "Atualizar App",
+                onClick = {
+                    showCancelDialog = false
+                    showForceUpdateDialog = true
+                }
+            )
+            Spacing.Normal()
+            PrimaryButton(
+                text = "Cancelar Cadastro",
+                onClick = {
+                    showForceUpdateDialog = false
+                    showCancelDialog = true
+                }
+            )
         }
     }
 }

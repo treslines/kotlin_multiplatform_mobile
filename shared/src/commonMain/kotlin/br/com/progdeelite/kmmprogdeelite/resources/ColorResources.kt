@@ -71,7 +71,7 @@ abstract class Theme (
         secondary = ColorResource(0xFF707070), // black 60% alpha
         secondaryVariant = ColorResource(0xFF707070), // black 60% alpha
         background = ColorResource(0xFFEFEFEF), // black 5% alpha
-        surface = ColorResource(0xFFFFFFFF), // white
+        surface = ColorResource(0xFF707070), // white
         error = ColorResource(0xFFF09C6D), // laranja 60% alpha
         onPrimary = ColorResource(0xFFFFFFFF), // white
         onSecondary = ColorResource(0xFFFFFFFF), // white
@@ -137,7 +137,7 @@ abstract class Theme (
 
         contentPrimary =  ColorResource(0xFFFFFFFF), // white
         contentSecondary =  ColorResource(0xFFE95D0F), // laranja
-        backgroundPrimary = ColorResource(0xFFE95D0F), // laranja
+        backgroundPrimary = ColorResource(0xFF1894E1), // azul
         backgroundSecondary = ColorResource(0xFFFFFFFF), // white
         strokeSecondary = ColorResource(0xFFE95D0F), // laranja
         backgroundSecondaryAlpha = ColorResource(0x66FFFFFF), // white 40% alpha

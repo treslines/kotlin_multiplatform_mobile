@@ -11,4 +11,14 @@ object StringResources {
     val textfield_number_not_found = TextResource("textfield_number_not_found")
     val textfield_invalid_birthdate = TextResource("textfield_invalid_birthdate")
     val textfield_invalid_code = TextResource("textfield_invalid_code")
+
+    val dialog_title_force_update = TextResource("dialog_title_force_update")
+    val dialog_description_force_update = TextResource("dialog_description_force_update")
+    val dialog_primary_button_text_force_update = TextResource("dialog_primary_button_text_force_update")
+    val dialog_secondary_button_text_force_update = TextResource("dialog_secondary_button_text_force_update")
+
+    val dialog_title_cancel = TextResource("dialog_title_cancel")
+    val dialog_description_cancel = TextResource("dialog_description_cancel")
+    val dialog_primary_button_text_cancel = TextResource("dialog_primary_button_text_cancel")
+    val dialog_secondary_button_cancel = TextResource("dialog_secondary_button_cancel")
 }
