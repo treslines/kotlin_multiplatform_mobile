@@ -63,6 +63,8 @@ abstract class Theme (
     val loadingButtonActiveColor: ColorResource,
     val loadingButtonLoadingColor: ColorResource,
     val loadingButtonDisabledColor: ColorResource,
+
+    val scrimColor: ColorResource
 ) {
     object Dark : Theme (
 
@@ -109,6 +111,7 @@ abstract class Theme (
         contentCloseButton = ColorResource(0xFFFFFFFF), // white
         backgroundCloseButton = ColorResource(0xFFE95D0F), // laranja
         disabledBackgroundCloseButton = ColorResource(0x99131313), // back 60% alpha
+        scrimColor = ColorResource(0xFF707070)
     )
 
     object Light : Theme (
@@ -156,6 +159,7 @@ abstract class Theme (
         contentCloseButton = ColorResource(0xFF414141), // black 80% alpha
         backgroundCloseButton = ColorResource(0xFFEFEFEF), // black 5% alpha
         disabledBackgroundCloseButton = ColorResource(0x99131313), // back 60% alpha
+        scrimColor = ColorResource(0xFF707070)
     )
 }
 

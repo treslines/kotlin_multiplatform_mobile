@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.*
 import br.com.progdeelite.kmmprogdeelite.android.R
@@ -21,6 +23,7 @@ import br.com.progdeelite.kmmprogdeelite.viewmodels.EntryViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.SampleViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.ShimmerViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,12 +40,76 @@ class MainActivity : ComponentActivity() {
                 // ShimmerVid(shimmerViewModel)
                 // KtorVid(viewModel = entryViewModel)
                 // LoadingButtonVid()
-                CustomDialogVid()
+                // CustomDialogVid()
+                //ModalBottomSheetVid()
+                DefaultBottomSheetVid()
             }
         }
     }
 }
+@Composable
+@OptIn(ExperimentalMaterialApi::class)
+private fun ModalBottomSheetVid() {
+    val bottomSheetState = rememberModalBottomSheetState(
+        initialValue = ModalBottomSheetValue.Hidden,
+    )
 
+    val coroutineScope = rememberCoroutineScope()
+    val onBottomSheetAction = {
+        coroutineScope.launch {
+            if(bottomSheetState.isVisible) bottomSheetState.hide() else bottomSheetState.show()
+        }
+    }
+
+    ModalBottomSheet(
+        title = "Título do BottomSheet",
+        sheetState = bottomSheetState,
+        parentContent = {
+            DummyScreen(
+                modifier = Modifier.background(
+                    color = Color.LightGray
+                ),
+                name = "Exibir BottomSheet", onClick = { onBottomSheetAction() }
+            )
+        }
+    ) {
+        Text(text = "Conteúdo do BottomSheet")
+    }
+}
+
+@Composable
+@OptIn(ExperimentalMaterialApi::class)
+private fun DefaultBottomSheetVid() {
+
+    val sheet = rememberBottomSheetScaffoldState(
+        bottomSheetState = BottomSheetState(BottomSheetValue.Expanded)
+    )
+    val coroutineScope = rememberCoroutineScope()
+    val onBottomSheetAction = {
+        coroutineScope.launch {
+            if(sheet.bottomSheetState.isExpanded){
+                sheet.bottomSheetState.collapse()
+            } else {
+                sheet.bottomSheetState.expand()
+            }
+        }
+    }
+
+    BottomSheet(
+        title = "Título do BottomSheet",
+        scaffoldState = sheet,
+        parentContent = {
+            DummyScreen(
+                modifier = Modifier.background(
+                    color = Color.LightGray
+                ),
+                name = "Exibir DefaultBottomSheet", onClick = { onBottomSheetAction() }
+            )
+        }
+    ) {
+        Text(text = "Conteúdo do BottomSheet")
+    }
+}
 @Composable
 private fun CustomDialogVid() {
     Surface(
