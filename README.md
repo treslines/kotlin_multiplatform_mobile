@@ -34,6 +34,7 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 | W) **kmm_textfield_with_erro_states** <br/> Projeto com A) até X) como criar campo de texo e validar entradas de erro com estados em compose |  |
 | Y) **kmm_loading_button_lottie** <br/> Projeto com A) até W) como criar loading button com lottie em compose |  |
 | Z) **kmm_alert_dialog_compose** <br/> Projeto com A) até Y) como criar alert dialogs, popups, custom dialogs em jetpack compose |  |
+| A1) **kmm_bottom_sheet_modal** <br/> Projeto com A) até Z) como criar bottomsheet dialog modal e padrão em jetpack compose |  |
 
 
 # Posso Ajudar/Contribuir?
