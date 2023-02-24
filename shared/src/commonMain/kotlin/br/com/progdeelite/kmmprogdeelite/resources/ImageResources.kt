@@ -6,4 +6,7 @@ object ImageResources {
     val lamp = ImageResource("lamp")
     val fire = ImageResource("fire")
 
+    val flash = ImageResource("flash")
+    val wifi = ImageResource("wifi")
+
 }

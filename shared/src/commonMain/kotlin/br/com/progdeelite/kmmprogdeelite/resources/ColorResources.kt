@@ -53,6 +53,13 @@ abstract class Theme (
     val subtitle: ColorResource,
     val description: ColorResource,
 
+    val iconConnectivityOnline: ColorResource,
+    val iconConnectivityOffline: ColorResource,
+    val textConnectivityOnline: ColorResource,
+    val textConnectivityOffline: ColorResource,
+    val bgConnectivityOnline: ColorResource,
+    val bgConnectivityOffline: ColorResource,
+
     // textos
     val textFieldHintColor: ColorResource,
     val textFieldCursorColor: ColorResource,
@@ -80,6 +87,13 @@ abstract class Theme (
         onBackground = ColorResource(0xFF131313), // black
         onSurface = ColorResource(0xFF131313), // black
         onError = ColorResource(0xFFFFFFFF), // white
+
+        iconConnectivityOnline = ColorResource(0xFF00D80A),
+        iconConnectivityOffline = ColorResource(0xFFFFFFFF),
+        textConnectivityOnline = ColorResource(0xFF131313),
+        textConnectivityOffline = ColorResource(0xFFFFFFFF),
+        bgConnectivityOnline = ColorResource(0xFF76DA96),
+        bgConnectivityOffline = ColorResource(0xFFDC4657),
 
         textFieldHintColor = ColorResource(0xFF707070),
         textFieldCursorColor = ColorResource(0xFF131313),
@@ -128,6 +142,13 @@ abstract class Theme (
         onBackground = ColorResource(0xFF131313), // black
         onSurface = ColorResource(0xFF131313), // black
         onError = ColorResource(0xFFFFFFFF), // white
+
+        iconConnectivityOnline = ColorResource(0xFF00D80A),
+        iconConnectivityOffline = ColorResource(0xFFFFFFFF),
+        textConnectivityOnline = ColorResource(0xFF131313),
+        textConnectivityOffline = ColorResource(0xFFFFFFFF),
+        bgConnectivityOnline = ColorResource(0xFF76DA96),
+        bgConnectivityOffline = ColorResource(0xFFDC4657),
 
         textFieldHintColor = ColorResource(0xFF707070),
         textFieldCursorColor = ColorResource(0xFF131313),

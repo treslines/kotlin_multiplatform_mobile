@@ -21,4 +21,7 @@ object StringResources {
     val dialog_description_cancel = TextResource("dialog_description_cancel")
     val dialog_primary_button_text_cancel = TextResource("dialog_primary_button_text_cancel")
     val dialog_secondary_button_cancel = TextResource("dialog_secondary_button_cancel")
+
+    val connectivity_ct_device_online = TextResource("connectivity_device_online")
+    val connectivity_ct_device_offline = TextResource("connectivity_device_offline")
 }
