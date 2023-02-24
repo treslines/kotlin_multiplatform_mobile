@@ -18,6 +18,18 @@ actual class SurfaceDimensResource actual constructor(
     val roundedCorner: Double by lazy { roundedCornerUnit.toDouble() }
 }
 
+actual class DefaultPaddingsResource actual constructor(
+    private val defaultStart: Int,
+    private val defaultEnd: Int,
+    private val defaultTop: Int,
+    private val defaultBottom:Int
+){
+    val start: Double by lazy { defaultStart.toDouble() }
+    val end: Double by lazy { defaultEnd.toDouble() }
+    val top: Double by lazy { defaultTop.toDouble() }
+    val bottom: Double by lazy { defaultBottom.toDouble() }
+}
+
 actual class TextFieldDimensResource actual constructor(
     private val minWidthUnit: Int,
     private val minHeightUnit: Int,
