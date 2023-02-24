@@ -9,32 +9,33 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 # 🌳 **Branches**
 | Nome e Descrição da Branch | 📺 UML-Diagram |
 | :------------- |:-------------:|
-| A) **kmm_ready_to_use_sample_project** <br/> Projeto pronto para usar apenas com módulo de buildSrc (dependency management) | <img src="https://user-images.githubusercontent.com/1042887/197234681-21fea81a-38be-461b-a91d-e27b77998e9e.png" width="100" height="137"> |
-| B) **kmm_with_shared_viewmodel** <br/> Projeto com A) e viewmodel compartilhada em kmm | <img src="https://user-images.githubusercontent.com/1042887/197233894-bc4412e7-d399-4a3a-9bc1-63348ffb0280.png" width="100" height="137"> |
-| C) **kmm_with_viewmodel_and_mockk** <br/> Projeto com A), B) e framework de mock para testes mockk |  |
-| D) **kmm_viewmodel_mockk_database** <br/> Projeto com A), B), C) e banco de dados compartilhado sqldelight | <img src="https://user-images.githubusercontent.com/1042887/197234244-ea7403d4-53c0-49eb-8d8d-7f41a7737f7c.png" width="100" height="137"> |
-| E) **kmm_viewmodel_mockk_db_logger** <br/> Projeto com A), B), C), D) logger e shimmer | <img src="https://user-images.githubusercontent.com/1042887/197232046-d3361fb5-a4bd-4196-a4fd-78f5d296436d.png" width="100" height="137"> |
-| F) **kmm_with_instrumented_tests** <br/> Projeto com A), B), C), D), E) e testes instrumentados no androidMain |  |
-| G) **kmm_with_ktor** <br/> Projeto com A), B), C), D), E), F) e ktor com respository e viewmodel retornando flow | <img src="https://user-images.githubusercontent.com/1042887/202708517-d82c153e-0899-4644-b075-6201f8718810.png" width="100" height="137"> |
-| H) **kmm_shared_build_config** <br/> Projeto com A), B), C), D), E), F), G) e common config (buildConfig) compartilhado entre android e iOS | <img src="https://user-images.githubusercontent.com/1042887/206722841-6f64628b-8926-4e1d-9561-c73f509ddd38.png" width="100" height="137"> |
-| I) **kmm_shared_image_resource** <br/> Projeto com A), B), C), D), E), F), G), H) e imagens compartilhadas entre android e iOS | <img src="https://user-images.githubusercontent.com/1042887/209583722-7e9733b8-c892-4c9b-83cd-845fa9b3f7cb.png" width="100" height="137"> |
-| J) **kmm_di_and_text_resource** <br/> Projeto com A), B), C), D), E), F), G), H), I) e textos compartilhados entre android e iOS | <img src="https://user-images.githubusercontent.com/1042887/209583839-a1e1f41c-d806-4417-9b22-3730c411023a.png" width="100" height="137"> |
-| L) **kmm_shared_color_resource** <br/> Projeto com A), B), C), D), E), F), G), H), I), J) e cores compartilhadas entre android e iOS |  |
-| M) **kmm_responsive_windows_size** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L) e telas responsivas compartilhadas entre android e iOS |  |
-| N) **kmm_shared_settings** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M) e settings & preferências compartilhadas entre android e iOS |  |
-| O) **kmm_custom_style_fonts** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M), N) e estilos & fontes customizadas android |  |
-| P) **kmm_usage_color_resource** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M), N), P) e uso prático do recurso de cores (theme) android |  |
-| Q) **kmm_usage_spacing_resource** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M), N), P), O) e uso prático do recurso de dimens (spacing) android |  |
-| R) **kmm_shared_font_sizing** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M), N), P), O), Q) e uso prático do recurso de tamanho de textos (font sizing) android |  |
-| S) **kmm_custom_spacers** <br/> Projeto com A), B), C), D), E), F), G), H), I), J), L), M), N), P), O), Q), R) e uso prático do spacer customizado fazendo uso dos espaços compartilhados (spacing resource) android |  |
-| T) **kmm_custom_listview_item** <br/> Projeto com A) até S) e uso prático do list view item customizado fazendo uso do theme compartilhado (color resource) android |  |
-| U) **kmm_custom_button_set** <br/> Projeto com A) até T) e criação de um set de botões customizáveis jetpack compose android |  |
-| V) **kmm_shared_dimens_resource** <br/> Projeto com A) até U) e recursos de dimensões compartilhados em kmm e uso prático dos mesmos |  |
-| X) **kmm_debug_proguard_release** <br/> Projeto com A) até V) como depurar, ofuscar e otimizar tamanho de código com proguard em release |  |
-| W) **kmm_textfield_with_erro_states** <br/> Projeto com A) até X) como criar campo de texo e validar entradas de erro com estados em compose |  |
-| Y) **kmm_loading_button_lottie** <br/> Projeto com A) até W) como criar loading button com lottie em compose |  |
-| Z) **kmm_alert_dialog_compose** <br/> Projeto com A) até Y) como criar alert dialogs, popups, custom dialogs em jetpack compose |  |
-| A1) **kmm_bottom_sheet_modal** <br/> Projeto com A) até Z) como criar bottomsheet dialog modal e padrão em jetpack compose |  |
+| X1) **kmm_ready_to_use_sample_project** <br/> Projeto pronto para usar apenas com módulo de buildSrc (dependency management) | <img src="https://user-images.githubusercontent.com/1042887/197234681-21fea81a-38be-461b-a91d-e27b77998e9e.png" width="100" height="137"> |
+| X2) **kmm_with_shared_viewmodel** <br/> Projeto com X1) e viewmodel compartilhada em kmm | <img src="https://user-images.githubusercontent.com/1042887/197233894-bc4412e7-d399-4a3a-9bc1-63348ffb0280.png" width="100" height="137"> |
+| X3) **kmm_with_viewmodel_and_mockk** <br/> Projeto com X1-X2) e framework de mock para testes mockk |  |
+| X4) **kmm_viewmodel_mockk_database** <br/> Projeto com X1-X3) e banco de dados compartilhado sqldelight | <img src="https://user-images.githubusercontent.com/1042887/197234244-ea7403d4-53c0-49eb-8d8d-7f41a7737f7c.png" width="100" height="137"> |
+| X5) **kmm_viewmodel_mockk_db_logger** <br/> Projeto com X1-X4) logger e shimmer | <img src="https://user-images.githubusercontent.com/1042887/197232046-d3361fb5-a4bd-4196-a4fd-78f5d296436d.png" width="100" height="137"> |
+| X6) **kmm_with_instrumented_tests** <br/> Projeto com X1-X5) e testes instrumentados no androidMain |  |
+| X7) **kmm_with_ktor** <br/> Projeto com X1-X6) e ktor com respository e viewmodel retornando flow | <img src="https://user-images.githubusercontent.com/1042887/202708517-d82c153e-0899-4644-b075-6201f8718810.png" width="100" height="137"> |
+| X8) **kmm_shared_build_config** <br/> Projeto com X1-X7) e common config (buildConfig) compartilhado entre android e iOS | <img src="https://user-images.githubusercontent.com/1042887/206722841-6f64628b-8926-4e1d-9561-c73f509ddd38.png" width="100" height="137"> |
+| X9) **kmm_shared_image_resource** <br/> Projeto com X1-X8) e imagens compartilhadas entre android e iOS | <img src="https://user-images.githubusercontent.com/1042887/209583722-7e9733b8-c892-4c9b-83cd-845fa9b3f7cb.png" width="100" height="137"> |
+| X10) **kmm_di_and_text_resource** <br/> Projeto com X1-X9) e textos compartilhados entre android e iOS | <img src="https://user-images.githubusercontent.com/1042887/209583839-a1e1f41c-d806-4417-9b22-3730c411023a.png" width="100" height="137"> |
+| X11) **kmm_shared_color_resource** <br/> Projeto com X1-X10) e cores compartilhadas entre android e iOS |  |
+| X12) **kmm_responsive_windows_size** <br/> Projeto com X1-X11) e telas responsivas compartilhadas entre android e iOS |  |
+| X13) **kmm_shared_settings** <br/> Projeto com X1-X12) e settings & preferências compartilhadas entre android e iOS |  |
+| X14) **kmm_custom_style_fonts** <br/> Projeto com X1-X13) e estilos & fontes customizadas android |  |
+| X15) **kmm_usage_color_resource** <br/> Projeto com X1-X14) e uso prático do recurso de cores (theme) android |  |
+| X16) **kmm_usage_spacing_resource** <br/> Projeto com X1-X15) e uso prático do recurso de dimens (spacing) android |  |
+| X17) **kmm_shared_font_sizing** <br/> Projeto com X1-X16) e uso prático do recurso de tamanho de textos (font sizing) android |  |
+| X18) **kmm_custom_spacers** <br/> Projeto com X1-X17) e uso prático do spacer customizado fazendo uso dos espaços compartilhados (spacing resource) android |  |
+| X19) **kmm_custom_listview_item** <br/> Projeto com X1-X18) e uso prático do list view item customizado fazendo uso do theme compartilhado (color resource) android |  |
+| X20) **kmm_custom_button_set** <br/> Projeto com X1-X19) e criação de um set de botões customizáveis jetpack compose android |  |
+| X21) **kmm_shared_dimens_resource** <br/> Projeto com X1-X20) e recursos de dimensões compartilhados em kmm e uso prático dos mesmos |  |
+| X22) **kmm_debug_proguard_release** <br/> Projeto com X1-X21) como depurar, ofuscar e otimizar tamanho de código com proguard em release |  |
+| X23) **kmm_textfield_with_erro_states** <br/> Projeto com X1-X22) como criar campo de texo e validar entradas de erro com estados em compose |  |
+| X24) **kmm_loading_button_lottie** <br/> Projeto com X1-X23) como criar loading button com lottie em compose |  |
+| X25) **kmm_alert_dialog_compose** <br/> Projeto com X1-X24) como criar alert dialogs, popups, custom dialogs em jetpack compose |  |
+| X26) **kmm_bottom_sheet_modal** <br/> Projeto com X1-X25) como criar bottomsheet dialog modal e padrão em jetpack compose |  |
+| X27) **kmm_accessibility_text** <br/> Projeto com X1-X27) como tratar textos e fontes gigantes em aparelhos pequenos em jetpack compose |  |
 
 
 # Posso Ajudar/Contribuir?
