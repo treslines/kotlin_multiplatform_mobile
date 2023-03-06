@@ -37,7 +37,7 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 | X26) **kmm_bottom_sheet_modal** <br/> Projeto com X1-X25) como criar bottomsheet dialog modal e padrão em jetpack compose                                           |  |
 | X27) **kmm_accessibility_text** <br/> Projeto com X1-X26) como tratar textos e fontes gigantes em aparelhos pequenos em jetpack compose                             |  |
 | X28) **kmm_online_offline_message** <br/> Projeto com X1-X27) como monitorar e exibir mensagem de conectividade em jetpack compose                                  |  |
-| X29) **kmm_online_offline_message** <br/> Projeto com X1-X28) como expor e observar mudanças de estados em jetpack compose                                          |  |
+| X29) **kmm_observe_state_change** <br/> Projeto com X1-X28) como expor e observar mudanças de estados em jetpack compose                                          |  |
 
 
 # Posso Ajudar/Contribuir?
