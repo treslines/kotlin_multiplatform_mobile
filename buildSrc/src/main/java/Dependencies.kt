@@ -117,6 +117,8 @@ object Compose {
     const val uiGraphics = "androidx.compose.ui:ui-graphics:${Versions.uiGraphics}"
     const val shimmer = "com.valentinilk.shimmer:compose-shimmer:${Versions.shimmer}"
     const val lottie = "com.airbnb.android:lottie-compose:${Versions.lottie}"
+    const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.viewModel}"
+
 }
 
 object Ktor {
