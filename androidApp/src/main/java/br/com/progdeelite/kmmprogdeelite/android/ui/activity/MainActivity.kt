@@ -1,9 +1,12 @@
 package br.com.progdeelite.kmmprogdeelite.android.ui.activity
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -18,16 +21,31 @@ import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
 import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
 import br.com.progdeelite.kmmprogdeelite.di.DI
 import br.com.progdeelite.kmmprogdeelite.localization.DialogTexts
+import br.com.progdeelite.kmmprogdeelite.resources.Resources
 import br.com.progdeelite.kmmprogdeelite.utils.LoadingButtonState
 import br.com.progdeelite.kmmprogdeelite.viewmodels.EntryViewModel
+import br.com.progdeelite.kmmprogdeelite.viewmodels.MainActivityViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.SampleViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.ShimmerViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
+
+    private val model by viewModels<MainActivityViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Endereça auditoria de segurança: Hide Recent Thumbnails
+        window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            // Endereça auditoria de segurança: Hide Multi-Windows Mode
+            model.toggleHideThumbnailState(
+                hide = isInMultiWindowMode || isInPictureInPictureMode
+            )
+        }
 
         val viewModel = SampleViewModel()
         val shimmerViewModel = ShimmerViewModel()
@@ -35,14 +53,24 @@ class MainActivity : ComponentActivity() {
 
         Log.d("TESTANDO", DI.Native.environment.name)
         setContent {
+            val hideThumbnail by model.hideThumbnail.collectAsState()
+
             AndroidAppTheme {
-                // DatabaseVid(viewModel)
-                // ShimmerVid(shimmerViewModel)
-                // KtorVid(viewModel = entryViewModel)
-                // LoadingButtonVid()
-                // CustomDialogVid()
-                //ModalBottomSheetVid()
-                DefaultBottomSheetVid()
+                if (hideThumbnail) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(Resources.Theme.background.getColor())
+                    )
+                } else {
+                    // DatabaseVid(viewModel)
+                    // ShimmerVid(shimmerViewModel)
+                    // KtorVid(viewModel = entryViewModel)
+                    // LoadingButtonVid()
+                    // CustomDialogVid()
+                    //ModalBottomSheetVid()
+                    DefaultBottomSheetVid()
+                }
             }
         }
     }
@@ -57,7 +85,7 @@ private fun ModalBottomSheetVid() {
     val coroutineScope = rememberCoroutineScope()
     val onBottomSheetAction = {
         coroutineScope.launch {
-            if(bottomSheetState.isVisible) bottomSheetState.hide() else bottomSheetState.show()
+            if (bottomSheetState.isVisible) bottomSheetState.hide() else bottomSheetState.show()
         }
     }
 
@@ -87,7 +115,7 @@ private fun DefaultBottomSheetVid() {
     val coroutineScope = rememberCoroutineScope()
     val onBottomSheetAction = {
         coroutineScope.launch {
-            if(sheet.bottomSheetState.isExpanded){
+            if (sheet.bottomSheetState.isExpanded) {
                 sheet.bottomSheetState.collapse()
             } else {
                 sheet.bottomSheetState.expand()
@@ -110,27 +138,28 @@ private fun DefaultBottomSheetVid() {
         Text(text = "Conteúdo do BottomSheet")
     }
 }
+
 @Composable
 private fun CustomDialogVid() {
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colors.background
     ) {
-        var showForceUpdateDialog by remember{ mutableStateOf(false) }
-        var showCancelDialog by remember{ mutableStateOf(false) }
+        var showForceUpdateDialog by remember { mutableStateOf(false) }
+        var showCancelDialog by remember { mutableStateOf(false) }
 
         Column(modifier = Modifier.padding(12.dp)) {
-            if(showForceUpdateDialog){
+            if (showForceUpdateDialog) {
                 CustomDialog(
                     dialogTexts = DialogTexts.ForceUpdate,
-                    primaryButtonAction = {showForceUpdateDialog = false},
-                    secondaryButtonAction = {showForceUpdateDialog = false}
+                    primaryButtonAction = { showForceUpdateDialog = false },
+                    secondaryButtonAction = { showForceUpdateDialog = false }
                 )
             }
-            if(showCancelDialog) {
+            if (showCancelDialog) {
                 CustomDialog(
                     dialogTexts = DialogTexts.Cancel,
-                    primaryButtonAction = {showCancelDialog = false}
+                    primaryButtonAction = { showCancelDialog = false }
                 )
             }
             PrimaryButton(

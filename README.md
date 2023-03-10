@@ -39,6 +39,7 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 | X28) **kmm_online_offline_message** <br/> Projeto com X1-X27) como monitorar e exibir mensagem de conectividade em jetpack compose                                  |  |
 | X29) **kmm_observe_state_change** <br/> Projeto com X1-X28) como expor e observar mudanças de estados em jetpack compose                                            |  |
 | X30) **kmm_draw_bezier_curve** <br/> Projeto com X1-X29) como desenhar curvas cóncavas e convex em views e componentes jetpack compose                              |  |
+| X31) **kmm_hide_recent_thumbnails** <br/> Projeto com X1-X30) como inibir usuário de fazer screenhots de tela e ocultar recente thumbnails jetpack compose          |  |
 
 
 # Posso Ajudar/Contribuir?
