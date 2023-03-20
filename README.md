@@ -122,7 +122,7 @@ Algum dos meus vídeos, posts ou repositórios te salvou muito tempo ou te ajudo
 Você prefere um conteúdo por escrito de **alta qualidade** e **extremamente didático** em Português? Da uma olhada aqui: https://bit.ly/techblogGb 
 ![image](https://user-images.githubusercontent.com/1042887/170555703-f4323c08-2bda-43a1-b42e-37d8fb7463b9.png)
 
-# ⛓️ CONECTE-SE COMIGO
+# ⛓️ CONECTE-SE COMIGO - ONE MORE THING... (ENCONTROU!)
 - 🧲 | Telegram: networking gratuito ► https://bit.ly/telegramGb
 - 🧲 | Discord: conteúdo seleto ►  https://bit.ly/discordGb
 - 🧲 | Techblog: system design ► https://bit.ly/techblogGb
