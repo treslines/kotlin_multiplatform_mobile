@@ -41,7 +41,8 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 | X30) **kmm_draw_bezier_curve** <br/> Projeto com X1-X29) como desenhar curvas cóncavas e convex em views e componentes jetpack compose                              |  |
 | X31) **kmm_hide_recent_thumbnails** <br/> Projeto com X1-X30) como inibir usuário de fazer screenhots de tela e ocultar recente thumbnails jetpack compose          |  |
 | X32) **kmm_open_email_clients** <br/> Projeto com X1-X31) como abrir apenas clientes de email e phone number kotlin multiplatform mobile                            |  |
-| X33) **kmm_lessons_learned** <br/> Projeto com X1-X32) lições aprendidadas e como compartilhar classes entre android e iOS                            |  |
+| X33) **kmm_lessons_learned** <br/> Projeto com X1-X32) lições aprendidadas e como compartilhar classes entre android e iOS                                          |  |
+| X34) **kmm_adobe_analytics** <br/> Projeto com X1-X33) como rastrear eventos do usuário com adobe analytics em kmm com compose                                      |  |
 
 
 # Posso Ajudar/Contribuir?
