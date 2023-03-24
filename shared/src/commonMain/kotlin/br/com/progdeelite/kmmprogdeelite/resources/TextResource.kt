@@ -1,6 +1,7 @@
 package br.com.progdeelite.kmmprogdeelite.resources
 
 import br.com.progdeelite.kmmprogdeelite.di.DI.inject
+import br.com.progdeelite.kmmprogdeelite.di.DI.injectInternal
 import br.com.progdeelite.kmmprogdeelite.localization.LocalizationService
 
 // 1) Definir dependencias
@@ -21,7 +22,7 @@ import br.com.progdeelite.kmmprogdeelite.localization.LocalizationService
 class TextResource(val name: String) {
 
     private var _text: String = ""
-    private val service by inject<LocalizationService>()
+    private val service by injectInternal<LocalizationService>()
 
     private fun localized(): String {
         return _text.ifBlank { service.lokalise(name) }

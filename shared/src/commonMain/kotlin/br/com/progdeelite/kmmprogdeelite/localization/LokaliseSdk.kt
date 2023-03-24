@@ -1,7 +1,7 @@
 package br.com.progdeelite.kmmprogdeelite.localization
 
 /** common interface for lokalise.com */
-interface Lokalisable {
+interface LokaliseSdk {
     /**
      * @param stringRef string reference stored in the cloud from lokalise.com
      */

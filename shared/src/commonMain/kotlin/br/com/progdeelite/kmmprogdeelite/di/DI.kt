@@ -1,13 +1,17 @@
 package br.com.progdeelite.kmmprogdeelite.di
 
+import br.com.progdeelite.kmmprogdeelite.di.DI.Native.adobeAnalyticsSdk
 import br.com.progdeelite.kmmprogdeelite.di.DI.Native.environment
-import br.com.progdeelite.kmmprogdeelite.di.DI.Native.lokalisable
+import br.com.progdeelite.kmmprogdeelite.di.DI.Native.lokaliseSdk
 import br.com.progdeelite.kmmprogdeelite.localization.Localization
 import br.com.progdeelite.kmmprogdeelite.localization.LocalizationService
-import br.com.progdeelite.kmmprogdeelite.localization.Lokalisable
+import br.com.progdeelite.kmmprogdeelite.localization.LokaliseSdk
 import br.com.progdeelite.kmmprogdeelite.network.Environment
 import br.com.progdeelite.kmmprogdeelite.settings.AppSettings
 import br.com.progdeelite.kmmprogdeelite.settings.SettingsService
+import br.com.progdeelite.kmmprogdeelite.tracking.adobe.AdobeAnalyticsSdk
+import br.com.progdeelite.kmmprogdeelite.tracking.adobe.AnalyticsService
+import br.com.progdeelite.kmmprogdeelite.tracking.adobe.AnalyticsTracker
 import kotlin.native.concurrent.ThreadLocal
 
 // 1) Renomear AndroidApp para AndroidMainApp e criar IOSMainApp
@@ -33,17 +37,26 @@ object DI {
     object Native {
         // 1)
         lateinit var environment: Environment // 2) will be initialized in MainApplication/UIApplicationDelegate
-        lateinit var lokalisable: Lokalisable
+        lateinit var lokaliseSdk: LokaliseSdk
+        lateinit var adobeAnalyticsSdk: AdobeAnalyticsSdk
     }
 
     inline fun <reified T> inject(): Lazy<T> {
         // 3)
         return when (T::class) {
             Environment::class -> lazy { environment as T }
-            Lokalisable::class -> lazy { lokalisable as T }
-            LocalizationService::class -> lazy { Localization() as T }
+            LokaliseSdk::class -> lazy { lokaliseSdk as T }
+            AdobeAnalyticsSdk::class -> lazy { adobeAnalyticsSdk as T }
             SettingsService::class -> lazy { AppSettings() as T }
             else -> throw IllegalArgumentException("Dependency not found! Specify class \"${T::class.qualifiedName}\" in DI.inject()")
+        }
+    }
+
+    internal inline fun <reified T> injectInternal(): Lazy<T> {
+        return when (T::class) {
+            AnalyticsService::class -> lazy { AnalyticsTracker() as T }
+            LocalizationService::class -> lazy { Localization() as T }
+            else -> throw IllegalArgumentException("Dependency not found! Specify class \"${T::class.qualifiedName}\" in DI.injectInternal()")
         }
     }
 

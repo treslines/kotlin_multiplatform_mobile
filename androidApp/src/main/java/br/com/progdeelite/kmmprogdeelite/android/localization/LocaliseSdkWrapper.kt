@@ -2,9 +2,8 @@ package br.com.progdeelite.kmmprogdeelite.android.localization
 
 import android.content.Context
 import br.com.progdeelite.kmmprogdeelite.android.BuildConfig
-import br.com.progdeelite.kmmprogdeelite.android.CommonConfig
 import br.com.progdeelite.kmmprogdeelite.localization.Language
-import br.com.progdeelite.kmmprogdeelite.localization.Lokalisable
+import br.com.progdeelite.kmmprogdeelite.localization.LokaliseSdk
 import br.com.progdeelite.kmmprogdeelite.utils.CommonLoggerImpl
 import com.lokalise.sdk.Lokalise
 import com.lokalise.sdk.LokaliseCallback
@@ -12,7 +11,7 @@ import com.lokalise.sdk.LokaliseResources
 import com.lokalise.sdk.LokaliseUpdateError
 import java.util.Locale
 
-class AndroidLocalisable (private val appContext: Context): Lokalisable {
+class LocaliseSdkWrapper (private val appContext: Context): LokaliseSdk {
 
     init {
         // TODO: comentado pois não esta sendo usado no projeto, apenas para fins didáticos

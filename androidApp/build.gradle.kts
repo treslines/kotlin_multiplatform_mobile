@@ -112,6 +112,11 @@ dependencies {
     // LOKALISE
     implementation(Translation.lokaliseSdk)
 
+    // ADOBE
+    implementation(Adobe.core)
+    implementation(Adobe.analytics)
+    implementation(Adobe.sdkCore)
+
     // TESTING
     testImplementation(Test.junit)
     androidTestImplementation(TestUi.extJunit)

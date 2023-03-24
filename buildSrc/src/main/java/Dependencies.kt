@@ -42,15 +42,15 @@ object Versions {
     const val espressoCore = "3.4.0"
     const val uiUnitTest = "1.1.0-beta01"
     const val kotlin = "1.7.10"
-    const val pluginAndroidLib = "7.3.0"
-    const val pluginAndroidApp = "7.3.0"
+    const val pluginAndroidLib = "7.4.2"
+    const val pluginAndroidApp = "7.4.2"
     const val viewModel = "2.5.1"
     const val kotlinx = "1.6.4"
     const val mockkCommon = "1.12.5"
     const val mockkCore = "1.13.2"
     const val sqlDelight = "1.5.3"
     const val kotlinSerializationCore = "1.3.2"
-    const val buildTools = "7.3.0"
+    const val buildTools = "7.4.2"
     const val shimmer = "1.0.3"
     const val espresso = "3.4.0"
     const val ktor = "2.1.2" // Releases > https://ktor.io/
@@ -62,6 +62,10 @@ object Versions {
     const val settings = "1.0.0-RC"
     const val preferences = "1.2.0"
     const val lottie = "5.2.0"
+
+    const val adobeSdkCore = "1.+"
+    const val adobeCore = "1.11.4"
+    const val adobeAnalytics = "1.2.10"
 }
 
 object Jetbrains {
@@ -84,6 +88,12 @@ object SqlDelight {
     const val driverIos = "com.squareup.sqldelight:native-driver:${Versions.sqlDelight}"
     const val databasePackage = "br.com.progdeelite.kmmprogdeelite.database"
     const val databaseScheme = "CommonDatabase"
+}
+
+object Adobe {
+    const val sdkCore = "com.adobe.marketing.mobile:sdk-core:${Versions.adobeSdkCore}"
+    const val core = "com.adobe.marketing.mobile:core:${Versions.adobeCore}"
+    const val analytics = "com.adobe.marketing.mobile:analytics:${Versions.adobeAnalytics}"
 }
 
 /**
