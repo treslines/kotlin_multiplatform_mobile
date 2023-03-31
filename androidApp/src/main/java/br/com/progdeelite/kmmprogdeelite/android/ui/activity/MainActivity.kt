@@ -15,8 +15,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.*
+import androidx.navigation.compose.rememberNavController
 import br.com.progdeelite.kmmprogdeelite.android.R
 import br.com.progdeelite.kmmprogdeelite.android.ui.components.*
+import br.com.progdeelite.kmmprogdeelite.android.ui.screens.AnimationScreen
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
 import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
 import br.com.progdeelite.kmmprogdeelite.di.DI
@@ -38,7 +40,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         // Endereça auditoria de segurança: Hide Recent Thumbnails
-        window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+        // window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             // Endereça auditoria de segurança: Hide Multi-Windows Mode
@@ -68,12 +70,18 @@ class MainActivity : ComponentActivity() {
                     // KtorVid(viewModel = entryViewModel)
                     // LoadingButtonVid()
                     // CustomDialogVid()
-                    //ModalBottomSheetVid()
-                    DefaultBottomSheetVid()
+                    // ModalBottomSheetVid()
+                    // DefaultBottomSheetVid()
+                    SplashWithLottieVid()
                 }
             }
         }
     }
+}
+
+@Composable
+private fun SplashWithLottieVid() {
+    AnimationScreen(navController = rememberNavController())
 }
 @Composable
 @OptIn(ExperimentalMaterialApi::class)

@@ -48,7 +48,7 @@ interface AdobeAnalyticsSdk {
 interface AnalyticsService {
 
     companion object {
-        private val instance by DI.injectInternal<AnalyticsService>()
+        val instance by DI.injectInternal<AnalyticsService>()
     }
 
     fun trackScreen(screen: ScreenInfo, contextData: Map<String, String>? = null)

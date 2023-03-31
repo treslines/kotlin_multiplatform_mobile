@@ -107,6 +107,7 @@ dependencies {
     implementation(Compose.materialIconsExtended)
     implementation(Compose.shimmer)
     implementation(Compose.lottie)
+    implementation(Compose.navigation)
     implementation(Compose.viewModelCompose)
 
     // LOKALISE

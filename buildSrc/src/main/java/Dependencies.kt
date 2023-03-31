@@ -66,6 +66,8 @@ object Versions {
     const val adobeSdkCore = "1.+"
     const val adobeCore = "1.11.4"
     const val adobeAnalytics = "1.2.10"
+
+    const val navigation = "2.5.3"
 }
 
 object Jetbrains {
@@ -127,6 +129,7 @@ object Compose {
     const val uiGraphics = "androidx.compose.ui:ui-graphics:${Versions.uiGraphics}"
     const val shimmer = "com.valentinilk.shimmer:compose-shimmer:${Versions.shimmer}"
     const val lottie = "com.airbnb.android:lottie-compose:${Versions.lottie}"
+    const val navigation = "androidx.navigation:navigation-compose:${Versions.navigation}"
     const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.viewModel}"
 
 }
