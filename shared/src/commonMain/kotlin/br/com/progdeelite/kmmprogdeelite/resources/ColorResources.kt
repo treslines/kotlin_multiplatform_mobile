@@ -2,6 +2,9 @@ package br.com.progdeelite.kmmprogdeelite.resources
 
 import kotlin.native.concurrent.ThreadLocal
 
+// VIDEO THEME E CORES COMPARTILHADAS (ASSISTA, VC VAI PRECISAR 100%):
+// 1) https://youtu.be/NtI-MWFGUBE
+// 2) https://youtu.be/kzbKuNtegkc
 @ThreadLocal
 object ColorResources {
     internal fun getTheme(): Theme = if (isSystemInDarkMode()) Theme.Dark else Theme.Light
@@ -71,7 +74,10 @@ abstract class Theme (
     val loadingButtonLoadingColor: ColorResource,
     val loadingButtonDisabledColor: ColorResource,
 
-    val scrimColor: ColorResource
+    val scrimColor: ColorResource,
+
+    val selectedContentColor: ColorResource,
+    val unselectedContentColor: ColorResource,
 ) {
     object Dark : Theme (
 
@@ -125,7 +131,10 @@ abstract class Theme (
         contentCloseButton = ColorResource(0xFFFFFFFF), // white
         backgroundCloseButton = ColorResource(0xFFE95D0F), // laranja
         disabledBackgroundCloseButton = ColorResource(0x99131313), // back 60% alpha
-        scrimColor = ColorResource(0xFF707070)
+        scrimColor = ColorResource(0xFF707070),
+
+        selectedContentColor = ColorResource(0xFFE95D0F), // laranja
+        unselectedContentColor = ColorResource(0x99131313), // back 60% alpha
     )
 
     object Light : Theme (
@@ -180,7 +189,10 @@ abstract class Theme (
         contentCloseButton = ColorResource(0xFF414141), // black 80% alpha
         backgroundCloseButton = ColorResource(0xFFEFEFEF), // black 5% alpha
         disabledBackgroundCloseButton = ColorResource(0x99131313), // back 60% alpha
-        scrimColor = ColorResource(0xFF707070)
+        scrimColor = ColorResource(0xFF707070),
+
+        selectedContentColor = ColorResource(0xFFE95D0F), // laranja
+        unselectedContentColor = ColorResource(0x99131313), // back 60% alpha
     )
 }
 

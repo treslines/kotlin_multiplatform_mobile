@@ -9,4 +9,10 @@ object ImageResources {
     val flash = ImageResource("flash")
     val wifi = ImageResource("wifi")
 
+    // VIDEO IMAGENS E ASSETS COMPARTILHADOS (ASSISTA, VC VAI PRECISAR 100%): https://youtu.be/ukXx8mD9Lmo
+    val home = ImageResource("home")
+    val insurance = ImageResource("insurance")
+    val support = ImageResource("support")
+    val profile = ImageResource("profile")
+
 }

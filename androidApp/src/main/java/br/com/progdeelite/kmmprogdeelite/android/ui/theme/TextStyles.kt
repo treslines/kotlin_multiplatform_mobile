@@ -5,6 +5,8 @@ import androidx.compose.ui.text.font.toFontFamily
 import androidx.compose.ui.unit.sp
 import br.com.progdeelite.kmmprogdeelite.resources.Resources
 
+// VIDEO FONTES E ESTILOS CUSTOMIZADOS
+// ASSISTA, VC VAI PRECISAR: https://youtu.be/7ZGF2muCeq4
 /** Centralizes App text styles */
 object TextStyles {
     val h0 = TextStyle(
@@ -64,5 +66,11 @@ object TextStyles {
         fontStyle = FontTypes.ttNormsMedium.style,
         fontSize = Resources.FontSizing.small.size,
         lineHeight = Resources.FontSizing.small.lineHeight
+    )
+    val navBarItem = TextStyle(
+        fontFamily = FontTypes.ttNormsBold.toFontFamily(),
+        fontWeight = FontTypes.ttNormsBold.weight,
+        fontSize = 13.sp,
+        fontStyle = FontTypes.ttNormsBold.style
     )
 }

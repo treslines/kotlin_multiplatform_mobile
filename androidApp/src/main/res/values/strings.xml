@@ -21,4 +21,10 @@
 
     <string name="connectivity_device_online">You are online again</string>
     <string name="connectivity_device_offline">You are offline</string>
+
+    <string name="nav_bar_home">Home</string>
+    <string name="nav_bar_insurance">Seguro</string>
+    <string name="nav_bar_support">Suporte</string>
+    <string name="nav_bar_profile">Perfil</string>
+
 </resources>
