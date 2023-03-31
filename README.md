@@ -5,6 +5,16 @@ Desafios e resoluções a problemas relacionados ao desenvolvimento multiplatafo
 Um projeto template já configurado com o modulo de dependencias para iniciar seu projeto multiplataforma móvel assim como vários vídeos com resoluções aos desafios comuns em um projeto kmm (vide branches abaixo)
   - techblog vantagens buildSrc: https://bit.ly/buildSrc
 
+
+# ⛓️ ANTES DE CONTINUAR, CONECTE-SE COMIGO!
+- 🧲 | Telegram: networking gratuito ► https://bit.ly/telegramGb
+- 🧲 | Discord: conteúdo seleto ►  https://bit.ly/discordGb
+- 🧲 | Techblog: system design ► https://bit.ly/techblogGb
+- 🧲 | Twitter: posts semanais ►  https://bit.ly/twitterGb
+- 🧲 | Tiktok: dicas e resenha ►  https://bit.ly/tiktokGb
+- 🧲 | LinkedIn: seja encontrado por recrutadores ► https://bit.ly/linkedinGb
+- 🧲 | Github: deixa uma estrelinha ► https://github.com/treslines
+
 ### Branches
 # 🌳 **Branches**
 | Nome e Descrição da Branch                                                                                                                                          | 📺 UML-Diagram |
@@ -102,8 +112,10 @@ Seja também um multiplicador de conhecimento. Mostre esse repositório para sua
 | ✔️ [OBSERVAR ESTADO] COMO EXPOR E USAR ESTADOS EM JETPACK COMPOSE ANDROID? | <a href="https://youtu.be/9z1qasdG_EM" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BOBSERVAR-ESTADO%5D-COMO-EXPOR-E-USAR-ESTADOS-EM-JETPACK-COMPOSE-ANDROID.png" width="100" height="56"></a> |
 | ✔️ CURVA BEZIER - COMO DESENHAR CURVA CÓNCAVA EM VIEWS E COMPONENTES JETPACK COMPOSE? | <a href="https://youtu.be/tnfXZXxOT7c" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BCURVA-BEZIER%5D-COMO-DESENHAR-CURVA-C%C3%93NCAVA-EM-VIEWS-E-COMPONENTES-JETPACK-COMPOSE.png" width="100" height="56"></a> |
 | ✔️ PROIBIR SCREENSHOTS - COMO IMPEDIR USUÁRIO DE FAZER PRINT SCREEN DA TELA EM JETPACK COMPOSE? | <a href="https://youtu.be/2SlMYdlykSE" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BPROIBIR-SCREENSHOTS%5D-COMO-IMPEDIR-USU%C3%81RIO-DE-FAZER-PRINT-SCREEN-DA-TELA-EM-JETPACK-COMPOSE.png" width="100" height="56"></a> |
-| **🚩 AGENDADO: 27/03/2023** ✔️ ENVIAR EMAILS - COMO EXIBIR APENAS CONTAS DE EMAIL INSTALADAS NO CELULAR EM JETPACK COMPOSE? | <a href="https://youtu.be/EYRFwIiV8D8" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BENVIAR%20EMAILS%5D-COMO-EXIBIR-APENAS-CONTAS-DE-EMAIL-INSTALADAS-NO-CELULAR-EM-JETPACK-COMPOSE.png" width="100" height="56"></a> |
-| **🚩 AGENDADO: 30/03/2023** ✔️ LICÕES APRENDIDAS - ERROS COMUNS AO COMPARTILHAR RECURSO EM ANDROID E IOS KOTLIN MULTIPLATFORM? | <a href="https://youtu.be/l55tPCHIC6c" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BLIC%C3%95ES-APRENDIDAS%5D-ERROS-COMUNS-AO-COMPARTILHAR-RECURSO-ENTRE-ANDROID-E-IOS-KOTLIN-MULTIPLATFORM.png" width="100" height="56"></a> |
+| ✔️ ENVIAR EMAILS - COMO EXIBIR APENAS CONTAS DE EMAIL INSTALADAS NO CELULAR EM JETPACK COMPOSE? | <a href="https://youtu.be/EYRFwIiV8D8" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BENVIAR%20EMAILS%5D-COMO-EXIBIR-APENAS-CONTAS-DE-EMAIL-INSTALADAS-NO-CELULAR-EM-JETPACK-COMPOSE.png" width="100" height="56"></a> |
+| ✔️ LICÕES APRENDIDAS - ERROS COMUNS AO COMPARTILHAR RECURSO EM ANDROID E IOS KOTLIN MULTIPLATFORM? | <a href="https://youtu.be/l55tPCHIC6c" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BLIC%C3%95ES-APRENDIDAS%5D-ERROS-COMUNS-AO-COMPARTILHAR-RECURSO-ENTRE-ANDROID-E-IOS-KOTLIN-MULTIPLATFORM.png" width="100" height="56"></a> |
+| **🚩 AGENDADO: 03/04/2023** ✔️ ADOBE ANALYTICS - COMO RASTREAR EVENTOS DE USUÁRIOS COM ADOBE ANALYTICS EM JETPACK COMPOSE? | <a href="https://youtu.be/tLM0HUQc7pA" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BADOBE-ANALYTICS%5D-COMO-RASTREAR-EVENTOS-DE-USU%C3%81RIOS-COM-ADOBE-ANALYTICS-EM-JETPACK-COMPOSE.png" width="100" height="56"></a> |
+| **🚩 AGENDADO: 06/04/2023** ✔️ LOTTIE ANIMATION - COMO FAZER SPLASH SCREEN ANIMADA COM ANIMAçÃO DE LOTTIE EM JETPACK COMPOSE? | <a href="https://youtu.be/qeurKOMugIU" target="_blank"><img src="https://github.com/treslines/android_compose_arsenal/blob/main/app/src/main/mini/%5BLOTTIE-ANIMATION%5D-COMO-FAZER-SPLASH-SCREEN-ANIMADA-COM-ANIMA%C3%A7%C3%83O-DE-LOTTIE-EM-JETPACK-COMPOSE.png" width="100" height="56"></a> |
 
 # Ta Curtindo? 
 Algum dos meus vídeos, posts ou repositórios te salvou muito tempo ou te ajudou no trabalho? Não é clichê não, eu produzo mais com café mesmo. 😁 É minha gasolina ⛽️ Me presentea com um café aqui: https://bit.ly/umCafeGb
