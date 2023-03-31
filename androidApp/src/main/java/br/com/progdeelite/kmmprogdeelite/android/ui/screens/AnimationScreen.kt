@@ -20,6 +20,7 @@ import com.airbnb.lottie.compose.*
 // 3) CRIAR TELA DE ANIMAçÃO - BAIXAR AQUI: https://lottiefiles.com/featured
 // 4) USAR ADOBE ANALYTICS PARA RASTREAR USUÁRIO
 
+// ASSISTA O VIDEO SPLASH SCREEN, VC VAI PRECISAR: https://youtu.be/qeurKOMugIU
 @Composable
 fun AnimationScreen(navController: NavHostController) {
     Column(
@@ -47,6 +48,6 @@ private fun navigateToHome(navController: NavHostController, splashAnimationStat
     if (splashAnimationState.isAtEnd && splashAnimationState.isPlaying) {
         AnalyticsService.instance.trackScreen(ScreenInfo.AnimationScreen)
         navController.popBackStack()
-        navController.navigate(Navigator.onboardingGraph.root)
+        navController.navigate(Navigator.homeGraph.root)
     }
 }

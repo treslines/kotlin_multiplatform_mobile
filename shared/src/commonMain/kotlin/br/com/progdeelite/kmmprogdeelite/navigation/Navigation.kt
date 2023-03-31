@@ -64,6 +64,8 @@ object StartGraph {
     const val start = "start"
 }
 
+// ERRO COMUM: ROTAS REPETIDAS EM GRAFICOS DIFERENTES
+// ESSES ID's TEM QUE SER UNICOS
 object BottomNavGraph {
     const val root = "nav_graph"
     const val home = "nav_home"

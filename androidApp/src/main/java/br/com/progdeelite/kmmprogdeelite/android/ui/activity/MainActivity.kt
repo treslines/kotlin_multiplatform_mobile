@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.*
 import androidx.navigation.compose.rememberNavController
 import br.com.progdeelite.kmmprogdeelite.android.R
 import br.com.progdeelite.kmmprogdeelite.android.ui.components.*
+import br.com.progdeelite.kmmprogdeelite.android.ui.navigation.RootNavigationGraph
 import br.com.progdeelite.kmmprogdeelite.android.ui.screens.AnimationScreen
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
 import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
@@ -59,11 +60,7 @@ class MainActivity : ComponentActivity() {
 
             AndroidAppTheme {
                 if (hideThumbnail) {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .background(Resources.Theme.background.getColor())
-                    )
+                    Box(modifier = Modifier.fillMaxSize().background(Resources.Theme.background.getColor()))
                 } else {
                     // DatabaseVid(viewModel)
                     // ShimmerVid(shimmerViewModel)
@@ -72,11 +69,17 @@ class MainActivity : ComponentActivity() {
                     // CustomDialogVid()
                     // ModalBottomSheetVid()
                     // DefaultBottomSheetVid()
-                    SplashWithLottieVid()
+                    // SplashWithLottieVid()
+                    NavigationVid()
                 }
             }
         }
     }
+}
+
+@Composable
+fun NavigationVid() {
+    RootNavigationGraph()
 }
 
 @Composable
