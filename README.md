@@ -54,6 +54,7 @@ Um projeto template já configurado com o modulo de dependencias para iniciar se
 | X33) **kmm_lessons_learned** <br/> Projeto com X1-X32) lições aprendidadas e como compartilhar classes entre android e iOS                                          |  |
 | X34) **kmm_adobe_analytics** <br/> Projeto com X1-X33) como rastrear eventos do usuário com adobe analytics em kmm com compose                                      |  |
 | X35) **kmm_splah_with_lottie** <br/> Projeto com X1-X34) como fazer splash screen animada com animação de lottie em jetpack compose                                 |  |
+| X36) **kmm_bottom_bar_item** <br/> Projeto com X1-X35) como implementar bottom bar item e bottomNavigationBar em jetpack compose                                    |  |
 
 
 # Posso Ajudar/Contribuir?
