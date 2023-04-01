@@ -1,12 +1,13 @@
 # 🇵🇹 🇧🇷 Kotlin Multiplatform Mobile (KMM)
-Desafios e resoluções a problemas relacionados ao desenvolvimento multiplataforma para mobile. Uma playlist imperdível do zero de quem teve que criar um projeto do zero. Conto os problemas que passei, como contornei, soluções encontradas, desafios etc. Pretendo documentar tudo aqui com código e videos no youtube para te ajudar. 
+Desafios e resoluções a problemas relacionados ao desenvolvimento multiplataforma para mobile. Uma playlist imperdível do zero de quem teve que criar um projeto "from scratch". Conto os problemas que passei, como contornei, soluções encontradas, desafios etc. Pretendo documentar tudo aqui com código e videos no youtube para te ajudar. E NÃO ESQUECE DE ME DEIXAR UMA ESTRELINHA ⭐, ASSIM VOCÊ ME COMUNICA, QUE ESTA GOSTANDO!
 
-# O que você vai encontrar aqui?
-Um projeto template já configurado com o modulo de dependencias para iniciar seu projeto multiplataforma móvel assim como vários vídeos com resoluções aos desafios comuns em um projeto kmm (vide branches abaixo)
-  - techblog vantagens buildSrc: https://bit.ly/buildSrc
+# Estrutura deste github didático
+Para cada vídeo eu criei uma branch. Assim você poderá acompanhar a evolução do código e ver os vídeos com as versões do código do jeito que ele se apresentava no ato da gravação. Adicionalmente eu também estou publicando e documentando as decisões arquiteturais no meu techblog com maior grau de detalhe, caso você queira se aprofundar ou entender melhor, porque certas coisas foram feitas da maneira que foram apresentadas nos vídeos.
+  - link techblog: https://bit.ly/buildSrc
 
 
 # ⛓️ ANTES DE CONTINUAR, CONECTE-SE COMIGO!
+Networking é uma das coisas mais importantes na área de TI. (Se não a mais importante) **Em tempos de tantos layoffs, uma boa rede de contatos é indispensável**. Portanto, comece a criar sua rede de networking o quanto antes. Você irá me agradecer no futuro.  **Não sabe por onde começar?** Conecte-se comigo e participe dos nossos grupos de ajuda e networking. O pessoal é super ativo, colaborativo e nos ajudamos uns aos outros. 
 - 🧲 | Telegram: networking gratuito ► https://bit.ly/telegramGb
 - 🧲 | Discord: conteúdo seleto ►  https://bit.ly/discordGb
 - 🧲 | Techblog: system design ► https://bit.ly/techblogGb
