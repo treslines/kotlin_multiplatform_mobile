@@ -16,6 +16,15 @@ Networking é uma das coisas mais importantes na área de TI. (Se não a mais im
 - 🧲 | LinkedIn: seja encontrado por recrutadores ► https://bit.ly/linkedinGb
 - 🧲 | Github: deixa uma estrelinha ► https://github.com/treslines
 
+
+# Conhecimento bom é conhecimento compartilhado
+Seja também um multiplicador de conhecimento. Mostre esse repositório para sua **COMUNIDADE/GRUPO/SLACK MOBILE** Com o textinho abaixo eu facilito para você como mostrar esse repositório para seus amigos ou companheiros de trabalho. Apenas copia o texto abaixo e posta nas suas redes sociais. **Conhecimento bom é conhecimento compartilhado** Conto com seu apoio e ajuda!
+
+| 👇 Texto com link para postar nas redes sociais 👇 |
+| :------------- |
+| Repositório bacana em Português 🇵🇹 🇧🇷 para quem pretende criar um projeto multiplataforma mobile. Vai te evitar muita dor de cabeça e economizar muito tempo no trabalho. https://bit.ly/kotlin-multiplatform-mobile |
+
+
 ### Branches
 # 🌳 **Branches**
 | Nome e Descrição da Branch                                                                                                                                                        | 📺 UML-Diagram |
@@ -59,12 +68,6 @@ Networking é uma das coisas mais importantes na área de TI. (Se não a mais im
 | X37) **kmm_bottom_navigation_bar** <br/> Projeto com X1-X36) como implementar navegação invefior em kotlin multiplatform mobile em jetpack compose |  |
 
 
-# Posso Ajudar/Contribuir?
-Seja também um multiplicador de conhecimento. Mostre esse repositório para sua **COMUNIDADE/GRUPO/SLACK MOBILE**
-:
-| 👇 Texto com link para postar nas redes sociais 👇 |
-| :------------- |
-| Repositório bacana em Português 🇵🇹 🇧🇷 para quem pretende criar um projeto multiplataforma mobile. Vai te evitar muita dor de cabeça e economizar muito tempo no trabalho. https://bit.ly/kotlin-multiplatform-mobile |
 
 # 🧪 **CODELABS / VÍDEOS / RESOLUçÕES**
 | Titulo        | 📺 Youtube Link |
