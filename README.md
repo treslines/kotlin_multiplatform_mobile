@@ -1,6 +1,18 @@
 # 🇵🇹 🇧🇷 Kotlin Multiplatform Mobile 📱💻
 Desafios e resoluções a problemas relacionados ao desenvolvimento multiplataforma para mobile. Uma playlist imperdível do zero de quem teve que criar um projeto "from scratch". Conto os problemas que passei, como contornei, soluções encontradas, desafios etc. Pretendo documentar tudo aqui com código e videos no youtube para te ajudar. Não esqueça de deixar uma **ESTRELINHA** ⭐, assim você me comunica, que **ESTA GOSTANDO!**
 
+Neste repositório iremos tratar temas tais como:
+- Introdução ao Kotlin Multiplatform Mobile
+- Como começar a usar o Kotlin Multiplatform Mobile
+- Compartilhamento de código entre plataformas com Kotlin Multiplatform Mobile
+- Desenvolvimento de aplicativos móveis para iOS e Android com Kotlin Multiplatform Mobile
+- Exemplos práticos de aplicativos móveis desenvolvidos com Kotlin Multiplatform Mobile
+- Arquitetura e boas práticas no Kotlin Multiplatform Mobile
+- Integração com APIs externas no Kotlin Multiplatform Mobile
+- Testes no Kotlin Multiplatform Mobile
+- Migração de projetos existentes para o Kotlin Multiplatform Mobile
+- Dicas e truques para o desenvolvimento com Kotlin Multiplatform Mobile
+
 # Estrutura deste github didático
 Para cada vídeo eu criei uma branch. Assim você poderá acompanhar a evolução do código e ver os vídeos com as versões do código do jeito que ele se apresentava no ato da gravação. Adicionalmente eu também estou publicando e documentando as decisões arquiteturais no meu techblog com maior grau de detalhe, caso você queira se aprofundar ou entender melhor, porque certas coisas foram feitas da maneira que foram apresentadas nos vídeos.
   - link techblog: https://bit.ly/buildSrc
