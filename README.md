@@ -1,12 +1,12 @@
-# 🇵🇹 🇧🇷 Kotlin Multiplatform Mobile (KMM)
-Desafios e resoluções a problemas relacionados ao desenvolvimento multiplataforma para mobile. Uma playlist imperdível do zero de quem teve que criar um projeto "from scratch". Conto os problemas que passei, como contornei, soluções encontradas, desafios etc. Pretendo documentar tudo aqui com código e videos no youtube para te ajudar. E NÃO ESQUECE DE ME DEIXAR UMA ESTRELINHA ⭐, ASSIM VOCÊ ME COMUNICA, QUE ESTA GOSTANDO!
+# 🇵🇹 🇧🇷 Kotlin Multiplatform Mobile 📱💻
+Desafios e resoluções a problemas relacionados ao desenvolvimento multiplataforma para mobile. Uma playlist imperdível do zero de quem teve que criar um projeto "from scratch". Conto os problemas que passei, como contornei, soluções encontradas, desafios etc. Pretendo documentar tudo aqui com código e videos no youtube para te ajudar. Não esqueça de deixar uma **ESTRELINHA** ⭐, assim você me comunica, que **ESTA GOSTANDO!**
 
 # Estrutura deste github didático
 Para cada vídeo eu criei uma branch. Assim você poderá acompanhar a evolução do código e ver os vídeos com as versões do código do jeito que ele se apresentava no ato da gravação. Adicionalmente eu também estou publicando e documentando as decisões arquiteturais no meu techblog com maior grau de detalhe, caso você queira se aprofundar ou entender melhor, porque certas coisas foram feitas da maneira que foram apresentadas nos vídeos.
   - link techblog: https://bit.ly/buildSrc
 
 
-# ⛓️ **ANTES DE CONTINUAR, CONECTE-SE COMIGO!**
+# ⛓️ **Antes de continuar, garanta sua empregabilidade futura!**
 Networking é uma das coisas mais importantes na área de TI. (Se não a mais importante) **Em tempos de tantos layoffs, uma boa rede de contatos é indispensável**. Portanto, comece a criar sua rede de networking o quanto antes. Você irá me agradecer no futuro.  **Não sabe por onde começar?** Conecte-se comigo e participe dos nossos grupos de ajuda e networking. O pessoal é super ativo, colaborativo e nos ajudamos uns aos outros. 
 - 🧲 | Telegram: networking gratuito ► https://bit.ly/telegramGb
 - 🧲 | Discord: conteúdo seleto ►  https://bit.ly/discordGb
@@ -16,6 +16,13 @@ Networking é uma das coisas mais importantes na área de TI. (Se não a mais im
 - 🧲 | LinkedIn: seja encontrado por recrutadores ► https://bit.ly/linkedinGb
 - 🧲 | Github: deixa uma estrelinha ► https://github.com/treslines
 
+# O que é o Kotlin Multiplatform Mobile?
+O Kotlin Multiplatform Mobile é uma ferramenta de desenvolvimento que permite a criação de aplicativos nativos para várias plataformas, incluindo Android e iOS, usando uma única base de código em Kotlin. Com a Kotlin Multiplatform Mobile, você pode compartilhar código de negócios entre diferentes plataformas, mantendo a experiência do usuário nativa em cada plataforma.
+
+# Por que usar o Kotlin Multiplatform Mobile?
+- **Compartilhe código de negócios:** Com o Kotlin Multiplatform Mobile, você pode compartilhar código de negócios entre diferentes plataformas, economizando tempo e esforço no desenvolvimento de aplicativos.
+- **Mantenha a experiência do usuário nativa:** Com a Kotlin Multiplatform Mobile, você pode criar aplicativos nativos para cada plataforma, mantendo a experiência do usuário nativa em cada plataforma.
+- **Desenvolvimento rápido de aplicativos:** O Kotlin Multiplatform Mobile permite que você desenvolva aplicativos para várias plataformas simultaneamente, economizando tempo e recursos de desenvolvimento.
 
 # Conhecimento bom é conhecimento compartilhado
 Seja também um multiplicador de conhecimento. Mostre esse repositório para sua **COMUNIDADE/GRUPO/SLACK MOBILE** Com o textinho abaixo eu facilito para você como mostrar esse repositório para seus amigos ou companheiros de trabalho. Apenas copia o texto abaixo e posta nas suas redes sociais. **Conhecimento bom é conhecimento compartilhado** Conto com seu apoio e ajuda!
