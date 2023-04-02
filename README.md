@@ -13,6 +13,21 @@ Neste repositório iremos tratar temas tais como:
 - Migração de projetos existentes para o Kotlin Multiplatform Mobile
 - Dicas e truques para o desenvolvimento com Kotlin Multiplatform Mobile
 
+# Dúvidas comuns dos desenvolvedores
+
+Se você já se fez algumas dessas perguntas, inscreva-se no canal e acompanhe a playlist, pois no decorrer dessa série, iremos tratar e sanar essas dúvidas nos vídeos publicados (**vide vídeos abaixo**):
+
+- Como começar a desenvolver com Kotlin Multiplatform Mobile?
+- Quais são as vantagens de usar Kotlin Multiplatform Mobile em relação a outras abordagens de desenvolvimento multiplataforma?
+- Como compartilhar código entre plataformas usando Kotlin Multiplatform Mobile?
+- Quais são as plataformas suportadas por Kotlin Multiplatform Mobile?
+- Como integrar bibliotecas nativas em projetos Kotlin Multiplatform Mobile?
+- Como lidar com diferenças de plataforma em projetos Kotlin Multiplatform Mobile?
+- Quais são as limitações e desafios do desenvolvimento com Kotlin Multiplatform Mobile?
+- Como configurar um projeto Kotlin Multiplatform Mobile no Android Studio ou IntelliJ IDEA?
+- Como realizar testes em projetos Kotlin Multiplatform Mobile?
+- Como publicar um aplicativo Kotlin Multiplatform Mobile nas lojas de aplicativos para iOS e Android?
+
 # Estrutura deste github didático
 Para cada vídeo eu criei uma branch. Assim você poderá acompanhar a evolução do código e ver os vídeos com as versões do código do jeito que ele se apresentava no ato da gravação. Adicionalmente eu também estou publicando e documentando as decisões arquiteturais no meu techblog com maior grau de detalhe, caso você queira se aprofundar ou entender melhor, porque certas coisas foram feitas da maneira que foram apresentadas nos vídeos.
   - link techblog: https://bit.ly/buildSrc
