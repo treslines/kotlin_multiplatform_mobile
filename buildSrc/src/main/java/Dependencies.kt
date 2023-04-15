@@ -1,4 +1,3 @@
-
 // 1) Definir dependências / Android dolphin ja cria com compose
 // 2) adicionar dependencias
 // 3) enxergar o beneficio da centralização das dependências
@@ -29,7 +28,7 @@ object Plugins {
 
 /** DEPENDENCY VERSIONS */
 object Versions {
-    const val compose = "1.1.1"
+    const val compose = "1.2.1"
     const val composeActivity = "1.4.0"
     const val composeCompiler = "1.3.1"
     const val composeThemeAdapter = "1.1.5"
@@ -55,9 +54,11 @@ object Versions {
     const val espresso = "3.4.0"
     const val ktor = "2.1.2" // Releases > https://ktor.io/
     const val lokalise = "2.1.1-lite"
-    const val uiGraphics ="1.3.2"
+    const val uiGraphics = "1.3.2"
+
     // BuildKonfig
     const val buildKonfig = "0.13.3"
+
     // Settings Russwolf Kmm
     const val settings = "1.0.0-RC"
     const val preferences = "1.2.0"
@@ -68,6 +69,7 @@ object Versions {
     const val adobeAnalytics = "1.2.10"
 
     const val navigation = "2.5.3"
+    const val accompanistSystemUiController = "0.28.0"
 }
 
 object Jetbrains {
@@ -108,6 +110,10 @@ object Androidx {
     const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntime}"
     const val viewModelLifecycle = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}"
     const val preferences = "androidx.preference:preference-ktx:${Versions.preferences}"
+}
+
+object Accompanist {
+    const val SystemUiController = "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanistSystemUiController}"
 }
 
 object Kotlinx {

@@ -30,7 +30,7 @@ object TextStyles {
     val body1 = TextStyle(
         fontFamily = FontTypes.ttNormsRegular.toFontFamily(),
         fontWeight = FontTypes.ttNormsRegular.weight,
-        fontSize = 20.sp,
+        fontSize = 16.sp,
         fontStyle = FontTypes.ttNormsRegular.style
     )
     val body2 = TextStyle(
@@ -68,9 +68,9 @@ object TextStyles {
         lineHeight = Resources.FontSizing.small.lineHeight
     )
     val navBarItem = TextStyle(
-        fontFamily = FontTypes.ttNormsBold.toFontFamily(),
-        fontWeight = FontTypes.ttNormsBold.weight,
-        fontSize = 13.sp,
-        fontStyle = FontTypes.ttNormsBold.style
+        fontFamily = FontTypes.ttNormsRegular.toFontFamily(),
+        fontWeight = FontTypes.ttNormsRegular.weight,
+        fontSize = 10.sp,
+        fontStyle = FontTypes.ttNormsRegular.style
     )
 }

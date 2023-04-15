@@ -5,13 +5,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.progdeelite.kmmprogdeelite.android.ui.components.BottomNavigationBar
-import br.com.progdeelite.kmmprogdeelite.android.ui.components.DummyScreen
-import br.com.progdeelite.kmmprogdeelite.android.ui.screens.AnimationScreen
+import br.com.progdeelite.kmmprogdeelite.android.ui.screens.*
 import br.com.progdeelite.kmmprogdeelite.navigation.Navigator
 
 // 1) COMO CRIAR O ROOT-NAV-GRAPH
@@ -31,6 +31,7 @@ fun RootNavigationGraph(navController: NavHostController = rememberNavController
         composable(route = Navigator.homeGraph.root) {
             val mainNavController = rememberNavController()
             Scaffold(
+                backgroundColor = Color.Transparent, // IMPORTANTE PARA PODER VER O EFEITO DO GRADIENTE
                 bottomBar = {
                     BottomNavigationBar(navController = mainNavController)
                 }
@@ -51,25 +52,16 @@ fun BottomNavGraph(navController: NavHostController) {
         startDestination = Navigator.bottomNavGraph.home
     ) {
         composable(route = Navigator.bottomNavGraph.home) {
-            DummyScreen(name = "TELA HOME") {
-                // ACÃO DE NAVEGAçÃO AQUI...
-            }
+            HomeScreen(navController = navController)
         }
         composable(route = Navigator.bottomNavGraph.insurance) {
-            DummyScreen(name = "TELA SEGURO") {
-                // ACÃO DE NAVEGAçÃO AQUI...
-            }
+            Confirm2faScreen({}, {}, {})
         }
         composable(route = Navigator.bottomNavGraph.support) {
-
-            DummyScreen(name = "TELA SUPORTE") {
-                // ACÃO DE NAVEGAçÃO AQUI...
-            }
+            SupportScreen(navController = navController)
         }
         composable(route = Navigator.bottomNavGraph.profile) {
-            DummyScreen(name = "TELA PERFIL") {
-                // ACÃO DE NAVEGAçÃO AQUI...
-            }
+            ProfileScreen(navController = navController)
         }
     }
 }

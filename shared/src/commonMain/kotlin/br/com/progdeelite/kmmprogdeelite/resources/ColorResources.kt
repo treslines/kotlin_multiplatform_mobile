@@ -12,20 +12,20 @@ object ColorResources {
     internal fun getLightTheme(): Theme = Theme.Light
 }
 
-abstract class Theme (
+abstract class Theme(
     // material theme android colors
-    val primary : ColorResource,
-    val primaryVariant : ColorResource,
-    val secondary : ColorResource,
-    val secondaryVariant : ColorResource,
-    val background : ColorResource,
-    val surface : ColorResource,
-    val error : ColorResource,
-    val onPrimary : ColorResource,
-    val onSecondary : ColorResource,
-    val onBackground : ColorResource,
-    val onSurface : ColorResource,
-    val onError : ColorResource,
+    val primary: ColorResource,
+    val primaryVariant: ColorResource,
+    val secondary: ColorResource,
+    val secondaryVariant: ColorResource,
+    val background: ColorResource,
+    val surface: ColorResource,
+    val error: ColorResource,
+    val onPrimary: ColorResource,
+    val onSecondary: ColorResource,
+    val onBackground: ColorResource,
+    val onSurface: ColorResource,
+    val onError: ColorResource,
 
     // default theming colors for background and content
     val contentPrimary: ColorResource,
@@ -78,16 +78,24 @@ abstract class Theme (
 
     val selectedContentColor: ColorResource,
     val unselectedContentColor: ColorResource,
-) {
-    object Dark : Theme (
 
-        primary = ColorResource(0xFFE95D0F), // laranja
-        primaryVariant = ColorResource(0xFFE95D0F), // laranja
+    val bgOverlayHeaderDefault: ColorResource,
+    val bgOverlayHeaderScroll: ColorResource,
+    val textStartColor: ColorResource,
+    val textEndColor: ColorResource,
+    val btnBgWhiteAlpha: ColorResource,
+    val btnBgGrayAlpha: ColorResource,
+    val defaultTextColor: ColorResource,
+
+) {
+    object Dark : Theme(
+        primary = ColorResource(0xFF9CECFB), // azul claro
+        primaryVariant = ColorResource(0xFF9CECFB), // azul claro
         secondary = ColorResource(0xFF707070), // black 60% alpha
         secondaryVariant = ColorResource(0xFF707070), // black 60% alpha
         background = ColorResource(0xFFEFEFEF), // black 5% alpha
         surface = ColorResource(0xFF707070), // white
-        error = ColorResource(0xFFF09C6D), // laranja 60% alpha
+        error = ColorResource(0xFF65C7F7), // azul 60% mais claro
         onPrimary = ColorResource(0xFFFFFFFF), // white
         onSecondary = ColorResource(0xFFFFFFFF), // white
         onBackground = ColorResource(0xFF131313), // black
@@ -110,9 +118,9 @@ abstract class Theme (
         loadingButtonLoadingColor = ColorResource(0xFFF09C6D),
         loadingButtonDisabledColor = ColorResource(0xFFEFEFEF),
 
-        contentPrimary =  ColorResource(0xFFFFFFFF), // white
-        contentSecondary =  ColorResource(0xFF131313), // black
-        backgroundPrimary = ColorResource(0xFF414141), // black 80% alpha
+        contentPrimary = ColorResource(0xFFFFFFFF), // white
+        contentSecondary = ColorResource(0xFF131313), // black
+        backgroundPrimary = ColorResource(0xFF414141), // azul
         backgroundSecondary = ColorResource(0xFF707070), // black 60% alpha
         backgroundSecondaryAlpha = ColorResource(0x66FFFFFF), // white 40% alpha
         strokeSecondary = ColorResource(0xFF131313), // black
@@ -123,29 +131,37 @@ abstract class Theme (
         iconPrimary = ColorResource(0xFF131313), // black
         iconSecondary = ColorResource(0x99131313), // back 60% alpha
         content1 = ColorResource(0xFFFFFFFF), // white
-        background1 = ColorResource(0xFFE95D0F), // laranja
+        background1 = ColorResource(0xFF9CECFB), // azul claro
         title = ColorResource(0xFF131313), // black
         titleSecondary = ColorResource(0xFFFFFFFF), // white
         subtitle = ColorResource(0xFF131313), // black
-        description = ColorResource(0xFFE95D0F), // laranja
+        description = ColorResource(0xFF9CECFB), // azul claro
         contentCloseButton = ColorResource(0xFFFFFFFF), // white
-        backgroundCloseButton = ColorResource(0xFFE95D0F), // laranja
+        backgroundCloseButton = ColorResource(0xFF9CECFB), // azul claro
         disabledBackgroundCloseButton = ColorResource(0x99131313), // back 60% alpha
         scrimColor = ColorResource(0xFF707070),
 
-        selectedContentColor = ColorResource(0xFFE95D0F), // laranja
+        selectedContentColor = ColorResource(0xFF1894E1), // azul
         unselectedContentColor = ColorResource(0x99131313), // back 60% alpha
+
+        bgOverlayHeaderDefault = ColorResource(0x00FFFFFF), // white 0% alpha
+        bgOverlayHeaderScroll = ColorResource(0xFFC0D6DF), // grey light
+        textStartColor = ColorResource(0xFFFFFFFF), // back 60% alpha
+        textEndColor = ColorResource(0x99131313), // back 60% alpha
+        btnBgWhiteAlpha = ColorResource(0xFFFFFFFF), // white
+        btnBgGrayAlpha = ColorResource(0xFFEFEFEF), // black 5% alpha
+        defaultTextColor = ColorResource(0x99131313), // back 60% alpha
     )
 
-    object Light : Theme (
+    object Light : Theme(
 
-        primary = ColorResource(0xFFE95D0F), // laranja
-        primaryVariant = ColorResource(0xFFE95D0F), // laranja
+        primary = ColorResource(0xFF9CECFB), // azul claro
+        primaryVariant = ColorResource(0xFF9CECFB), // azul claro
         secondary = ColorResource(0xFF707070), // black 60% alpha
         secondaryVariant = ColorResource(0xFF707070), // black 60% alpha
         background = ColorResource(0xFFEFEFEF), // black 5% alpha
         surface = ColorResource(0xFFFFFFFF), // white
-        error = ColorResource(0xFFF09C6D), // laranja 60% alpha
+        error = ColorResource(0xFF65C7F7), // azul 60% mais claro
         onPrimary = ColorResource(0xFFFFFFFF), // white
         onSecondary = ColorResource(0xFFFFFFFF), // white
         onBackground = ColorResource(0xFF131313), // black
@@ -168,19 +184,19 @@ abstract class Theme (
         loadingButtonLoadingColor = ColorResource(0xFFF09C6D),
         loadingButtonDisabledColor = ColorResource(0xFFEFEFEF),
 
-        contentPrimary =  ColorResource(0xFFFFFFFF), // white
-        contentSecondary =  ColorResource(0xFFE95D0F), // laranja
+        contentPrimary = ColorResource(0xFFFFFFFF), // white
+        contentSecondary = ColorResource(0xFF9CECFB), // azul claro
         backgroundPrimary = ColorResource(0xFF1894E1), // azul
         backgroundSecondary = ColorResource(0xFFFFFFFF), // white
-        strokeSecondary = ColorResource(0xFFE95D0F), // laranja
+        strokeSecondary = ColorResource(0xFF9CECFB), // azul claro
         backgroundSecondaryAlpha = ColorResource(0x66FFFFFF), // white 40% alpha
         divider = ColorResource(0xFFEFEFEF), // black 5% alpha
         textPrimary = ColorResource(0xFF131313), // black
         textTertiary = ColorResource(0xFF707070), // black 60% alpha
-        textSecondary = ColorResource(0xFFE95D0F), // laranja
-        iconPrimary = ColorResource(0xFFE95D0F), // laranja
-        iconSecondary = ColorResource(0xFFF09C6D), // laranja 60% alpha
-        content1 = ColorResource(0xFFE95D0F), // laranja
+        textSecondary = ColorResource(0xFF9CECFB), // azul claro
+        iconPrimary = ColorResource(0xFF9CECFB), // azul claro
+        iconSecondary = ColorResource(0xFF65C7F7), // azul 60% mais claro
+        content1 = ColorResource(0xFF9CECFB), // azul claro
         background1 = ColorResource(0xFFFFFFFF), // white
         title = ColorResource(0xFFFFFFFF), // white
         titleSecondary = ColorResource(0xFF131313), // black
@@ -191,8 +207,16 @@ abstract class Theme (
         disabledBackgroundCloseButton = ColorResource(0x99131313), // back 60% alpha
         scrimColor = ColorResource(0xFF707070),
 
-        selectedContentColor = ColorResource(0xFFE95D0F), // laranja
+        selectedContentColor = ColorResource(0xFF1894E1), // azul
         unselectedContentColor = ColorResource(0x99131313), // back 60% alpha
+
+        bgOverlayHeaderDefault = ColorResource(0x00FFFFFF), // white 0% alpha
+        bgOverlayHeaderScroll = ColorResource(0xFFC0D6DF), // grey light
+        textStartColor = ColorResource(0xFFFFFFFF), // back 60% alpha
+        textEndColor = ColorResource(0x99131313), // back 60% alpha
+        btnBgWhiteAlpha = ColorResource(0xFFFFFFFF), // white
+        btnBgGrayAlpha = ColorResource(0xFFEFEFEF), // black 5% alpha
+        defaultTextColor = ColorResource(0x99131313), // back 60% alpha
     )
 }
 

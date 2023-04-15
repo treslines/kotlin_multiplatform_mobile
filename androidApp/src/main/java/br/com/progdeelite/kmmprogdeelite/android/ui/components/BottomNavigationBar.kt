@@ -35,6 +35,13 @@ fun BottomNavigationBar(navController: NavHostController) {
 
     val showNavigationItems = BottomBarConfigList.all.any { it.route == currentDestination?.route }
     if (showNavigationItems) {
+
+        // We are using: WindowCompat.setDecorFitsSystemWindows(window, false) in the MainActivity
+        // to fit our header over the status bar. For that reason we need to compensate the height
+        // of the system navigation bar. Otherwise it would overlay the bottom navigation bar. compose <= 1.1.1
+        // val res = LocalContext.current.resources
+        // val density = LocalDensity.current.density
+        // Column (modifier = Modifier.padding(bottom = getSysNavBarHeight(res, density))) {
         Column {
             BottomNavigation(
                 backgroundColor = Resources.Theme.surface.getColor()

@@ -11,12 +11,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.progdeelite.kmmprogdeelite.resources.Resources
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
 fun AndroidAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
+
+    val systemUiController = rememberSystemUiController()
+    systemUiController.setStatusBarColor(
+        color = Color.Transparent
+    )
 
     val colors = if (darkTheme) {
         darkColors(

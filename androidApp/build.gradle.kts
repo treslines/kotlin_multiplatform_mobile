@@ -91,6 +91,8 @@ android {
 dependencies {
     implementation(project(":shared"))
 
+    implementation(Accompanist.SystemUiController)
+
     // CORE
     implementation(Androidx.core)
     implementation(Androidx.lifecycleRuntime)

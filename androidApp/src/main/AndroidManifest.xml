@@ -7,7 +7,7 @@
         android:name=".ui.MainApplication"
         android:allowBackup="false"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppTheme">
         <activity
             android:name=".ui.activity.MainActivity"
             android:exported="true">

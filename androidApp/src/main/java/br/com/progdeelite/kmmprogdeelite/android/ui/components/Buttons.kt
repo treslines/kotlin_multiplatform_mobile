@@ -8,11 +8,13 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBackIos
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
@@ -240,6 +242,77 @@ fun CloseButton(
     }
 }
 
+@Composable
+fun CloseIconButton(
+    modifier: Modifier = Modifier,
+    backgroundColor: Color = Resources.Theme.backgroundCloseButton.getColor(),
+    onClick: () -> Unit = {}
+) {
+    IconButton(
+        modifier = modifier,
+        backgroundColor = backgroundColor,
+        icon = Icons.Filled.Close,
+        onClick = onClick
+    )
+}
+
+@Composable
+fun BackIconButton(
+    modifier: Modifier = Modifier,
+    backgroundColor: Color = Resources.Theme.backgroundCloseButton.getColor(),
+    onClick: () -> Unit = {}
+) {
+    IconButton(
+        modifier = modifier,
+        backgroundColor = backgroundColor,
+        icon = Icons.Filled.ArrowBack,
+        onClick = onClick
+    )
+}
+
+@Composable
+fun PlaceholderIconButton(
+    modifier: Modifier = Modifier,
+    backgroundColor: Color = Color.Transparent
+) {
+    IconButton(
+        modifier = modifier,
+        backgroundColor = backgroundColor
+    )
+}
+
+@Composable
+fun IconButton(
+    modifier: Modifier = Modifier,
+    icon: ImageVector? = null,
+    backgroundColor: Color,
+    onClick: () -> Unit = {}
+) {
+    Button(
+        onClick = onClick,
+        contentPadding = PaddingValues(0.dp),
+        modifier = modifier
+            .defaultMinSize(Resources.Spacing.extraBig.dp)
+            .size(Resources.Spacing.extraBig.dp),
+        elevation = null,
+        shape = CircleShape,
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = backgroundColor,
+            contentColor = Resources.Theme.contentCloseButton.getColor(),
+            disabledBackgroundColor = Resources.Theme.disabledBackgroundCloseButton.getColor(),
+            disabledContentColor = Color.Transparent
+        )
+    ) {
+        if (icon != null) {
+            Icon(
+                imageVector = icon,
+                contentDescription = null,
+                modifier = Modifier.size(ButtonDefaults.IconSize)
+            )
+        }
+    }
+}
+
 // 1) DEFINIR DEPENDÊNCIAS DE LOTTIE
 // 2) DEFINIR ESTADOS DA ANIMAçÃO DE LOADING
 // 3) ESPECIFICAR CORES PARA OS ESTADOS DO BOTÃO DE LOADING
@@ -345,6 +418,12 @@ fun ButtonsPreview() {
             SecondaryButton(text = "Atendimento")
             Spacing.Normal()
             CloseButton()
+            Spacing.Normal()
+            CloseIconButton()
+            Spacing.Normal()
+            BackIconButton()
+            Spacing.Normal()
+            PlaceholderIconButton()
         }
     }
 }

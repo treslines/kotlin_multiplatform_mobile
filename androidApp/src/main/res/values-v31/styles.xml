@@ -1,9 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="android:Theme.Material.NoActionBar"/>
-
-    <!-- Splash xml for Android 11 and below -->
     <style name="Theme.AppTheme" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@color/blue_light</item>
         <item name="android:windowBackground">@drawable/app_gradient_bg</item>
+        <!-- We need this for compatibility. otherwise the splash will cut a circle in the center -->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_transparent_image</item>
     </style>
 </resources>

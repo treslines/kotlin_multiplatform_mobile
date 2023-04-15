@@ -3,7 +3,6 @@ package br.com.progdeelite.kmmprogdeelite.android.ui.activity
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -15,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.*
+import androidx.core.view.WindowCompat
 import androidx.navigation.compose.rememberNavController
 import br.com.progdeelite.kmmprogdeelite.android.R
 import br.com.progdeelite.kmmprogdeelite.android.ui.components.*
@@ -40,6 +40,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // IMPORTANTE: PARA QUE COMPOSABLES INICIEM PARTINDO DA STATUS BAR E NÃO ABAIXO DELA
+        // PORÉM FIQUE ATENTO QUE VOCÊ PRECISA COMPENSAR A ALTURA DA BARRA DE NAVEGAçÃO
+        // DO SYSTEMA ANDROID NA SUA BOTTOM NAVIGATION BAR, CASO VC ESTEJA USANDO UMA VERSÃO
+        // DE COMPOSE INFERIOR OU IGUAL = 1.1.1. DO CONTRARIO USE "Modifier.navigationBarsPadding"
+        // VIDE: BottomNavigationBar ou Box(Modifier.navigationBarsPadding() ABAIXO
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
         // Endereça auditoria de segurança: Hide Recent Thumbnails
         // window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
 
@@ -59,18 +66,20 @@ class MainActivity : ComponentActivity() {
             val hideThumbnail by model.hideThumbnail.collectAsState()
 
             AndroidAppTheme {
-                if (hideThumbnail) {
-                    Box(modifier = Modifier.fillMaxSize().background(Resources.Theme.background.getColor()))
-                } else {
-                    // DatabaseVid(viewModel)
-                    // ShimmerVid(shimmerViewModel)
-                    // KtorVid(viewModel = entryViewModel)
-                    // LoadingButtonVid()
-                    // CustomDialogVid()
-                    // ModalBottomSheetVid()
-                    // DefaultBottomSheetVid()
-                    // SplashWithLottieVid()
-                    NavigationVid()
+                Box(Modifier.navigationBarsPadding()){ // compose >= 1.2.1 to proper position bottomNavBar
+                    if (hideThumbnail) {
+                        Box(modifier = Modifier.fillMaxSize().background(Resources.Theme.background.getColor()))
+                    } else {
+                        // DatabaseVid(viewModel)
+                        // ShimmerVid(shimmerViewModel)
+                        // KtorVid(viewModel = entryViewModel)
+                        // LoadingButtonVid()
+                        // CustomDialogVid()
+                        // ModalBottomSheetVid()
+                        // DefaultBottomSheetVid()
+                        // SplashWithLottieVid()
+                        NavigationVid()
+                    }
                 }
             }
         }
