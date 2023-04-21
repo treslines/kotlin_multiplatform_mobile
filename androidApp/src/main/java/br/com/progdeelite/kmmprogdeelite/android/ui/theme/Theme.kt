@@ -26,15 +26,15 @@ fun AndroidAppTheme(
 
     val colors = if (darkTheme) {
         darkColors(
-            primary = Resources.Dark.primary.getColor(),
-            primaryVariant = Resources.Dark.primaryVariant.getColor(),
-            secondary = Resources.Dark.secondary.getColor()
+            primary = Resources.Theme.primary.getColor(),
+            primaryVariant = Resources.Theme.primaryVariant.getColor(),
+            secondary = Resources.Theme.secondary.getColor()
         )
     } else {
         lightColors(
-            primary = Resources.Light.primary.getColor(),
-            primaryVariant = Resources.Light.primaryVariant.getColor(),
-            secondary = Resources.Light.secondary.getColor()
+            primary = Resources.Theme.primary.getColor(),
+            primaryVariant = Resources.Theme.primaryVariant.getColor(),
+            secondary = Resources.Theme.secondary.getColor()
         )
     }
     val typography = Typography(

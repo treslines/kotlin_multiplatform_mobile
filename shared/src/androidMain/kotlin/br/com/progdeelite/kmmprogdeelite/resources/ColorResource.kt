@@ -9,6 +9,8 @@ actual fun isSystemInDarkMode(): Boolean {
     return (uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
 }
 
-actual class ColorResource actual constructor(private val colorHexValue: Long): IosColor(colorHexValue) {
-    fun getColor() = Color(colorHexValue)
+actual class ColorResource actual constructor(light: Long, dark: Long) {
+    private val colorDark = Color(dark)
+    private val colorLight = Color(light)
+    fun getColor() = if (isSystemInDarkMode()) colorDark else colorLight
 }
