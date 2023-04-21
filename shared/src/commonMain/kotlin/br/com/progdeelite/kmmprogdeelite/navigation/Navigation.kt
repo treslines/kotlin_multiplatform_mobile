@@ -30,8 +30,8 @@ object AuthGraph {
 
 object AuthLoginGraph {
     const val root = "auth_login_graph"
-    const val step1 = "mobile"
-    const val step2 = "mtan"
+    const val mobileNumber = "mobile"
+    const val confirmSms = "sms"
 }
 
 object OnboardingGraph {
@@ -47,11 +47,13 @@ object InsuranceGraph {
 object ProfileGraph {
     const val root = "profile_graph"
     const val profile = "profile"
+    const val settings = "settings"
 }
 
 object SupportGraph {
     const val root = "support_graph"
     const val support = "support"
+    const val callCenter = "call_center"
 }
 
 object HomeGraph {

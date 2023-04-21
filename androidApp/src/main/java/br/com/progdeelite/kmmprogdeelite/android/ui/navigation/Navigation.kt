@@ -13,6 +13,7 @@ import androidx.navigation.compose.rememberNavController
 import br.com.progdeelite.kmmprogdeelite.android.ui.components.BottomNavigationBar
 import br.com.progdeelite.kmmprogdeelite.android.ui.screens.*
 import br.com.progdeelite.kmmprogdeelite.navigation.Navigator
+import br.com.progdeelite.kmmprogdeelite.viewmodels.OnBoardingViewModel
 
 // 1) COMO CRIAR O ROOT-NAV-GRAPH
 // 2) COMO ADICIONAR ROTAS
@@ -55,13 +56,21 @@ fun BottomNavGraph(navController: NavHostController) {
             HomeScreen(navController = navController)
         }
         composable(route = Navigator.bottomNavGraph.insurance) {
-            Confirm2faScreen({}, {}, {})
+            Confirm2faScreen({}, {}, {navController.navigate(Navigator.onboardingGraph.onboarding)})
         }
         composable(route = Navigator.bottomNavGraph.support) {
             SupportScreen(navController = navController)
         }
         composable(route = Navigator.bottomNavGraph.profile) {
             ProfileScreen(navController = navController)
+        }
+        composable(route = Navigator.authGraph.login) {
+            LoginScreen(onClose = {navController.navigate(Navigator.bottomNavGraph.root)},
+                onNext = {navController.navigate(Navigator.bottomNavGraph.profile)}
+            )
+        }
+        composable(route = Navigator.onboardingGraph.onboarding) {
+            OnBoardingScreen(viewModel = OnBoardingViewModel())
         }
     }
 }

@@ -16,6 +16,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.TextStyles
 import br.com.progdeelite.kmmprogdeelite.navigation.BottomBarItem
+import br.com.progdeelite.kmmprogdeelite.navigation.BottomBarSubItems
+import br.com.progdeelite.kmmprogdeelite.navigation.Navigator
 import br.com.progdeelite.kmmprogdeelite.resources.Resources
 import br.com.progdeelite.kmmprogdeelite.tracking.adobe.AnalyticsService
 
@@ -33,8 +35,23 @@ fun BottomNavigationBar(navController: NavHostController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
+    val homeItem = BottomBarSubItems.topLevelHomeItem.any { it == currentDestination?.route }
+    val insuranceItem = BottomBarSubItems.topLevelInsuranceItem.any { it == currentDestination?.route }
+    val supportItem = BottomBarSubItems.topLevelSupportItem.any { it == currentDestination?.route }
+    val profileItem = BottomBarSubItems.topLevelHelpItem.any { it == currentDestination?.route }
+    val showNavBarOnSubItems = homeItem || insuranceItem || supportItem || profileItem
+
+    val selectedBottomBarItem = BottomBarConfigList.all.firstOrNull { it.route == currentDestination?.route }
+    val bottomBarItemToHighlight = when {
+        homeItem -> Navigator.bottomNavGraph.home
+        insuranceItem -> Navigator.bottomNavGraph.insurance
+        supportItem -> Navigator.bottomNavGraph.support
+        profileItem -> Navigator.bottomNavGraph.profile
+        else -> selectedBottomBarItem?.route ?: Navigator.bottomNavGraph.home
+    }
+
     val showNavigationItems = BottomBarConfigList.all.any { it.route == currentDestination?.route }
-    if (showNavigationItems) {
+    if (showNavigationItems || showNavBarOnSubItems ) {
 
         // We are using: WindowCompat.setDecorFitsSystemWindows(window, false) in the MainActivity
         // to fit our header over the status bar. For that reason we need to compensate the height
@@ -50,7 +67,8 @@ fun BottomNavigationBar(navController: NavHostController) {
                     AddItem(
                         itemConfig = itemConfig,
                         currentDestination = currentDestination,
-                        navController = navController
+                        navController = navController,
+                        itemToHighlight = bottomBarItemToHighlight
                     )
                 }
             }
@@ -67,6 +85,7 @@ fun RowScope.AddItem(
     itemConfig: BottomBarItem,
     currentDestination: NavDestination?,
     navController: NavHostController,
+    itemToHighlight: String,
     navIconContentDescription: String? = null,
     analytics: AnalyticsService = AnalyticsService.instance
 ) {
@@ -84,7 +103,8 @@ fun RowScope.AddItem(
                 contentDescription = navIconContentDescription
             )
         },
-        selected = currentDestination?.hierarchy?.any { it.route == itemConfig.route } == true,
+        selected = currentDestination?.hierarchy?.any { it.route == itemConfig.route } == true || itemConfig.route == itemToHighlight
+        ,
         selectedContentColor = Resources.Theme.selectedContentColor.getColor(),
         unselectedContentColor = Resources.Theme.unselectedContentColor.getColor(),
         onClick = {

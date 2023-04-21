@@ -22,6 +22,7 @@ import br.com.progdeelite.kmmprogdeelite.android.ui.headers.TopLevelHeader
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.TextStyles
 import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
+import br.com.progdeelite.kmmprogdeelite.navigation.Navigator
 import br.com.progdeelite.kmmprogdeelite.resources.Resources
 
 @Composable
@@ -29,7 +30,7 @@ fun SupportScreen(
     navController: NavHostController
 ) {
     SupportScreen(
-        onSupportClick = { }
+        onSupportClick = { navController.navigate(Navigator.authGraph.login)}
     )
 }
 

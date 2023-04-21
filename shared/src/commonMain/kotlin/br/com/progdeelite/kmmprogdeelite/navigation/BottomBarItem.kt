@@ -58,3 +58,24 @@ abstract class BottomBarItem(
         screenInfo = ScreenInfo.ProfileScreen
     )
 }
+
+// 1) DEFINIR AS SUB ROTAS
+// 2) ADAPTER SUA BOTTOM NAVIGATION BAR
+
+// Any sub navigation point (screen) which should show the bottom navigation bar
+object BottomBarSubItems {
+    val topLevelHomeItem = listOf("")
+
+    val topLevelInsuranceItem = listOf(
+        Navigator.authLoginGraph.mobileNumber,
+        Navigator.authLoginGraph.confirmSms
+    )
+    val topLevelSupportItem = listOf(
+        Navigator.authGraph.login,
+        Navigator.authGraph.signUp,
+        Navigator.authGraph.forgotPassword,
+    )
+    val topLevelHelpItem = listOf(
+        Navigator.profileGraph.settings
+    )
+}
