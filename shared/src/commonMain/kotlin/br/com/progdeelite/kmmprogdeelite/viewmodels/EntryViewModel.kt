@@ -4,8 +4,7 @@ import br.com.progdeelite.kmmprogdeelite.di.DI.inject
 import br.com.progdeelite.kmmprogdeelite.network.*
 import br.com.progdeelite.kmmprogdeelite.network.models.Entry
 import br.com.progdeelite.kmmprogdeelite.repositories.EntryRepository
-import br.com.progdeelite.kmmprogdeelite.utils.CommonLogger
-import br.com.progdeelite.kmmprogdeelite.utils.CommonLoggerImpl
+import br.com.progdeelite.kmmprogdeelite.utils.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -13,7 +12,7 @@ import kotlinx.coroutines.launch
 class EntryViewModel: BaseSharedViewModel() {
 
     private lateinit var storyRepository: EntryRepository
-    private val logger: CommonLogger = CommonLoggerImpl()
+    private val logContext = "EntryViewModel"
     private val environment by inject<Environment>()
 
     private val _entries = MutableStateFlow<List<Entry>?>(null)
@@ -42,18 +41,18 @@ class EntryViewModel: BaseSharedViewModel() {
     }
 
     fun fetchEntries() {
-        logger.log("Meu ambiente é: ${environment.name}")
+        logD(logContext, "Meu ambiente é: ${environment.name}")
         scope.launch {
             storyRepository.fetchEntries().collect { result ->
                 when(result){
                     is NetworkResult.Success -> _entries.emit(result.data).also {
-                        logger.log("Entries fetched successfully")
+                        logI(logContext, "Entries fetched successfully")
                     }
                     is NetworkResult.Error -> _error.emit(result.errorMessage).also{
-                        logger.log("Entries Error ${result.errorMessage}")
+                        logE(logContext,"Entries Error ${result.errorMessage}")
                     }
                     is NetworkResult.Exception -> _error.emit(result.exception?.message).also{
-                        logger.log("Entries Exception ${result.exception?.message}")
+                        logE(logContext,"Entries Exception ${result.exception?.message}")
                     }
                 }
             }

@@ -4,7 +4,7 @@ import android.content.Context
 import br.com.progdeelite.kmmprogdeelite.android.BuildConfig
 import br.com.progdeelite.kmmprogdeelite.localization.Language
 import br.com.progdeelite.kmmprogdeelite.localization.LokaliseSdk
-import br.com.progdeelite.kmmprogdeelite.utils.CommonLoggerImpl
+import br.com.progdeelite.kmmprogdeelite.utils.logD
 import com.lokalise.sdk.Lokalise
 import com.lokalise.sdk.LokaliseCallback
 import com.lokalise.sdk.LokaliseResources
@@ -13,6 +13,7 @@ import java.util.Locale
 
 class LocaliseSdkWrapper (private val appContext: Context): LokaliseSdk {
 
+    private val logContext = "LocaliseSdkWrapper"
     init {
         // TODO: comentado pois não esta sendo usado no projeto, apenas para fins didáticos
         Lokalise.init(appContext, "CommonConfig.LOKALISE_TOKEN", "CommonConfig.LOKALISE_PROJEKT_ID")
@@ -23,7 +24,7 @@ class LocaliseSdkWrapper (private val appContext: Context): LokaliseSdk {
         // ONLY TO DETECT FAILURE WHILE DEVELOPING
         Lokalise.addCallback(object: LokaliseCallback {
             override fun onUpdateFailed(error: LokaliseUpdateError) {
-                CommonLoggerImpl().log("Lokalise - callback onUpdateFailed: ${error.name}")
+                logD(logContext, "callback onUpdateFailed: ${error.name}")
             }
             override fun onUpdateNotNeeded() { /* ignored */ }
             override fun onUpdated(oldBundleId: Long, newBundleId: Long) { /* ignored */ }

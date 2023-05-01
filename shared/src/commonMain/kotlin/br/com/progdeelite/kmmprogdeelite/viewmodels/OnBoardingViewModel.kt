@@ -5,7 +5,7 @@ import br.com.progdeelite.kmmprogdeelite.network.Environment
 import br.com.progdeelite.kmmprogdeelite.resources.ImageResource
 import br.com.progdeelite.kmmprogdeelite.resources.Resources
 import br.com.progdeelite.kmmprogdeelite.resources.TextResource
-import br.com.progdeelite.kmmprogdeelite.utils.CommonLoggerImpl
+import br.com.progdeelite.kmmprogdeelite.utils.logD
 
 // 1) Implementar iOS e Android
 // 2) definir classe compartilhada de Resources
@@ -17,10 +17,11 @@ class OnBoardingViewModel(
     val texts: OnBoardingTexts
 ) : BaseSharedViewModel() {
 
+    private val logContext = "OnBoardingViewModel"
     private val environment by inject<Environment>()
 
     init{
-        CommonLoggerImpl().log("Meu ambiente corrente é: ${environment.name}")
+        logD(logContext,"Meu ambiente corrente é: ${environment.name}")
     }
 
     constructor() : this(

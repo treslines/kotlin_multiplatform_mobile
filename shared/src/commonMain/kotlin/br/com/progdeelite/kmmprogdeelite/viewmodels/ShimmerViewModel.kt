@@ -1,7 +1,6 @@
 package br.com.progdeelite.kmmprogdeelite.viewmodels
 
-import br.com.progdeelite.kmmprogdeelite.utils.CommonLogger
-import br.com.progdeelite.kmmprogdeelite.utils.CommonLoggerImpl
+import br.com.progdeelite.kmmprogdeelite.utils.logI
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -13,13 +12,13 @@ import kotlinx.coroutines.launch
 class ShimmerViewModel: BaseSharedViewModel() {
 
     private val _loading = MutableStateFlow(false)
-    private val logger: CommonLogger = CommonLoggerImpl()
+    private val logContext = "ShimmerViewModel"
 
     val loading: StateFlow<Boolean>
         get() = _loading
 
     fun toggleLoadingState() {
-        logger.log("Loading State Triggered!")
+        logI(logContext, "Loading State Triggered!")
         scope.launch {
             _loading.emit(_loading.value.not())
         }

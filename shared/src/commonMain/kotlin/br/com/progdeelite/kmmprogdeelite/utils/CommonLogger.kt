@@ -5,5 +5,5 @@ package br.com.progdeelite.kmmprogdeelite.utils
 // 3) COMO DISPONIBILIZAR A CLASSE IMPL
 // 4) COMO USAR NA PRÁTICA DENTRO DO VIEW MODEL
 expect interface CommonLogger {
-    open fun log(message: String)
+    open fun log(message:String, type: LogType)
 }

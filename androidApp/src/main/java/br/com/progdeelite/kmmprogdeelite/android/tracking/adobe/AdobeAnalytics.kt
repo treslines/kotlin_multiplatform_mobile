@@ -2,12 +2,13 @@ package br.com.progdeelite.kmmprogdeelite.android.tracking.adobe
 
 import android.app.Application
 import br.com.progdeelite.kmmprogdeelite.tracking.adobe.AdobeAnalyticsSdk
-import br.com.progdeelite.kmmprogdeelite.utils.CommonLoggerImpl
+import br.com.progdeelite.kmmprogdeelite.utils.logD
 import br.com.progdeelite.kmmprogdeelite.utils.setLogLevelByBuildFlavor
 import com.adobe.marketing.mobile.*
 
 class AdobeAnalyticsSdkWrapper(app: Application) : AdobeAnalyticsSdk {
 
+    private val logContext = "AdobeAnalyticsSdkWrapper"
     private val propertyMap: MutableMap<String, String> = mutableMapOf()
 
     init {
@@ -22,7 +23,7 @@ class AdobeAnalyticsSdkWrapper(app: Application) : AdobeAnalyticsSdk {
             Lifecycle.registerExtension()
             MobileCore.start(null)
         } catch (e: InvalidInitException) {
-            CommonLoggerImpl().log("Could not initialize Adobe MobileCore: ${e.message}")
+            logD(logContext,"Could not initialize Adobe MobileCore: ${e.message}")
         }
     }
 
