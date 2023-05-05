@@ -15,6 +15,14 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <!-- Example: HABILITAR DEEPLINKS -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Example: host: google.com scheme: mobile -->
+                <data android:host="yourcompany.com" android:scheme="yourscheme" />
+            </intent-filter>
         </activity>
     </application>
 </manifest> 
