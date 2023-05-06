@@ -19,7 +19,8 @@ interface AppRoute {
 
     // retorna a rota padrao definida no navigation graph
     val route get() = build(false)
-    // retorna a rota padrao como parametro na url base do deeplink especificado no manifest do app
+    // retorna a rota padrao como parametro na url base do
+    // deeplink especificado no manifest do app
     val deeplink get() = build(true)
 
     private fun build(asDeeplink: Boolean): String {
@@ -30,7 +31,7 @@ interface AppRoute {
     }
 
     // responsaval em montar as rotas ou deeplinks no formato esperado pelo framework
-    private class Builder(private val route: String, private val asDeeplink: Boolean = false) {
+    private class Builder(private val destination: String, private val asDeeplink: Boolean = false) {
         var args: MutableList<String> = mutableListOf()
         var params: MutableList<String> = mutableListOf()
 
@@ -44,15 +45,15 @@ interface AppRoute {
                 stringBuilder.append(Deeplink.baseUrl)
             }
             // do contrario apenas retorna a rota destino especificada no navigation graph
-            stringBuilder.append(route)
+            stringBuilder.append(destination)
 
             // se na definiçao da rota foram especificados parametros ou argumentos,
             // adicione os mesmos a rota para que possam ser recuperados no destino
             // o formato de parametros ou argumentos segue a mesma convençao de uma
             // request http no format de get. Veja exemplo abaixo:
             // yourscheme://yourhost/param1/param2?arg1=val1&arg2=val2
-            args.forEach { stringBuilder.append("/{$it}") }
-            params.forEachIndexed { index, value ->
+            params.forEach { stringBuilder.append("/{$it}") }
+            args.forEachIndexed { index, value ->
                 when(index){
                     0 -> stringBuilder.append("?$value={$value}")
                     else -> stringBuilder.append("&$value={$value}")
@@ -73,22 +74,46 @@ object Graphs {
         const val onboarding = "onboarding"
     }
 
-    object AuthGraph {
-        const val root = "auth_graph"
-
-        object Login : AppRoute {
-            override val startRoute = "login"
-            override val params = listOf("start_screen")
-        }
+    object AuthRegisterGraph {
+        const val root = "auth_register_graph"
 
         object Register : AppRoute {
             override val startRoute = "register"
-            override val params = listOf("start_screen")
+            override val args = Args.from(NavArgs.values())
+
+            enum class NavArgs{
+                start_screen
+            }
         }
 
         object Otp : AppRoute {
-            override val startRoute = "otp"
-            override val params = listOf("mobile")
+            override val startRoute = "register_otp"
+            override val args = Args.from(NavArgs.values())
+
+            enum class NavArgs{
+                mobile
+            }
+        }
+    }
+
+    object AuthLoginGraph {
+        const val root = "auth_login_graph"
+
+        object Login : AppRoute {
+            override val startRoute = "login"
+            override val args = Args.from(NavArgs.values())
+            enum class NavArgs {
+                start_screen
+            }
+        }
+
+        object Otp : AppRoute {
+            override val startRoute = "login_otp"
+            override val args = Args.from(NavArgs.values())
+
+            enum class NavArgs{
+                mobile
+            }
         }
     }
 
@@ -117,6 +142,17 @@ object Graphs {
 
         object Profile : AppRoute {
             override val startRoute = "profile"
+        }
+    }
+}
+
+interface Args {
+    companion object {
+        fun <T: Enum<*>> from(type: T): String{
+            return type.name
+        }
+        fun <T: Enum<*>> from(type: Array<T>): List<String>{
+            return type.map {it.name}.toList()
         }
     }
 }

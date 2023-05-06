@@ -27,7 +27,7 @@ abstract class BottomBarItem(
 ) {
 
     object Home : BottomBarItem(
-        route = Navigator.bottomNavGraph.home,
+        route = Graphs.HomeGraph.root,
         title = Resources.Strings.nav_bar_home,
         icon = Resources.Image.home,
         action = AnalyticsAction.NavHomeAction,
@@ -35,7 +35,7 @@ abstract class BottomBarItem(
     )
 
     object Insurance : BottomBarItem(
-        route = Navigator.bottomNavGraph.insurance,
+        route = Graphs.InsuranceGraph.root,
         title = Resources.Strings.nav_bar_insurance,
         icon = Resources.Image.insurance,
         action = AnalyticsAction.NavInsuranceAction,
@@ -43,39 +43,10 @@ abstract class BottomBarItem(
     )
 
     object Support : BottomBarItem(
-        route = Navigator.bottomNavGraph.support,
+        route = Graphs.SupportGraph.root,
         title = Resources.Strings.nav_bar_support,
         icon = Resources.Image.support,
         action = AnalyticsAction.NavSupportAction,
         screenInfo = ScreenInfo.SupportScreen
-    )
-
-    object Profile : BottomBarItem(
-        route = Navigator.bottomNavGraph.profile,
-        title = Resources.Strings.nav_bar_profile,
-        icon = Resources.Image.profile,
-        action = AnalyticsAction.NavProfileAction,
-        screenInfo = ScreenInfo.ProfileScreen
-    )
-}
-
-// 1) DEFINIR AS SUB ROTAS
-// 2) ADAPTER SUA BOTTOM NAVIGATION BAR
-
-// Any sub navigation point (screen) which should show the bottom navigation bar
-object BottomBarSubItems {
-    val topLevelHomeItem = listOf("")
-
-    val topLevelInsuranceItem = listOf(
-        Navigator.authLoginGraph.mobileNumber,
-        Navigator.authLoginGraph.confirmSms
-    )
-    val topLevelSupportItem = listOf(
-        Navigator.authGraph.login,
-        Navigator.authGraph.signUp,
-        Navigator.authGraph.forgotPassword,
-    )
-    val topLevelHelpItem = listOf(
-        Navigator.profileGraph.settings
     )
 }

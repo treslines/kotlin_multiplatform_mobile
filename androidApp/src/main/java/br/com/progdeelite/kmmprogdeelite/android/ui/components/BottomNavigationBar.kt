@@ -16,8 +16,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.TextStyles
 import br.com.progdeelite.kmmprogdeelite.navigation.BottomBarItem
-import br.com.progdeelite.kmmprogdeelite.navigation.BottomBarSubItems
-import br.com.progdeelite.kmmprogdeelite.navigation.Navigator
+import br.com.progdeelite.kmmprogdeelite.navigation.Graphs
 import br.com.progdeelite.kmmprogdeelite.resources.Resources
 import br.com.progdeelite.kmmprogdeelite.tracking.adobe.AnalyticsService
 
@@ -26,8 +25,23 @@ object BottomBarConfigList {
         BottomBarItem.Home,
         BottomBarItem.Insurance,
         BottomBarItem.Support,
-        BottomBarItem.Profile
     )
+}
+
+// screen onde não exibiremos a barra de navegacão
+// pois as mesmas serão apresentadas em full screen mode
+object FullScreenList {
+    val all: List<String> by lazy {
+        listOf(
+            Graphs.AppEntryGraph.onboarding,
+            Graphs.AppEntryGraph.splash,
+            Graphs.AuthLoginGraph.Login.startRoute,
+            Graphs.AuthLoginGraph.Otp.startRoute,
+            Graphs.AuthRegisterGraph.Otp.startRoute,
+            Graphs.AuthRegisterGraph.Register.startRoute,
+            Graphs.HomeGraph.Profile.startRoute,
+        )
+    }
 }
 
 @Composable
@@ -35,23 +49,8 @@ fun BottomNavigationBar(navController: NavHostController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
-    val homeItem = BottomBarSubItems.topLevelHomeItem.any { it == currentDestination?.route }
-    val insuranceItem = BottomBarSubItems.topLevelInsuranceItem.any { it == currentDestination?.route }
-    val supportItem = BottomBarSubItems.topLevelSupportItem.any { it == currentDestination?.route }
-    val profileItem = BottomBarSubItems.topLevelHelpItem.any { it == currentDestination?.route }
-    val showNavBarOnSubItems = homeItem || insuranceItem || supportItem || profileItem
-
-    val selectedBottomBarItem = BottomBarConfigList.all.firstOrNull { it.route == currentDestination?.route }
-    val bottomBarItemToHighlight = when {
-        homeItem -> Navigator.bottomNavGraph.home
-        insuranceItem -> Navigator.bottomNavGraph.insurance
-        supportItem -> Navigator.bottomNavGraph.support
-        profileItem -> Navigator.bottomNavGraph.profile
-        else -> selectedBottomBarItem?.route ?: Navigator.bottomNavGraph.home
-    }
-
-    val showNavigationItems = BottomBarConfigList.all.any { it.route == currentDestination?.route }
-    if (showNavigationItems || showNavBarOnSubItems ) {
+    val showBottomBar = FullScreenList.all.none { currentDestination?.route?.startsWith(it) ?: true }
+    if (showBottomBar) {
 
         // We are using: WindowCompat.setDecorFitsSystemWindows(window, false) in the MainActivity
         // to fit our header over the status bar. For that reason we need to compensate the height
@@ -67,8 +66,7 @@ fun BottomNavigationBar(navController: NavHostController) {
                     AddItem(
                         itemConfig = itemConfig,
                         currentDestination = currentDestination,
-                        navController = navController,
-                        itemToHighlight = bottomBarItemToHighlight
+                        navController = navController
                     )
                 }
             }
@@ -85,7 +83,6 @@ fun RowScope.AddItem(
     itemConfig: BottomBarItem,
     currentDestination: NavDestination?,
     navController: NavHostController,
-    itemToHighlight: String,
     navIconContentDescription: String? = null,
     analytics: AnalyticsService = AnalyticsService.instance
 ) {
@@ -103,7 +100,7 @@ fun RowScope.AddItem(
                 contentDescription = navIconContentDescription
             )
         },
-        selected = currentDestination?.hierarchy?.any { it.route == itemConfig.route } == true || itemConfig.route == itemToHighlight
+        selected = currentDestination?.hierarchy?.any { it.route == itemConfig.route } == true
         ,
         selectedContentColor = Resources.Theme.selectedContentColor.getColor(),
         unselectedContentColor = Resources.Theme.unselectedContentColor.getColor(),
