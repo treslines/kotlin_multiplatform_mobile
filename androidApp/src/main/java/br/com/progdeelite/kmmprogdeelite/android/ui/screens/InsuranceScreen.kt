@@ -26,17 +26,17 @@ import br.com.progdeelite.kmmprogdeelite.navigation.Graphs
 import br.com.progdeelite.kmmprogdeelite.resources.Resources
 
 @Composable
-fun SupportScreen(
+fun InsuranceScreen(
     navController: NavHostController
 ) {
-    SupportScreen(
-        onSupportClick = { navController.navigate(Graphs.AuthLoginGraph.Login.startRoute)}
+    InsuranceScreen(
+        onInsuranceClick = { navController.navigate(Graphs.AuthLoginGraph.Login.startRoute)}
     )
 }
 
 @Composable
-fun SupportScreen(
-    onSupportClick: () -> Unit
+fun InsuranceScreen(
+    onInsuranceClick: () -> Unit
 ) {
     val screenState = ScreenState(rememberScrollState())
 
@@ -44,22 +44,22 @@ fun SupportScreen(
         header = {
             TopLevelHeader(
                 screenState = screenState,
-                title = "Suporte"
+                title = "Seguros"
             )
         },
         body = {
-            SupportContent(
+            InsuranceContent(
                 scrollState = screenState.scrollState,
-                onSupportClick = onSupportClick
+                onInsuranceClick = onInsuranceClick
             )
         }
     )
 }
 
 @Composable
-fun SupportContent(
+fun InsuranceContent(
     scrollState: ScrollState,
-    onSupportClick: () -> Unit
+    onInsuranceClick: () -> Unit
 ) {
     BaseScreenContent(
         scrollState = scrollState,
@@ -89,7 +89,7 @@ fun SupportContent(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Spacing.Big()
-                PrimaryButton(text = "Support", onClick = onSupportClick)
+                PrimaryButton(text = "Contratar", onClick = onInsuranceClick)
                 Spacing.Big()
             }
         }
@@ -99,9 +99,9 @@ fun SupportContent(
 
 @Preview(showBackground = true)
 @Composable
-fun SupportScreenPreview() {
+fun InsuranceScreenPreview() {
     DependencyInjectionForPreview()
     AndroidAppTheme {
-        SupportScreen {}
+        InsuranceScreen {}
     }
 }

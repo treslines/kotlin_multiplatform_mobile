@@ -24,6 +24,7 @@ import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
 import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
 import br.com.progdeelite.kmmprogdeelite.di.DI
 import br.com.progdeelite.kmmprogdeelite.localization.DialogTexts
+import br.com.progdeelite.kmmprogdeelite.navigation.Deeplink
 import br.com.progdeelite.kmmprogdeelite.resources.Resources
 import br.com.progdeelite.kmmprogdeelite.utils.LoadingButtonState
 import br.com.progdeelite.kmmprogdeelite.viewmodels.EntryViewModel
@@ -57,6 +58,9 @@ class MainActivity : ComponentActivity() {
             )
         }
 
+        val deeplinkDestination = intent.data?.lastPathSegment ?: "*"
+        val isDeeplink = intent.data?.host?.contains(Deeplink.host) ?: false
+
         val viewModel = SampleViewModel()
         val shimmerViewModel = ShimmerViewModel()
         val entryViewModel = EntryViewModel()
@@ -78,12 +82,18 @@ class MainActivity : ComponentActivity() {
                         // ModalBottomSheetVid()
                         // DefaultBottomSheetVid()
                         // SplashWithLottieVid()
-                        NavigationVid()
+                        // NavigationVid()
+                        NavigationDeeplinkVid(isDeeplink, deeplinkDestination)
                     }
                 }
             }
         }
     }
+}
+
+@Composable
+fun NavigationDeeplinkVid(isDeeplink: Boolean, deeplinkDestination: String) {
+    RootNavigationGraph(isDeeplink = isDeeplink, deeplinkDestination = deeplinkDestination)
 }
 
 @Composable

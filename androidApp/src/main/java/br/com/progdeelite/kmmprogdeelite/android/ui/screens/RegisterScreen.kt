@@ -24,19 +24,21 @@ import br.com.progdeelite.kmmprogdeelite.android.ui.theme.TextStyles
 import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
 import br.com.progdeelite.kmmprogdeelite.navigation.Graphs
 import br.com.progdeelite.kmmprogdeelite.resources.Resources
+import br.com.progdeelite.kmmprogdeelite.viewmodels.RegisterViewModel
 
 @Composable
-fun SupportScreen(
-    navController: NavHostController
+fun RegisterScreen(
+    navController: NavHostController,
+    viewModel: RegisterViewModel
 ) {
-    SupportScreen(
-        onSupportClick = { navController.navigate(Graphs.AuthLoginGraph.Login.startRoute)}
+    RegisterScreen(
+        onRegisterClick = { navController.navigate(Graphs.AuthRegisterGraph.Register.startRoute)}
     )
 }
 
 @Composable
-fun SupportScreen(
-    onSupportClick: () -> Unit
+fun RegisterScreen(
+    onRegisterClick: () -> Unit
 ) {
     val screenState = ScreenState(rememberScrollState())
 
@@ -44,22 +46,22 @@ fun SupportScreen(
         header = {
             TopLevelHeader(
                 screenState = screenState,
-                title = "Suporte"
+                title = "Registar"
             )
         },
         body = {
-            SupportContent(
+            RegisterContent(
                 scrollState = screenState.scrollState,
-                onSupportClick = onSupportClick
+                onRegisterClick = onRegisterClick
             )
         }
     )
 }
 
 @Composable
-fun SupportContent(
+fun RegisterContent(
     scrollState: ScrollState,
-    onSupportClick: () -> Unit
+    onRegisterClick: () -> Unit
 ) {
     BaseScreenContent(
         scrollState = scrollState,
@@ -89,7 +91,7 @@ fun SupportContent(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Spacing.Big()
-                PrimaryButton(text = "Support", onClick = onSupportClick)
+                PrimaryButton(text = "Registrar", onClick = onRegisterClick)
                 Spacing.Big()
             }
         }
@@ -99,9 +101,9 @@ fun SupportContent(
 
 @Preview(showBackground = true)
 @Composable
-fun SupportScreenPreview() {
+fun RegisterScreenPreview() {
     DependencyInjectionForPreview()
     AndroidAppTheme {
-        SupportScreen {}
+        RegisterScreen {}
     }
 }

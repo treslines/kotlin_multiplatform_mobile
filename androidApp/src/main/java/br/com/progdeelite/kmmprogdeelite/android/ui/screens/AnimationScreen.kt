@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import br.com.progdeelite.kmmprogdeelite.android.R
+import br.com.progdeelite.kmmprogdeelite.navigation.Graphs
 import br.com.progdeelite.kmmprogdeelite.navigation.Navigator
 import br.com.progdeelite.kmmprogdeelite.tracking.adobe.AnalyticsService
 import br.com.progdeelite.kmmprogdeelite.tracking.adobe.ScreenInfo
@@ -48,6 +49,6 @@ private fun navigateToHome(navController: NavHostController, splashAnimationStat
     if (splashAnimationState.isAtEnd && splashAnimationState.isPlaying) {
         AnalyticsService.instance.trackScreen(ScreenInfo.AnimationScreen)
         navController.popBackStack()
-        navController.navigate(Navigator.homeGraph.root)
+        navController.navigate(Graphs.HomeGraph.root)
     }
 }
