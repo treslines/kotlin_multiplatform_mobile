@@ -18,6 +18,7 @@ object FontSizingResources {
 }
 
 abstract class FontSizing(
+    val tiny: FontSizingResource,
     val small: FontSizingResource,
     val normal: FontSizingResource,
     val medium: FontSizingResource,
@@ -26,6 +27,7 @@ abstract class FontSizing(
     val huge: FontSizingResource,
 ) {
     internal class Small : FontSizing(
+        tiny = FontSizingResource(8, 14),
         small = FontSizingResource(13, 18),
         normal = FontSizingResource(15, 19),
         medium = FontSizingResource(17, 23),
@@ -35,6 +37,7 @@ abstract class FontSizing(
     )
 
     internal class Medium : FontSizing(
+        tiny = FontSizingResource(10, 16),
         small = FontSizingResource(13, 18),
         normal = FontSizingResource(15, 19),
         medium = FontSizingResource(17, 23),
@@ -44,6 +47,7 @@ abstract class FontSizing(
     )
 
     internal class Large : FontSizing(
+        tiny = FontSizingResource(12, 18),
         small = FontSizingResource(14, 19),
         normal = FontSizingResource(16, 20),
         medium = FontSizingResource(19, 25),
