@@ -36,26 +36,29 @@ object DI {
     @ThreadLocal
     object Native {
         // 1)
-        lateinit var environment: Environment // 2) will be initialized in MainApplication/UIApplicationDelegate
+        lateinit var environment: Environment // 2) initialized in MainApplication/UIApplicationDelegate
         lateinit var lokaliseSdk: LokaliseSdk
         lateinit var adobeAnalyticsSdk: AdobeAnalyticsSdk
     }
 
+    // PARA INJETAR NOS VIEW MODELS, REPOSITÓRIOS, APPS OU ONDE SEJA PRECISO
     inline fun <reified T> inject(): Lazy<T> {
         // 3)
         return when (T::class) {
             Environment::class -> lazy { environment as T }
             LokaliseSdk::class -> lazy { lokaliseSdk as T }
             AdobeAnalyticsSdk::class -> lazy { adobeAnalyticsSdk as T }
-            SettingsService::class -> lazy { AppSettings() as T }
             else -> throw IllegalArgumentException("Dependency not found! Specify class \"${T::class.qualifiedName}\" in DI.inject()")
         }
     }
 
+    // USADO PARA INJECÃO DE DEPENDÊNCIAS APENAS NO COMMON E
+    // LIMITAR ACESSO DOS APPs ATRAVES DAS INTERFACES
     internal inline fun <reified T> injectInternal(): Lazy<T> {
         return when (T::class) {
             AnalyticsService::class -> lazy { AnalyticsTracker() as T }
             LocalizationService::class -> lazy { Localization() as T }
+            SettingsService::class -> lazy { AppSettings() as T }
             else -> throw IllegalArgumentException("Dependency not found! Specify class \"${T::class.qualifiedName}\" in DI.injectInternal()")
         }
     }
