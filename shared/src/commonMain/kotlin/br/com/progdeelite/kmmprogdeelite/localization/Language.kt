@@ -1,8 +1,8 @@
 package br.com.progdeelite.kmmprogdeelite.localization
 
 enum class Language(val isoCode: String, val region: String, val text: String) {
-    DE_CH("de", "CH", "Deutsch - Schweiz"),
-    DE_AT("de", "AT", "Deutsch - Österreich"),
+    DE_CH("de", "CH", "Alemão - Suiça"),
+    DE_AT("de", "AT", "Alemão - Austria"),
     IT_CH("it", "CH", "Italiano"),
     FR_CH("fr", "CH", "Français");
 

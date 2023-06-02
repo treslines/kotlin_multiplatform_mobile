@@ -102,7 +102,7 @@ fun ModalBottomSheet(
             topEnd = Resources.Spacing.big.dp
         ),
         scrimColor = Resources.Theme.scrimColor.getColor(),
-        sheetBackgroundColor = Resources.Theme.background.getColor()
+        sheetBackgroundColor = Resources.Theme.surface.getColor()
     ) {
         parentContent()
     }

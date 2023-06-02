@@ -8,10 +8,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.material.TextButton
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -19,27 +18,48 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.graphics.ColorUtils
 import androidx.navigation.NavHostController
+import br.com.progdeelite.kmmprogdeelite.android.ui.components.LanguagePickerBottomSheet
+import br.com.progdeelite.kmmprogdeelite.android.ui.components.SmallButton
 import br.com.progdeelite.kmmprogdeelite.android.ui.components.Spacing
 import br.com.progdeelite.kmmprogdeelite.android.ui.headers.TopLevelHeader
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.TextStyles
 import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
 import br.com.progdeelite.kmmprogdeelite.resources.Resources
+import br.com.progdeelite.kmmprogdeelite.viewmodels.LanguagePickerViewModel
+import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun HomeScreen(
     navController: NavHostController
 ) {
-    HomeScreen(
-        onLoginClick = { },
-        onProfileClick = { }
-    )
+    val sheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
+
+    val coroutineScope = rememberCoroutineScope()
+    val onLanguageButtonAction = {
+        coroutineScope.launch {
+            if (sheetState.isVisible) sheetState.hide() else sheetState.show()
+        }
+    }
+
+    LanguagePickerBottomSheet(
+        viewModel = LanguagePickerViewModel(),
+        sheetState = sheetState,
+    ) {
+        HomeScreen(
+            onLoginClick = { },
+            onProfileClick = { },
+            onSelectLangClick = { onLanguageButtonAction() }
+        )
+    }
 }
 
 @Composable
 fun HomeScreen(
     onLoginClick: () -> Unit,
-    onProfileClick: () -> Unit
+    onProfileClick: () -> Unit,
+    onSelectLangClick: () -> Unit
 ) {
     val screenState = ScreenState(rememberScrollState())
 
@@ -63,6 +83,7 @@ fun HomeScreen(
                     TextButton(onClick = onProfileClick) {
                         Text(text = "Perfil", color = textColor)
                     }
+                    SmallButton(text = "Idioma", onClick = onSelectLangClick)
                 }
             )
         },
@@ -132,7 +153,7 @@ fun getLoremIpsumLong(): String {
 }
 
 fun getLoremIpsumShort(): String {
-    return "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham"
+    return "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested."
 }
 
 
@@ -141,6 +162,6 @@ fun getLoremIpsumShort(): String {
 fun DefaultPreview() {
     DependencyInjectionForPreview()
     AndroidAppTheme {
-        HomeScreen({}, {})
+        HomeScreen({}, {}, {})
     }
 }

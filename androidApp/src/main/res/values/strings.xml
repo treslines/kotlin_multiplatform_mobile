@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">KMM App</string>
     <string name="top_image_text">Top Image Text</string>
+    <string name="app_language">Selecione Idioma</string>
+
     <string name="middle_image_text">Middle Image Text</string>
     <string name="bottom_image_text">Bottom Image Text</string>
 

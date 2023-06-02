@@ -9,6 +9,7 @@ package br.com.progdeelite.kmmprogdeelite.resources
 
 object ColorScheme {
     const val gray60a: Long = 0xFF707070
+    const val grayLaminate: Long = 0xFFCECECE
 
     const val black: Long = 0xFF131313
     const val black5a: Long = 0xFFEFEFEF

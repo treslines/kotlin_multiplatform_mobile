@@ -60,9 +60,9 @@ object Themes {
     val subtitle by lazy { ColorResource(light = ColorScheme.white, dark = ColorScheme.black) }
     val description by lazy { ColorResource(light = ColorScheme.black, dark = ColorScheme.blueLight) }
     val contentCloseButton by lazy { ColorResource(light = ColorScheme.blue, dark = ColorScheme.white) }
-    val backgroundCloseButton by lazy { ColorResource(light = ColorScheme.black5a, dark = ColorScheme.blueLight) }
+    val backgroundCloseButton by lazy { ColorResource(light = ColorScheme.grayLaminate, dark = ColorScheme.blueLight) }
     val disabledBackgroundCloseButton by lazy { ColorResource(light = ColorScheme.black60a, dark = ColorScheme.black60a) }
-    val scrimColor by lazy { ColorResource(light = ColorScheme.gray60a, dark = ColorScheme.gray60a) }
+    val scrimColor by lazy { ColorResource(light = ColorScheme.transparent, dark = ColorScheme.gray60a) }
 
     val selectedContentColor by lazy { ColorResource(light = ColorScheme.blueSky, dark = ColorScheme.blueSky) }
     val unselectedContentColor by lazy { ColorResource(light = ColorScheme.black60a, dark = ColorScheme.black60a) }
@@ -74,5 +74,11 @@ object Themes {
     val btnBgWhiteAlpha by lazy { ColorResource(light = ColorScheme.white, dark = ColorScheme.white) }
     val btnBgGrayAlpha by lazy { ColorResource(light = ColorScheme.black5a, dark = ColorScheme.black5a) }
     val defaultTextColor by lazy { ColorResource(light = ColorScheme.black60a, dark = ColorScheme.black60a) }
+
+    val langTextColorSelected by lazy { ColorResource(light = ColorScheme.black, dark = ColorScheme.orangeDark) }
+    val langTextColorUnselected by lazy { ColorResource(light = ColorScheme.black60a, dark = ColorScheme.black) }
+    val langRadioColorSelected by lazy { ColorResource(light = ColorScheme.blueLight, dark = ColorScheme.orangeDark) }
+    val langRadioColorUnselected by lazy { ColorResource(light = ColorScheme.black60a, dark = ColorScheme.orangeLight) }
+    val langRadioColorDisabled by lazy { ColorResource(light = ColorScheme.black60a, dark = ColorScheme.orangeLight) }
 }
 
