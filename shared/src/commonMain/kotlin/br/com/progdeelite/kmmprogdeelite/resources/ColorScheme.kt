@@ -14,6 +14,8 @@ object ColorScheme {
     const val black: Long = 0xFF131313
     const val black5a: Long = 0xFFEFEFEF
     const val black60a: Long = 0x99131313
+    const val gold: Long = 0xFFFFD700
+
 
     const val redDark: Long = 0xFFDC4657
 

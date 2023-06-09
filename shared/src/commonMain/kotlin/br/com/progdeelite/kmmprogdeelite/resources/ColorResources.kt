@@ -80,5 +80,9 @@ object Themes {
     val langRadioColorSelected by lazy { ColorResource(light = ColorScheme.blueLight, dark = ColorScheme.orangeDark) }
     val langRadioColorUnselected by lazy { ColorResource(light = ColorScheme.black60a, dark = ColorScheme.orangeLight) }
     val langRadioColorDisabled by lazy { ColorResource(light = ColorScheme.black60a, dark = ColorScheme.orangeLight) }
+
+    val labelDisabled by lazy { ColorResource(light = ColorScheme.black5a, dark = ColorScheme.black5a) }
+    val labelDefault by lazy { ColorResource(light = ColorScheme.black60a, dark = ColorScheme.black60a) }
+    val labelInteractive by lazy { ColorResource(light = ColorScheme.gold, dark = ColorScheme.blueLight) }
 }
 
