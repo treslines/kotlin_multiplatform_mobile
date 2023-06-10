@@ -13,6 +13,9 @@ object StringResources {
     val textfield_number_not_found = TextResource("textfield_number_not_found")
     val textfield_invalid_birthdate = TextResource("textfield_invalid_birthdate")
     val textfield_invalid_code = TextResource("textfield_invalid_code")
+    val textfield_invalid_phone_number_format = TextResource("textfield_invalid_phone_number_format")
+    val textfield_code_expired = TextResource("textfield_code_expired")
+    val textfield_empty = TextResource("textfield_empty")
 
     val dialog_title_force_update = TextResource("dialog_title_force_update")
     val dialog_description_force_update = TextResource("dialog_description_force_update")

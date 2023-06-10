@@ -10,6 +10,9 @@
     <string name="textfield_number_not_found">Este número não foi encontrado.</string>
     <string name="textfield_invalid_birthdate">Data de nascimento invalida.</string>
     <string name="textfield_invalid_code">Código invalido.</string>
+    <string name="textfield_invalid_phone_number_format">Formato incorreto.</string>
+    <string name="textfield_code_expired">Código expirado.</string>
+    <string name="textfield_empty">Campo vazio.</string>
 
     <string name="dialog_title_force_update">Atualizar App</string>
     <string name="dialog_description_force_update">Para continuar usando o app, você precisa atualiza-lo</string>

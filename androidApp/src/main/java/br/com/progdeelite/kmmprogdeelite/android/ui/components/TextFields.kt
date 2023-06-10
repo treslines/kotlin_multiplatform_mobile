@@ -27,7 +27,7 @@ import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.TextStyles
 import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
 import br.com.progdeelite.kmmprogdeelite.resources.Resources
-import br.com.progdeelite.kmmprogdeelite.resources.TextFieldErrorType
+import br.com.progdeelite.kmmprogdeelite.validations.TextFieldErrorType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
@@ -138,7 +138,7 @@ fun CustomTextField(
         Spacing.Tiny()
 
         when (errorType) {
-            TextFieldErrorType.NumberNotFound -> ErrorHintText(errorType)
+            TextFieldErrorType.PhoneNumberNotFound -> ErrorHintText(errorType)
             TextFieldErrorType.InvalidBirthdate -> ErrorHintText(errorType)
             TextFieldErrorType.InvalidCode -> ErrorHintText(errorType)
             else -> ErrorHintText(TextFieldErrorType.None)
@@ -163,7 +163,7 @@ fun InputFieldsPreview() {
 
     val errorStateTrue: StateFlow<Boolean> = MutableStateFlow(true)
     val errorStateFalse: StateFlow<Boolean> = MutableStateFlow(false)
-    val errorNumberNotFound: StateFlow<TextFieldErrorType> = MutableStateFlow(TextFieldErrorType.NumberNotFound)
+    val errorNumberNotFound: StateFlow<TextFieldErrorType> = MutableStateFlow(TextFieldErrorType.PhoneNumberNotFound)
     val errorInvalidDate: StateFlow<TextFieldErrorType> = MutableStateFlow(TextFieldErrorType.InvalidBirthdate)
     val errorInvalidCode: StateFlow<TextFieldErrorType> = MutableStateFlow(TextFieldErrorType.InvalidCode)
     val errorNone: StateFlow<TextFieldErrorType> = MutableStateFlow(TextFieldErrorType.None)

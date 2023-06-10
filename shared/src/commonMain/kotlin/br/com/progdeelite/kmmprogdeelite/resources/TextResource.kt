@@ -1,8 +1,9 @@
 package br.com.progdeelite.kmmprogdeelite.resources
 
-import br.com.progdeelite.kmmprogdeelite.di.DI.inject
 import br.com.progdeelite.kmmprogdeelite.di.DI.injectInternal
 import br.com.progdeelite.kmmprogdeelite.localization.LocalizationService
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 
 // 1) Definir dependencias
 // 2) especificar interface de localização e implementar nas plataformas
@@ -40,23 +41,4 @@ fun getTextResource(text: String): TextResource {
     val resource = TextResource("")
     resource.setText(text)
     return resource
-}
-
-abstract class TextFieldErrorType(val text: TextResource) {
-
-    object None : TextFieldErrorType(
-        text = TextResource("")
-    )
-
-    object NumberNotFound : TextFieldErrorType(
-        text = Resources.Strings.textfield_number_not_found
-    )
-
-    object InvalidBirthdate : TextFieldErrorType(
-        text = Resources.Strings.textfield_invalid_birthdate
-    )
-
-    object InvalidCode : TextFieldErrorType(
-        text = Resources.Strings.textfield_invalid_code
-    )
 }
