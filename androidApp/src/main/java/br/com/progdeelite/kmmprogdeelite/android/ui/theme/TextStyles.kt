@@ -49,6 +49,7 @@ object TextStyles {
     val button = TextStyleDefinitions.Bold.Base
     val smallButton = TextStyleDefinitions.Bold.S
     val navBarItem = TextStyleDefinitions.Medium.T
+    val textFieldSms = TextStyleDefinitions.Medium.S
     val textField = TextStyleDefinitions.Regular.M
     val textFieldHint = TextStyleDefinitions.Medium.S
 }

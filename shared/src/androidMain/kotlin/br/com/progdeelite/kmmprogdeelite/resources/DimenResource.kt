@@ -59,6 +59,14 @@ actual class CardDimensResource actual constructor(
     val padding: Dp by lazy { defaultPadding.dp }
 }
 
+actual class IconDimensResource actual constructor(
+    private val defaultTiny: Int,
+    private val defaultNormal: Int
+) {
+    val tiny: Dp by lazy { defaultTiny.dp }
+    val normal: Dp by lazy { defaultNormal.dp }
+}
+
 actual class DefaultPaddingsResource actual constructor(
     private val defaultStart: Int,
     private val defaultEnd: Int,

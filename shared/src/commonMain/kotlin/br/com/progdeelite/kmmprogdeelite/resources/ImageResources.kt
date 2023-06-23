@@ -5,6 +5,7 @@ object ImageResources {
     val switch = ImageResource("switch_cam")
     val lamp = ImageResource("lamp")
     val fire = ImageResource("fire")
+    val info = ImageResource("info")
 
     val flash = ImageResource("flash")
     val wifi = ImageResource("wifi")

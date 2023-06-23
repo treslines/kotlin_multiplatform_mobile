@@ -18,13 +18,17 @@ import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPre
 import br.com.progdeelite.kmmprogdeelite.resources.Resources
 import br.com.progdeelite.kmmprogdeelite.resources.getPreviewImageResource
 import br.com.progdeelite.kmmprogdeelite.resources.getTextResource
+import br.com.progdeelite.kmmprogdeelite.viewmodels.LanguagePickerViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.OnBoardingImages
 import br.com.progdeelite.kmmprogdeelite.viewmodels.OnBoardingTexts
 import br.com.progdeelite.kmmprogdeelite.viewmodels.OnBoardingViewModel
 
 @Composable
 fun OnBoardingScreen(
-    viewModel: OnBoardingViewModel
+    viewModel: OnBoardingViewModel,
+    onDiscoverAction: () -> Unit = {},
+    onLoginAction: () -> Unit = {},
+    showLanguagePicker: () -> Unit = {}
 ) {
     Surface {
         Column(
@@ -82,7 +86,8 @@ fun OnBoardingPreview() {
                         topImageText = getTextResource("Titulo: Hello Compose"),
                         middleImageText = getTextResource("Titulo: Eu consigo me"),
                         bottomImageText = getTextResource("Titulo: renderizar assim!")
-                    )
+                    ),
+                    picker = LanguagePickerViewModel()
                 )
             )
         }

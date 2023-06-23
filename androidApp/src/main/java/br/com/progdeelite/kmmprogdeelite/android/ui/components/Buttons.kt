@@ -68,10 +68,12 @@ fun BaseButton(
     modifier: Modifier = Modifier,
     colors: ButtonColors = ButtonDefaults.buttonColors(),
     onClick: () -> Unit = {},
+    enabled: Boolean = true,
     content: @Composable RowScope.() -> Unit
 ) {
     Button(
         modifier = modifier.height(48.dp),
+        enabled = enabled,
         onClick = onClick,
         colors = colors,
         contentPadding = PaddingValues(horizontal = Resources.Spacing.huge.dp),
@@ -86,16 +88,18 @@ fun BaseButton(
 fun PrimaryButton(
     modifier: Modifier = Modifier,
     text: String,
+    enabled: Boolean = true,
     onClick: () -> Unit = {}
 ) {
     BaseButton(
         modifier = modifier,
         onClick = onClick,
+        enabled = enabled,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = Resources.Theme.backgroundPrimary.getColor(),
             contentColor = Resources.Theme.contentPrimary.getColor(),
             disabledBackgroundColor = MaterialTheme.colors.onSurface.copy(alpha = ContentAlpha.disabled),
-            disabledContentColor = Color.Transparent
+            disabledContentColor = Resources.Theme.content1.getColor().copy(alpha = ContentAlpha.disabled)
         )
     ) {
         Text(
@@ -118,7 +122,7 @@ fun PrimaryWhiteButton(
             backgroundColor = Resources.Theme.backgroundSecondary.getColor(),
             contentColor = Resources.Theme.content1.getColor(),
             disabledBackgroundColor = MaterialTheme.colors.onSurface.copy(alpha = ContentAlpha.disabled),
-            disabledContentColor = Color.Transparent
+            disabledContentColor = Resources.Theme.content1.getColor().copy(alpha = ContentAlpha.disabled)
         )
     ) {
         Text(

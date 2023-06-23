@@ -14,7 +14,8 @@ import br.com.progdeelite.kmmprogdeelite.utils.logD
 
 class OnBoardingViewModel(
     val images: OnBoardingImages, // Pitfall Nr1. kmm para iOS não sabe lidar com default parameters (ainda)
-    val texts: OnBoardingTexts
+    val texts: OnBoardingTexts,
+    val picker: LanguagePickerViewModel
 ) : BaseSharedViewModel() {
 
     private val logContext = "OnBoardingViewModel"
@@ -26,7 +27,8 @@ class OnBoardingViewModel(
 
     constructor() : this(
         images = OnBoardingImages(), // iOS: tivemos que mover as inicializações padrão para o construtor
-        texts = OnBoardingTexts()
+        texts = OnBoardingTexts(),
+        picker = LanguagePickerViewModel()
     )
 }
 

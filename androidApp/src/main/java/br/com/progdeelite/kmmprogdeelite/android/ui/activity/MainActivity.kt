@@ -7,6 +7,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -26,7 +27,13 @@ import br.com.progdeelite.kmmprogdeelite.di.DI
 import br.com.progdeelite.kmmprogdeelite.localization.DialogTexts
 import br.com.progdeelite.kmmprogdeelite.navigation.Deeplink
 import br.com.progdeelite.kmmprogdeelite.resources.Resources
+import br.com.progdeelite.kmmprogdeelite.resources.components.ResendSmsResources
+import br.com.progdeelite.kmmprogdeelite.resources.getPreviewImageResource
+import br.com.progdeelite.kmmprogdeelite.resources.getTextResource
 import br.com.progdeelite.kmmprogdeelite.utils.LoadingButtonState
+import br.com.progdeelite.kmmprogdeelite.utils.logD
+import br.com.progdeelite.kmmprogdeelite.validations.TextFieldType
+import br.com.progdeelite.kmmprogdeelite.validations.TextFieldValidator
 import br.com.progdeelite.kmmprogdeelite.viewmodels.EntryViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.MainActivityViewModel
 import br.com.progdeelite.kmmprogdeelite.viewmodels.SampleViewModel
@@ -34,6 +41,7 @@ import br.com.progdeelite.kmmprogdeelite.viewmodels.ShimmerViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
+private val logContext = MainActivity::class.simpleName!!
 class MainActivity : ComponentActivity() {
 
     private val model by viewModels<MainActivityViewModel>()
@@ -72,7 +80,9 @@ class MainActivity : ComponentActivity() {
             AndroidAppTheme {
                 Box(Modifier.navigationBarsPadding()){ // compose >= 1.2.1 to proper position bottomNavBar
                     if (hideThumbnail) {
-                        Box(modifier = Modifier.fillMaxSize().background(Resources.Theme.background.getColor()))
+                        Box(modifier = Modifier
+                            .fillMaxSize()
+                            .background(Resources.Theme.background.getColor()))
                     } else {
                         // DatabaseVid(viewModel)
                         // ShimmerVid(shimmerViewModel)
@@ -83,10 +93,39 @@ class MainActivity : ComponentActivity() {
                         // DefaultBottomSheetVid()
                         // SplashWithLottieVid()
                         // NavigationVid()
-                        NavigationDeeplinkVid(isDeeplink, deeplinkDestination)
+                        //NavigationDeeplinkVid(isDeeplink, deeplinkDestination)
+                        SendSmsVid()
                     }
                 }
             }
+        }
+    }
+}
+
+@Composable
+fun SendSmsVid() {
+    Column(
+        modifier = Modifier.padding(top=60.dp, start = 20.dp, end = 20.dp)
+    ) {
+        var sms by remember { mutableStateOf("") }
+        val onSmsInputChanged: (String)-> Unit = {
+            sms = it
+        }
+        val validator = TextFieldValidator(TextFieldType.Otp)
+        ResendSmsTextField(
+            resources = ResendSmsResources(
+                title = getTextResource("Código SMS"),
+                sendSmsText = getTextResource("Solicitar SMS"),
+                resendSmsText = getTextResource("Próximo SMS em {0}"),
+                placeholder = getTextResource("Insira Código SMS"),
+                errorIcon = getPreviewImageResource(R.drawable.info)
+            ),
+            validator = validator,
+            onSmsInputChange = onSmsInputChanged
+        )
+        Spacing.Normal()
+        PrimaryButton(enabled = validator.isValid(sms), text = "Validar SMS") {
+            // do something
         }
     }
 }

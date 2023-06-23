@@ -18,6 +18,7 @@ enum class AnalyticsAction(val actionName: String, val actionContext: String?) {
     NavHomeAction("nav_home", "Navegou para Tela Inicial"),
     NavInsuranceAction("nav_insurance", "Navegou para Tela de Seguros"),
     NavSupportAction("nav_help", "Navegou para Tela de Suporte"),
+    TooManySmsAction("sms_exceeded", "Número de SMS por dia excedido!"),
     NavProfileAction("nav_profile", "Navegou para Tela de Perfil");
 
     companion object {

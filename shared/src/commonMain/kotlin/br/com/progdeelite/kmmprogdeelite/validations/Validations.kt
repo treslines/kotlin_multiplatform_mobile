@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.StateFlow
 // 4) Como criar o validador para usar e observar os estados de erro nos componentes
 
 class TextFieldValidator(
-    val type: TextFieldType = TextFieldType.Default
+    private val type: TextFieldType = TextFieldType.Default
 ) {
     private val _error = MutableStateFlow<TextFieldErrorType>(TextFieldErrorType.None)
     val error: StateFlow<TextFieldErrorType> = _error
@@ -20,7 +20,7 @@ class TextFieldValidator(
         setErrorState(validate(input))
     }
 
-    fun setErrorState(errorType: TextFieldErrorType) {
+    private fun setErrorState(errorType: TextFieldErrorType) {
         _error.tryEmit(errorType)
     }
 

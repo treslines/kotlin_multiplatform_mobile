@@ -17,6 +17,11 @@ object StringResources {
     val textfield_code_expired = TextResource("textfield_code_expired")
     val textfield_empty = TextResource("textfield_empty")
 
+    val sms_text_title = TextResource("sms_text_title")
+    val sms_text_send = TextResource("sms_text_send")
+    val sms_text_resend = TextResource("sms_text_resend")
+    val sms_textfield_hint = TextResource("sms_textfield_hint")
+
     val dialog_title_force_update = TextResource("dialog_title_force_update")
     val dialog_description_force_update = TextResource("dialog_description_force_update")
     val dialog_primary_button_text_force_update = TextResource("dialog_primary_button_text_force_update")

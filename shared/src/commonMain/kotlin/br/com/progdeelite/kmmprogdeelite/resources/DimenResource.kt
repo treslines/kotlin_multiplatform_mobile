@@ -20,7 +20,8 @@ abstract class ComponentDimens(
     val defaultPadding: DefaultPaddingsResource,
     val header: HeaderDimensResource,
     val screen: ScreenDimensResource,
-    val card: CardDimensResource
+    val card: CardDimensResource,
+    val icon: IconDimensResource,
     // ... OUTROS COMPONENTES ADICIONE AQUI ....
 ) {
     internal class Dimens : ComponentDimens(
@@ -30,7 +31,8 @@ abstract class ComponentDimens(
         defaultPadding = DefaultPaddingsResource(12, 12, 12, 12),
         header = HeaderDimensResource(100, 45, 24, 0, 24, 12, 0.95f),
         screen = ScreenDimensResource(24, 0.1f, 100f, 20),
-        card = CardDimensResource(15, 24)
+        card = CardDimensResource(15, 24),
+        icon = IconDimensResource(24, 48)
     )
 }
 
@@ -46,6 +48,8 @@ expect class HeaderDimensResource(
 
 expect class ScreenDimensResource(defaultPadding: Int, defaultStatusBarThreshold: Float, defaultBlendLimit: Float, defaultCurveInset: Int)
 expect class CardDimensResource(defaultCornerRadius: Int, defaultPadding: Int)
+
+expect class IconDimensResource(defaultTiny: Int, defaultNormal: Int)
 
 expect class DefaultPaddingsResource(defaultStart: Int, defaultEnd: Int, defaultTop: Int, defaultBottom: Int)
 expect class SurfaceDimensResource(roundedCornerUnit: Int)

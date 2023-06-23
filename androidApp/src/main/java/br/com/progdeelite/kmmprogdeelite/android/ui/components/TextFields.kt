@@ -1,9 +1,7 @@
 package br.com.progdeelite.kmmprogdeelite.android.ui.components
 
 import android.content.res.Configuration
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -18,18 +16,113 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import br.com.progdeelite.kmmprogdeelite.android.R
+import br.com.progdeelite.kmmprogdeelite.android.modifiers.onFocusChangedIgnoreInitialState
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.AndroidAppTheme
 import br.com.progdeelite.kmmprogdeelite.android.ui.theme.TextStyles
 import br.com.progdeelite.kmmprogdeelite.android.utils.DependencyInjectionForPreview
+import br.com.progdeelite.kmmprogdeelite.resources.ImageResource
 import br.com.progdeelite.kmmprogdeelite.resources.Resources
+import br.com.progdeelite.kmmprogdeelite.resources.components.ResendSmsResources
+import br.com.progdeelite.kmmprogdeelite.resources.getPreviewImageResource
+import br.com.progdeelite.kmmprogdeelite.resources.getTextResource
+import br.com.progdeelite.kmmprogdeelite.tracking.adobe.AnalyticsAction
+import br.com.progdeelite.kmmprogdeelite.tracking.adobe.AnalyticsService
 import br.com.progdeelite.kmmprogdeelite.validations.TextFieldErrorType
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
+import br.com.progdeelite.kmmprogdeelite.validations.TextFieldType
+import br.com.progdeelite.kmmprogdeelite.validations.TextFieldValidator
+import kotlinx.coroutines.delay
+
+// 1) COMO CRIAR CAMPO SMS QUE VALIDA SMS
+// 2) COMO USAR VALIDATOR E COUNT DOWN DE SMS
+// 3) COMO OBSERVAR OS ESTADOS PARA ATIVAR OU DESATIVAR BOTÃO DE FORMULÁRIO
+// 4) USAR NA PRÁTICA DENTRO DA MAIN ACTIVITY (EXEMPLO PRÁTICO)
+
+@Composable
+fun ResendSmsTextField(
+    initialInput: String = "",
+    resendSeconds: Int = 10,
+    allowedRetries: Int = 5,
+    autofocus: Boolean = false,
+    validator: TextFieldValidator = TextFieldValidator(TextFieldType.Otp),
+    onResendSmsClick: () -> Unit = {},
+    onSmsInputChange: (input: String) -> Unit = {},
+    resources: ResendSmsResources = ResendSmsResources(),
+) {
+    // VOCE PODERIA TBM (SE FOR ALGO RESUSÁVEL) ESTRAIR PARA UM UI STATE
+    val errorState by validator.error.collectAsState()
+    var resend by remember { mutableStateOf(false) }
+    var seconds by remember { mutableStateOf("$resendSeconds") }
+    var retries by remember { mutableStateOf(allowedRetries) }
+
+    if (retries == 0) {
+        AnalyticsService.instance.trackAction(AnalyticsAction.TooManySmsAction)
+    }
+    if (resend) {
+        LaunchedEffect(true) {
+            for (countDown in resendSeconds - 1 downTo 0) {
+                delay(1000)
+                seconds = "$countDown"
+                if (countDown == 0) {
+                    resend = false
+                    seconds = "$resendSeconds"
+                }
+            }
+            retries--
+        }
+    }
+    Row {
+        AccessibilityText(
+            modifier = Modifier,
+            text = resources.title.localized,
+            maxLines = 1,
+            style = TextStyles.textFieldSms,
+            color = Resources.Theme.textPrimary.getColor()
+        )
+        Spacer(modifier = Modifier.weight(1f, true))
+        if (retries > 0) {
+            SmsResendText(
+                disable = resend,
+                sendText = resources.sendSmsText.localized,
+                resendText = resources.resendSmsText.localized,
+                secondsText = seconds,
+                style = TextStyles.textFieldSms,
+                onClick = {
+                    resend = true
+                    onResendSmsClick()
+                    AnalyticsService.instance.trackAction(AnalyticsAction.TooManySmsAction)
+                }
+            )
+        }
+    }
+    Spacing.Tiny()
+    CustomTextField(
+        initialInput = initialInput,
+        autofocus = autofocus,
+        textFieldHint = resources.placeholder.localized,
+        errorTypeState = errorState,
+        imeAction = ImeAction.Next,
+        keyboardType = KeyboardType.Number,
+        validator = validator,
+        onInputChange = onSmsInputChange,
+        trailingIcon = { TrailingIcon(resources.errorIcon) }
+    )
+}
+
+@Composable
+fun TrailingIcon(imageResource: ImageResource) = Icon(
+    modifier = Modifier.size(Resources.Dimen.icon.tiny),
+    contentDescription = null,
+    painter = painterResource(id = imageResource.id),
+    tint = Resources.Theme.error.getColor()
+)
+
 
 // 1) COMO CRIAR ESTADOS COMPARTILHADOS PARA VALIDAçÃO DE CAMPOS DE TEXTO
 // 2) COMO DEFINIR OS ESTILOS DOS CAMPOS DE TEXTO E FONT SIZE COMPARTILHADO
@@ -43,8 +136,7 @@ fun DefaultTextInputField(
     autofocus: Boolean = true,
     keyboardType: KeyboardType = KeyboardType.Text,
     imeAction: ImeAction = ImeAction.Done,
-    errorState: StateFlow<Boolean> = MutableStateFlow(false),
-    errorTypeState: StateFlow<TextFieldErrorType> = MutableStateFlow(TextFieldErrorType.None),
+    errorTypeState: TextFieldErrorType = TextFieldErrorType.None,
     onInputChange: (input: String) -> Unit = {}
 ) {
     CustomTextField(
@@ -54,7 +146,6 @@ fun DefaultTextInputField(
         imeAction= imeAction,
         trailingIcon = { Icon(imageVector = Icons.Default.Error, contentDescription = null) },
         textFieldHint = textFieldHint,
-        errorState = errorState,
         errorTypeState = errorTypeState,
         onInputChange = onInputChange
     )
@@ -73,8 +164,8 @@ fun CustomTextField(
     autofocus: Boolean = false,
     trailingIcon: @Composable (() -> Unit)? = null,
     textFieldHint: String = "",
-    errorState: StateFlow<Boolean>,
-    errorTypeState: StateFlow<TextFieldErrorType>,
+    errorTypeState: TextFieldErrorType,
+    validator: TextFieldValidator = TextFieldValidator(TextFieldType.Default),
     onInputChange: (input: String) -> Unit = {}
 ) {
 
@@ -82,30 +173,34 @@ fun CustomTextField(
     val focusRequester = remember { FocusRequester() }
     val keyboardController = LocalSoftwareKeyboardController.current
 
-    val error by errorState.collectAsState()
-    val errorType by errorTypeState.collectAsState()
     var input by remember { mutableStateOf(TextFieldValue(initialInput)) }
 
     return Column {
 
-        if(autofocus){
+        if (autofocus) {
             LaunchedEffect(Unit) {
                 focusRequester.requestFocus()
             }
         }
 
+        val modifier = Modifier
+            .fillMaxWidth()
+            .height(Resources.Dimen.textInputField.minHeight)
+            .onFocusChangedIgnoreInitialState {
+                if (it.isFocused) return@onFocusChangedIgnoreInitialState
+                validator.updateErrorState(input.text)
+            }
+
         OutlinedTextField(
             value = input,
             singleLine = true,
-            isError = error,
-            modifier = when(autofocus) {
-                true -> Modifier
-                    .height(Resources.Dimen.textInputField.minHeight)
-                    .focusRequester(focusRequester)
-                else -> Modifier.height(Resources.Dimen.textInputField.minHeight)
+            isError = errorTypeState != TextFieldErrorType.None,
+            modifier = when (autofocus) {
+                true -> modifier.focusRequester(focusRequester)
+                else -> modifier
             },
             shape = RoundedCornerShape(Resources.Dimen.textInputField.roundCorner),
-            trailingIcon = if (error) trailingIcon else null,
+            trailingIcon = if (errorTypeState != TextFieldErrorType.None) trailingIcon else null,
             keyboardOptions = KeyboardOptions(keyboardType = keyboardType, imeAction = imeAction),
             keyboardActions = KeyboardActions {
                 keyboardController?.hide()
@@ -127,20 +222,20 @@ fun CustomTextField(
             },
 
             colors = TextFieldDefaults.textFieldColors(
-                    backgroundColor = Resources.Theme.backgroundSecondary.getColor(),
-                    cursorColor = Resources.Theme.textFieldCursorColor.getColor(),
-                    textColor = if (error) MaterialTheme.colors.error else LocalContentColor.current.copy(LocalContentAlpha.current),
-                    focusedIndicatorColor = Resources.Theme.textFieldSelectedFocusColor.getColor(),
-                    unfocusedIndicatorColor = Resources.Theme.textFieldUnselectedFocusColor.getColor(),
-                ),
-            )
+                backgroundColor = Resources.Theme.backgroundSecondary.getColor(),
+                cursorColor = Resources.Theme.textFieldCursorColor.getColor(),
+                textColor = if (errorTypeState == TextFieldErrorType.None) MaterialTheme.colors.error else LocalContentColor.current.copy(LocalContentAlpha.current),
+                focusedIndicatorColor = Resources.Theme.textFieldSelectedFocusColor.getColor(),
+                unfocusedIndicatorColor = Resources.Theme.textFieldUnselectedFocusColor.getColor(),
+            ),
+        )
 
         Spacing.Tiny()
 
-        when (errorType) {
-            TextFieldErrorType.PhoneNumberNotFound -> ErrorHintText(errorType)
-            TextFieldErrorType.InvalidBirthdate -> ErrorHintText(errorType)
-            TextFieldErrorType.InvalidCode -> ErrorHintText(errorType)
+        when (errorTypeState) {
+            TextFieldErrorType.PhoneNumberNotFound -> ErrorHintText(errorTypeState)
+            TextFieldErrorType.InvalidBirthdate -> ErrorHintText(errorTypeState)
+            TextFieldErrorType.InvalidCode -> ErrorHintText(errorTypeState)
             else -> ErrorHintText(TextFieldErrorType.None)
         }
     }
@@ -161,23 +256,27 @@ private fun ErrorHintText(errorType: TextFieldErrorType) {
 fun InputFieldsPreview() {
     DependencyInjectionForPreview()
 
-    val errorStateTrue: StateFlow<Boolean> = MutableStateFlow(true)
-    val errorStateFalse: StateFlow<Boolean> = MutableStateFlow(false)
-    val errorNumberNotFound: StateFlow<TextFieldErrorType> = MutableStateFlow(TextFieldErrorType.PhoneNumberNotFound)
-    val errorInvalidDate: StateFlow<TextFieldErrorType> = MutableStateFlow(TextFieldErrorType.InvalidBirthdate)
-    val errorInvalidCode: StateFlow<TextFieldErrorType> = MutableStateFlow(TextFieldErrorType.InvalidCode)
-    val errorNone: StateFlow<TextFieldErrorType> = MutableStateFlow(TextFieldErrorType.None)
-
     AndroidAppTheme {
         Column(
             modifier = Modifier.padding(20.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+
+            ResendSmsTextField(
+                resources = ResendSmsResources(
+                    title = getTextResource("Código SMS"),
+                    sendSmsText = getTextResource("Solicitar SMS"),
+                    resendSmsText = getTextResource("Próximo SMS em {0}"),
+                    placeholder = getTextResource("Insira Código SMS"),
+                    errorIcon = getPreviewImageResource(R.drawable.info)
+                )
+            )
+
+            Spacing.Big()
             DefaultTextInputField(
                 initialInput = "076 888 44 222",
                 keyboardType = KeyboardType.Phone,
-                errorState = errorStateTrue,
-                errorTypeState = errorNumberNotFound
+                errorTypeState = TextFieldErrorType.PhoneNumberNotFound
             )
 
             Spacing.Big()
@@ -185,8 +284,7 @@ fun InputFieldsPreview() {
             DefaultTextInputField(
                 textFieldHint = "066 888 44 22",
                 keyboardType = KeyboardType.Phone,
-                errorState = errorStateFalse,
-                errorTypeState = errorNone
+                errorTypeState = TextFieldErrorType.None
             )
 
             Spacing.ExtraHuge()
@@ -194,8 +292,7 @@ fun InputFieldsPreview() {
             DefaultTextInputField(
                 initialInput = "11/12-2023",
                 keyboardType = KeyboardType.Text,
-                errorState = errorStateTrue,
-                errorTypeState = errorInvalidDate
+                errorTypeState = TextFieldErrorType.InvalidBirthdate
             )
 
             Spacing.Big()
@@ -203,8 +300,7 @@ fun InputFieldsPreview() {
             DefaultTextInputField(
                 textFieldHint = "11/12/2023",
                 keyboardType = KeyboardType.Text,
-                errorState = errorStateFalse,
-                errorTypeState = errorNone
+                errorTypeState = TextFieldErrorType.None
             )
 
             Spacing.ExtraHuge()
@@ -212,8 +308,7 @@ fun InputFieldsPreview() {
             DefaultTextInputField(
                 initialInput = "815444",
                 keyboardType = KeyboardType.Number,
-                errorState = errorStateTrue,
-                errorTypeState = errorInvalidCode
+                errorTypeState = TextFieldErrorType.InvalidCode
             )
 
             Spacing.Big()
@@ -221,8 +316,7 @@ fun InputFieldsPreview() {
             DefaultTextInputField(
                 textFieldHint = "815444",
                 keyboardType = KeyboardType.Number,
-                errorState = errorStateFalse,
-                errorTypeState = errorNone
+                errorTypeState = TextFieldErrorType.None
             )
         }
     }

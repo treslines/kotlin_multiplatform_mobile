@@ -14,6 +14,11 @@
     <string name="textfield_code_expired">Código expirado.</string>
     <string name="textfield_empty">Campo vazio.</string>
 
+    <string name="sms_text_title">Código SMS</string>
+    <string name="sms_text_send">Solicitar SMS</string>
+    <string name="sms_text_resend">Próximo SMS em {0}</string>
+    <string name="sms_textfield_hint">Insira Código SMS</string>
+
     <string name="dialog_title_force_update">Atualizar App</string>
     <string name="dialog_description_force_update">Para continuar usando o app, você precisa atualiza-lo</string>
     <string name="dialog_primary_button_text_force_update">Atualizar</string>
