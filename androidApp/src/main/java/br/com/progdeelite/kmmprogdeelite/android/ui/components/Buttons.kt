@@ -68,6 +68,7 @@ fun BaseButton(
     modifier: Modifier = Modifier,
     colors: ButtonColors = ButtonDefaults.buttonColors(),
     onClick: () -> Unit = {},
+    contentPadding: PaddingValues = PaddingValues(horizontal = Resources.Spacing.huge.dp),
     enabled: Boolean = true,
     content: @Composable RowScope.() -> Unit
 ) {
@@ -76,11 +77,37 @@ fun BaseButton(
         enabled = enabled,
         onClick = onClick,
         colors = colors,
-        contentPadding = PaddingValues(horizontal = Resources.Spacing.huge.dp),
+        contentPadding = contentPadding,
         shape = RoundedCornerShape(48.dp),
         elevation = ButtonDefaults.elevation(0.dp)
     ) {
         content()
+    }
+}
+
+@Composable
+fun SwitchButton(
+    modifier: Modifier = Modifier,
+    text: String,
+    contentColor: Color = Resources.Theme.contentPrimary.getColor(),
+    backgroundColor: Color = Resources.Theme.backgroundPrimary.getColor(),
+    onClick: () -> Unit = {}
+) {
+    BaseButton(
+        modifier = modifier,
+        onClick = onClick,
+        contentPadding = PaddingValues(
+            start = 2.dp,
+            end = 2.dp
+        ),
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = backgroundColor,
+            contentColor = contentColor,
+            disabledBackgroundColor = Resources.Theme.disabledBackgroundCloseButton.getColor(),
+            disabledContentColor = Resources.Theme.transparent.getColor()
+        )
+    ) {
+        AccessibilityText(text = text, style = TextStyles.button, maxLines = 1)
     }
 }
 
@@ -334,13 +361,16 @@ fun LoadingButton(
     var buttonWidth by remember { mutableStateOf(0.dp) }
     var memorizedWidth by remember { mutableStateOf(false) }
     Button(
-        modifier = modifier.height(Resources.Dimen.button.height)
+        modifier = modifier
+            .height(Resources.Dimen.button.height)
             .onGloballyPositioned { coordinates ->
-                if(memorizedWidth.not()){
+                if (memorizedWidth.not()) {
                     memorizedWidth = true
-                    buttonWidth = with(localDensity) { coordinates.size.width.toDp()
+                    buttonWidth = with(localDensity) {
+                        coordinates.size.width.toDp()
                     }
-                }},
+                }
+            },
         onClick = onLoadingClick(state, onLoadingStart),
         contentPadding = PaddingValues(horizontal = Resources.Spacing.huge.dp),
         shape = RoundedCornerShape(Resources.Dimen.button.height),
@@ -428,6 +458,8 @@ fun ButtonsPreview() {
             BackIconButton()
             Spacing.Normal()
             PlaceholderIconButton()
+            Spacing.Normal()
+            SwitchButton(text = "Detalhes")
         }
     }
 }

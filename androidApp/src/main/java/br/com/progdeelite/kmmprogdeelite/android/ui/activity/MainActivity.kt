@@ -94,11 +94,27 @@ class MainActivity : ComponentActivity() {
                         // SplashWithLottieVid()
                         // NavigationVid()
                         //NavigationDeeplinkVid(isDeeplink, deeplinkDestination)
-                        SendSmsVid()
+                        // SendSmsVid()
+                        DoubleSwitchVid()
                     }
                 }
             }
         }
+    }
+}
+
+@Composable
+fun DoubleSwitchVid() {
+    Column(
+        modifier = Modifier.padding(top=60.dp, start = 20.dp, end = 20.dp)
+    ) {
+        DoubleSwitch(
+            startAtLeftPosition = true,
+            leftSwitchText = "Descontos",
+            leftSwitchAction = {},
+            rightSwitchText = "Promoções",
+            rightSwitchAction = {}
+        )
     }
 }
 
