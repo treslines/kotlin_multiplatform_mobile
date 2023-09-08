@@ -6,6 +6,12 @@ import kotlinx.serialization.json.JsonObject
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
 import kotlinx.serialization.encodeToString as jsonEncoder
+import kotlinx.datetime.Clock
+import kotlinx.datetime.Instant
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
 
 // 0) DEPENDÊNCIAS QUE PRECISAREMOS
 // 1) COMO SERIALIZAR E DESERIALIZAR OBJETOS
@@ -44,8 +50,35 @@ inline fun <reified T> String.toObject(): T? {
 }
 
 // BÔNUS - NAVEGACão
-private fun parseData(data: String): String {
+fun parseData(data: String): String {
     // you need this to ensure proper navigation when passing arguments to routes
     // if there are some special chars, urls etc. the navigation will crash
     return URLEncoder.encode(data, StandardCharsets.UTF_8.toString())
+}
+
+// 0) DEPENDÊNCIAS QUE PRECISAREMOS
+// 1) COMO CRIAR EXTENSÃO QUE VERIFICA SE DATA ESTA EXPIRADA
+// 2) COMO OBTER O TEMPO (TIME) CORRENTE
+// 3) COMO OBTER A DATA ATUAL E COMO FORMATA-LA
+
+// returns current date time
+fun nowLocalDateTime(): LocalDateTime {
+    val now: Instant = Clock.System.now()
+    return now.toLocalDateTime(TimeZone.currentSystemDefault())
+}
+
+// checks if today is bigger than this time
+fun LocalDate.isExpired() = this.now().compareTo(this) > 1
+
+// returns today's date
+fun LocalDate.now(): LocalDate {
+    val now: Instant = Clock.System.now()
+    return now.toLocalDateTime(TimeZone.currentSystemDefault()).date
+}
+
+// With leading zeros
+fun LocalDate.toDayMonthYear(): String {
+    val dayWithLeadingZero = if (this.dayOfMonth.toString().length < 2) "0${this.dayOfMonth}" else this.dayOfMonth
+    val monthWithLeadingZero = if (this.monthNumber.toString().length < 2) "0${this.monthNumber}" else this.monthNumber
+    return "$dayWithLeadingZero.$monthWithLeadingZero.${this.year}"
 }

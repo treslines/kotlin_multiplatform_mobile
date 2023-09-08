@@ -45,6 +45,7 @@ object Versions {
     const val pluginAndroidApp = "7.4.2"
     const val viewModel = "2.5.1"
     const val kotlinx = "1.6.4"
+    const val kotlinxDatetime = "0.4.1"
     const val mockkCommon = "1.12.5"
     const val mockkCore = "1.13.2"
     const val sqlDelight = "1.5.3"
@@ -119,6 +120,7 @@ object Accompanist {
 object Kotlinx {
     const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinx}"
     const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlinx}"
+    const val datetime = "org.jetbrains.kotlinx:kotlinx-datetime:${Versions.kotlinxDatetime}"
 }
 
 object Compose {

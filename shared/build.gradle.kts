@@ -32,6 +32,7 @@ kotlin {
                 implementation(Ktor.serialization)
                 implementation(Ktor.clientContentNegotiation)
                 implementation(Russhwolf.settings)
+                implementation(Kotlinx.datetime)
             }
         }
         val commonTest by getting {
