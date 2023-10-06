@@ -28,10 +28,10 @@ object Themes {
     val onError by lazy { ColorResource(light = ColorScheme.white, dark = ColorScheme.white) }
 
     val iconConnectivityOnline by lazy { ColorResource(light = ColorScheme.greenDark, dark = ColorScheme.greenDark) }
+    val bgConnectivityOnline by lazy { ColorResource(light = ColorScheme.greenLight, dark = ColorScheme.greenLight) }
     val iconConnectivityOffline by lazy { ColorResource(light = ColorScheme.white, dark = ColorScheme.white0a) }
     val textConnectivityOnline by lazy { ColorResource(light = ColorScheme.black, dark = ColorScheme.black) }
     val textConnectivityOffline by lazy { ColorResource(light = ColorScheme.white, dark = ColorScheme.white) }
-    val bgConnectivityOnline by lazy { ColorResource(light = ColorScheme.greenLight, dark = ColorScheme.greenLight) }
     val bgConnectivityOffline by lazy { ColorResource(light = ColorScheme.redDark, dark = ColorScheme.redDark) }
     val textFieldHintColor by lazy { ColorResource(light = ColorScheme.gray60a, dark = ColorScheme.gray60a) }
     val textFieldCursorColor by lazy { ColorResource(light = ColorScheme.black, dark = ColorScheme.black) }
@@ -84,5 +84,12 @@ object Themes {
     val labelDisabled by lazy { ColorResource(light = ColorScheme.black5a, dark = ColorScheme.black5a) }
     val labelDefault by lazy { ColorResource(light = ColorScheme.black60a, dark = ColorScheme.black60a) }
     val labelInteractive by lazy { ColorResource(light = ColorScheme.gold, dark = ColorScheme.blueLight) }
+
+    val textPlaceholder by lazy { ColorResource(light = ColorScheme.greenLight, dark = ColorScheme.blueLight) }
+    val textDefault by lazy { ColorResource(light = ColorScheme.black, dark = ColorScheme.white) }
+    val textDisabled by lazy { ColorResource(light = ColorScheme.gray60a, dark = ColorScheme.gray60a) }
+    val textMuted by lazy { ColorResource(light = ColorScheme.gray60a, dark = ColorScheme.grayLaminate) }
+    val badgeActiveText by lazy { ColorResource(light = ColorScheme.greenExtraDark, dark = ColorScheme.greenExtraDark) }
+    val badgeActiveBg by lazy { ColorResource(light = ColorScheme.greenLight, dark = ColorScheme.greenLight) }
 }
 

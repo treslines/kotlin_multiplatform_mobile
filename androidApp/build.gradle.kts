@@ -111,6 +111,8 @@ dependencies {
     implementation(Compose.lottie)
     implementation(Compose.navigation)
     implementation(Compose.viewModelCompose)
+    implementation(Compose.viewPagerBase)
+    implementation(Compose.viewPagerCompose)
 
     // LOKALISE
     implementation(Translation.lokaliseSdk)

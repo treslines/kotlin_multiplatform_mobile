@@ -28,7 +28,7 @@ object Plugins {
 
 /** DEPENDENCY VERSIONS */
 object Versions {
-    const val compose = "1.2.1"
+    const val compose = "1.4.0"
     const val composeActivity = "1.4.0"
     const val composeCompiler = "1.3.1"
     const val composeThemeAdapter = "1.1.5"
@@ -71,6 +71,9 @@ object Versions {
 
     const val navigation = "2.5.3"
     const val accompanistSystemUiController = "0.28.0"
+
+    const val viewPagerBase = "3.1.1"
+    const val viewPagerCompose = "3.2.0-rc01"
 }
 
 object Jetbrains {
@@ -139,6 +142,8 @@ object Compose {
     const val lottie = "com.airbnb.android:lottie-compose:${Versions.lottie}"
     const val navigation = "androidx.navigation:navigation-compose:${Versions.navigation}"
     const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.viewModel}"
+    const val viewPagerBase = "androidx.paging:paging-runtime:${Versions.viewPagerBase}"
+    const val viewPagerCompose = "androidx.paging:paging-compose:${Versions.viewPagerCompose}"
 
 }
 

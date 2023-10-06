@@ -22,6 +22,7 @@ abstract class ComponentDimens(
     val screen: ScreenDimensResource,
     val card: CardDimensResource,
     val icon: IconDimensResource,
+    val viewPager: ViewPagerResource
     // ... OUTROS COMPONENTES ADICIONE AQUI ....
 ) {
     internal class Dimens : ComponentDimens(
@@ -31,8 +32,9 @@ abstract class ComponentDimens(
         defaultPadding = DefaultPaddingsResource(12, 12, 12, 12),
         header = HeaderDimensResource(100, 45, 24, 0, 24, 12, 0.95f),
         screen = ScreenDimensResource(24, 0.1f, 100f, 20),
-        card = CardDimensResource(15, 24),
-        icon = IconDimensResource(24, 48)
+        card = CardDimensResource(15, 24, 56, 56),
+        icon = IconDimensResource(24, 48),
+        viewPager = ViewPagerResource(10, 10, 20)
     )
 }
 
@@ -47,7 +49,18 @@ expect class HeaderDimensResource(
 )
 
 expect class ScreenDimensResource(defaultPadding: Int, defaultStatusBarThreshold: Float, defaultBlendLimit: Float, defaultCurveInset: Int)
-expect class CardDimensResource(defaultCornerRadius: Int, defaultPadding: Int)
+expect class CardDimensResource(
+    defaultCornerRadius: Int,
+    defaultPadding: Int,
+    defaultHeight: Int,
+    defaultWidth: Int
+)
+
+expect class ViewPagerResource(
+    defaultIndicatorComponentPadding: Int,
+    defaultIndicatorPadding: Int,
+    defaultIndicatorSize: Int,
+)
 
 expect class IconDimensResource(defaultTiny: Int, defaultNormal: Int)
 

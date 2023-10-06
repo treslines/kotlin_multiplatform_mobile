@@ -50,10 +50,24 @@ actual class ScreenDimensResource actual constructor(
 
 actual class CardDimensResource actual constructor(
     private val defaultCornerRadius: Int,
-    private val defaultPadding: Int
+    private val defaultPadding: Int,
+    private val defaultHeight: Int,
+    private val defaultWidth: Int
 ) {
     val cornerRadius: Double by lazy { defaultCornerRadius.toDouble() }
     val padding: Double by lazy { defaultPadding.toDouble() }
+    val height: Double by lazy { defaultHeight.toDouble() }
+    val width: Double by lazy { defaultWidth.toDouble() }
+}
+
+actual class ViewPagerResource actual constructor(
+    private val defaultIndicatorComponentPadding: Int,
+    private val defaultIndicatorPadding: Int,
+    private val defaultIndicatorSize: Int
+) {
+    val indicatorComponentPadding: Double by lazy { defaultIndicatorComponentPadding.toDouble() }
+    val indicatorPadding: Double by lazy { defaultIndicatorPadding.toDouble() }
+    val indicatorSize: Double by lazy { defaultIndicatorSize.toDouble() }
 }
 
 actual class IconDimensResource actual constructor(

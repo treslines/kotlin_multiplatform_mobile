@@ -19,6 +19,7 @@ object ColorScheme {
 
     const val redDark: Long = 0xFFDC4657
 
+    const val greenExtraDark: Long = 0xff001e00
     const val greenDark: Long = 0xFF00D80A
     const val greenLight: Long = 0xFF76DA96
     const val orangeDark: Long = 0xFFE95D0F
