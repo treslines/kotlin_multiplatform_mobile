@@ -7,6 +7,26 @@ plugins {
 val flavorProps = project.properties["FLAVOR_PROPERTIES"]
 val envProps = if(flavorProps != null) flavorProps as Map<*,*> else null
 
+/*
+ Title: Enforce Specific Kotlin Standard Library Versions
+
+ Description:
+ This snippet of Gradle configuration ensures that the project uses a specified version (1.8.21) of Kotlin's standard
+ library, regardless of other version references in the project dependencies. It applies this resolution strategy to
+ all configurations within the project, promoting consistency and preventing potential issues arising from version
+ discrepancies.
+*/
+
+configurations.all {
+    resolutionStrategy {
+        force(
+            "org.jetbrains.kotlin:kotlin-stdlib:1.8.21",
+            "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.21",
+            "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
+        )
+    }
+}
+
 android {
     namespace = Namespaces.android
     compileSdk = Playstore.compileSdk
